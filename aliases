@@ -1,0 +1,7 @@
+alias g="git"
+alias sc="script/console"
+alias ss="script/server"
+alias cuc="script/cucumber"
+alias gadd="git add -u && git add . && git status"
+alias migrate="rake db:migrate db:test:prepare"
+alias remigrate="rake db:migrate && rake db:migrate:redo && rake db:schema:dump db:test:prepare"
