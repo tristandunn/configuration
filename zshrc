@@ -39,3 +39,8 @@ export PATH="/Library/PostgreSQL/8.4/bin:$PATH"
 
 # Shut up Postgres.
 export PGOPTIONS='-c client_min_messages=WARNING'
+
+# Add homebrew to path.
+if [[ -s ~/.homebrew ]] ; then
+  export PATH="`cd ~/.homebrew/bin && pwd`:$PATH"
+fi
