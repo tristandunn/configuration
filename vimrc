@@ -170,3 +170,6 @@ match Error /\%80v.\+/
 
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
 :nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" Disable viminfo.
+:set viminfo=""
