@@ -1,6 +1,6 @@
 # Completion.
 autoload -U compinit
-compinit
+compinit -D
 
 # Automatically enter directories without `cd`.
 setopt auto_cd
