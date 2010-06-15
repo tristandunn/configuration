@@ -33,10 +33,6 @@ if [[ -s ~/.rvm/scripts/rvm ]] ; then
   source ~/.rvm/scripts/rvm
 fi
 
-# Add MySQL and Postgres commands to path.
-export PATH="/usr/local/mysql/bin:$PATH"
-export PATH="/Library/PostgreSQL/8.4/bin:$PATH"
-
 # Shut up Postgres.
 export PGOPTIONS='-c client_min_messages=WARNING'
 
