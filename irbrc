@@ -18,7 +18,6 @@ if ENV.include?('RAILS_ENV')
   IRB.conf[:IRB_RC] = Proc.new do
     if defined?(ActiveRecord)
       ActiveRecord::Base.logger = Logger.new(STDOUT)
-      ActiveRecord::Base.instance_eval { alias :[] :find }
     end
   end
 end
