@@ -10,9 +10,6 @@
   excludesfile = ~/.gitignore
 [alias]
   c = commit -m
-  a = add
-  di = diff
-  dic = diff --cached
   pl = pull
   ps = push
   plre = pull --rebase
