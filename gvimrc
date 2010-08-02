@@ -1,12 +1,9 @@
 " Window size
-set winwidth=80
-let g:halfsize=85
-let g:fullsize=156
-set lines=42
-let &columns=g:halfsize
+set lines=44
+let &columns=85
 
 " Font
-set guifont=Monaco:h15.00
+set guifont=Monaco:h16.00
 
 " No audible bell
 set vb
