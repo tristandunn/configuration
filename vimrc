@@ -18,6 +18,13 @@ map Q gq
 " Alternate to escape.
 ino jj <esc>
 
+" Disable arrow keys in normal and visual mode.
+for prefix in ['n', 'v']
+  for key in ['<Up>', '<Down>', '<Left>', '<Right>']
+    exe prefix . "noremap " . key . " <Nop>"
+  endfor
+endfor
+
 " Switch syntax highlighting on, when the terminal has colors.
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
