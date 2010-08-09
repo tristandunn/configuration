@@ -1,6 +1,7 @@
 :Snippet	snippets_emu.txt	/*:Snippet*
 CreateBundleSnippet	snippets_emu.txt	/*CreateBundleSnippet*
 CreateSnippet	snippets_emu.txt	/*CreateSnippet*
+Tabular.txt	tabular.txt	/*Tabular.txt*
 basic-snippet	snippets_emu.txt	/*basic-snippet*
 config/rails.vim	rails.txt	/*config\/rails.vim*
 creating-snippets	snippets_emu.txt	/*creating-snippets*
@@ -186,3 +187,9 @@ snippets_emu-features	snippets_emu.txt	/*snippets_emu-features*
 snippets_emu-options	snippets_emu.txt	/*snippets_emu-options*
 snippets_emu-troubleshooting	snippets_emu.txt	/*snippets_emu-troubleshooting*
 snippets_emu.txt	snippets_emu.txt	/*snippets_emu.txt*
+tabular	tabular.txt	/*tabular*
+tabular-intro	tabular.txt	/*tabular-intro*
+tabular-scripting	tabular.txt	/*tabular-scripting*
+tabular-toc	tabular.txt	/*tabular-toc*
+tabular-walkthrough	tabular.txt	/*tabular-walkthrough*
+tabular.vim	tabular.txt	/*tabular.vim*
