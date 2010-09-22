@@ -61,17 +61,6 @@ else
   set autoindent
 endif
 
-"if has("folding")
-"  set foldenable
-"  set foldmethod=syntax
-"  set foldlevel=1
-"  set foldnestmax=2
-"  set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
-"
-"  " automatically open folds at the starting cursor position
-"  " autocmd BufReadPost .foldo!
-"endif
-
 " Softtabs, 2 spaces.
 set tabstop=2
 set shiftwidth=2
@@ -125,9 +114,6 @@ imap <Tab> <C-N>
 " Visual mode: D
 vmap D y'>p
 
-" For Haml
-au! BufRead,BufNewFile *.haml         setfiletype haml
-
 " No Help, please.
 nmap <F1> <Esc>
 
@@ -144,11 +130,6 @@ command! RTroutes :tabe config/routes.rb
 " Local config.
 if filereadable(".vimrc.local")
   source .vimrc.local
-endif
-
-" Use Ack instead of Grep when available.
-if executable("ack")
-  set grepprg=ack\ -H\ --nogroup\ --nocolor
 endif
 
 " Color scheme.
