@@ -14,6 +14,10 @@ set guioptions-=T
 " Use console dialogs
 set guioptions+=c
 
+" Remove scrollbars.
+set guioptions-=r
+set guioptions-=l
+
 " Open tabs with CMD + N.
 map <D-1> :tabn 1<CR>
 map <D-2> :tabn 2<CR>
