@@ -35,18 +35,3 @@ fi
 
 # Shut up Postgres.
 export PGOPTIONS='-c client_min_messages=WARNING'
-
-# Add homebrew to path.
-if [[ -s ~/.homebrew ]] ; then
-  export PATH="`cd ~/.homebrew/bin && pwd`:$PATH"
-fi
-
-# Add npm binaries to path.
-if [[ -s ~/.homebrew/share/npm/bin ]] ; then
-  export PATH="`cd ~/.homebrew/share/npm/bin && pwd`:$PATH"
-fi
-
-# Add npm libraries to node path.
-if [[ -s ~/.homebrew/lib/node ]] ; then
-  export NODE_PATH="`cd ~/.homebrew/lib/node && pwd`"
-fi
