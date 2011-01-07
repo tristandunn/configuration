@@ -67,7 +67,7 @@ set expandtab
 " Always display the status line.
 set laststatus=2
 
-" \ is the leader character.
+" Space is the leader character.
 let mapleader = " "
 
 " Edit the README_FOR_APP (makes :R commands work)
