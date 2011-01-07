@@ -8,13 +8,10 @@ set backspace=indent,eol,start
 set nobackup
 set noswapfile
 set nowritebackup
-set history=50    " Keep 50 lines of command line history.
+set history=32    " Keep 32 lines of command line history.
 set ruler         " Show the cursor position all the time.
 set showcmd       " Display incomplete commands.
 set incsearch     " Do incremental searching.
-
-" Don't use Ex mode, use Q for formatting.
-map Q gq
 
 " Alternate to escape.
 ino jj <esc>
@@ -71,7 +68,7 @@ set expandtab
 set laststatus=2
 
 " \ is the leader character.
-let mapleader = "\\"
+let mapleader = " "
 
 " Edit the README_FOR_APP (makes :R commands work)
 map <Leader>R :e doc/README_FOR_APP<CR>
@@ -127,11 +124,6 @@ set list listchars=tab:»·,trail:·
 " Edit routes.
 command! Rroutes :e config/routes.rb
 command! RTroutes :tabe config/routes.rb
-
-" Local config.
-if filereadable(".vimrc.local")
-  source .vimrc.local
-endif
 
 " Color scheme.
 colorscheme ir_black
