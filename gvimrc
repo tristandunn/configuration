@@ -16,7 +16,7 @@ set guioptions+=c
 
 " Remove scrollbars.
 set guioptions-=r
-set guioptions-=l
+set guioptions-=L
 
 " Open tabs with CMD + N.
 map <D-1> :tabn 1<CR>
