@@ -101,10 +101,6 @@ map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 " Normal mode: <Leader>t
 map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
-" Inserts the path of the currently edited file into a command.
-" Command mode: Ctrl+P
-cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-
 " Maps autocomplete to tab.
 imap <Tab> <C-N>
 
@@ -114,9 +110,6 @@ vmap D y'>p
 
 " No Help, please.
 nmap <F1> <Esc>
-
-" Press ^F from insert mode to insert the current file name.
-imap <C-F> <C-R>=expand("%")<CR>
 
 " Display extra whitespace.
 set list listchars=tab:»·,trail:·
