@@ -1,5 +1,4 @@
 alias g="git"
-alias n="node"
 alias sc="script/rails console"
 alias ss="script/rails server"
 alias gadd="git add -u && git add . && git status"
