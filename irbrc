@@ -1,11 +1,12 @@
 # Rails customization.
-if ENV.include?('RAILS_ENV')
+if ENV["_"].include?("script/rails")
   # Custom prompt with environment hint.
-  prompt = "#{File.basename(Dir.pwd)}[#{ENV['RAILS_ENV'].split('').first.upcase}]"
+  prompt = "#{File.basename(Dir.pwd)}[#{Rails.env.split('').first.upcase}]"
 
   IRB.conf[:PROMPT] ||= {}
   IRB.conf[:PROMPT][:RAILS] = {
-    :PROMPT_I => "#{prompt}>> ",
+    :PROMPT_I => "#{prompt}> ",
+    :PROMPT_N => "#{prompt}* ",
     :PROMPT_S => "#{prompt}* ",
     :PROMPT_C => "#{prompt}? ",
     :RETURN   => "=> %s\n"
