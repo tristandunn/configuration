@@ -1,6 +1,6 @@
 " Window size
 set lines=44
-let &columns=127
+let &columns=143
 
 " Font
 set guifont=Monaco:h16.00
