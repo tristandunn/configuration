@@ -68,7 +68,7 @@ set expandtab
 set laststatus=2
 
 " Space is the leader character.
-let mapleader = " "
+let mapleader=" "
 
 " Edit the README_FOR_APP (makes :R commands work)
 map <Leader>R :e doc/README_FOR_APP<CR>
@@ -108,9 +108,6 @@ imap <Tab> <C-N>
 " Visual mode: D
 vmap D y'>p
 
-" No Help, please.
-nmap <F1> <Esc>
-
 " Display extra whitespace.
 set list listchars=tab:»·,trail:·
 
@@ -126,9 +123,6 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0
 " Numbers.
 set number
 set numberwidth=5
-
-" Snippets are activated by Shift+Tab.
-let g:snippetsEmu_key = "<S-Tab>"
 
 " Tab completion options.
 " (only complete to the longest unambiguous match, and show a menu)
