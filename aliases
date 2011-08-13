@@ -1,3 +1,4 @@
+alias b="bundle exec"
 alias g="git"
 alias sc="script/rails console"
 alias ss="script/rails server"
