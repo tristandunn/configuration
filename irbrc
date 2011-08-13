@@ -27,7 +27,7 @@ end
 require 'irb/completion'
 
 # Prompt behavior
-ARGV.concat [ "--readline" ]
+ARGV.concat ["--readline"]
 
 # Easily print methods local to an object's class.
 class Object
