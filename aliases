@@ -1,6 +1,6 @@
 alias b="bundle exec"
 alias g="git"
-alias sc="script/rails console"
-alias ss="script/rails server"
+alias sc="bundle exec rails console"
+alias ss="bundle exec rails server"
 alias gadd="git add -u && git add . && git status"
 alias iphone="open '/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone Simulator.app'"
