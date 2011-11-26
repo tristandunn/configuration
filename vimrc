@@ -99,7 +99,7 @@ map <Leader>e :e +8 <C-R>=expand("%:p:h") . "/" <CR>
 
 " Opens a tab edit command with the path of the currently edited file filled in.
 " Normal mode: <Leader>t
-map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>te :tabe +8 <C-R>=expand("%:p:h") . "/" <CR>
 
 " Maps autocomplete to tab.
 imap <Tab> <C-N>
