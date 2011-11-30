@@ -9,7 +9,7 @@ export CLICOLOR=1
 setopt prompt_subst
 
 # Custom prompt.
-export PS1='$(git_prompt_info)[${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%~%{$reset_color%}] '
+export PS1='$(git_prompt_info)[%{$fg_bold[blue]%}%~%{$reset_color%}] '
 
 git_prompt_info() {
   if [[ -d .git ]]; then
