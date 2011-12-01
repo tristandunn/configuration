@@ -2,10 +2,10 @@
 .bundle
 .rspec
 .rvmrc
+.sass-cache
 .yardoc
+*.log
 *.swp
 *.swo
 *.sqlite3
-.sass-cache/
-node_modules/
-npm-debug.log
+node_modules
