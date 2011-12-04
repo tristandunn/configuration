@@ -1,7 +1,7 @@
 alias g="git"
 alias be="bundle exec"
 alias br="bundle exec rake"
-alias ls="ls -l"
+alias ls="ls -ahl"
 alias sc="bundle exec rails console"
 alias ss="bundle exec rails server"
 alias gadd="git add -u && git add . && git status"
