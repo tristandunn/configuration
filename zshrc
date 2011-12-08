@@ -28,10 +28,8 @@ setopt histignoredups
 # Keep more history.
 export HISTSIZE=256
 
-# Load rvm, if installed.
-if [[ -s ~/.rvm/scripts/rvm ]] ; then
-  source ~/.rvm/scripts/rvm
-fi
+# Use rbenv for Ruby management.
+eval "$(rbenv init -)"
 
 # Shut up Postgres.
 export PGOPTIONS='-c client_min_messages=WARNING'
