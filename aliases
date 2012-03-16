@@ -11,7 +11,7 @@ alias br="bundle exec rake"
 
 # Rails
 alias rc="bundle exec rails console"
-alias rd="bundle exec rails log:clear default"
+alias rd="bundle exec rake log:clear default"
 alias rg="bundle exec rails generate"
 alias rs="bundle exec rails server"
 alias migrate="bundle exec rake db:migrate db:test:prepare"
