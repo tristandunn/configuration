@@ -1,10 +1,22 @@
+# Unix
+alias ls="ls -al"
+
+# git
 alias g="git"
+alias gadd="git add -u && git add . && git status"
+
+# Bundler
 alias be="bundle exec"
 alias br="bundle exec rake"
-alias ls="ls -al"
-alias sc="bundle exec rails console"
-alias ss="bundle exec rails server"
-alias gadd="git add -u && git add . && git status"
-alias iphone="open '/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone Simulator.app'"
+
+# Rails
+alias rc="bundle exec rails console"
+alias rd="bundle exec rails log:clear default"
+alias rg="bundle exec rails generate"
+alias rs="bundle exec rails server"
+alias migrate="bundle exec rake db:migrate db:test:prepare"
+alias remigrate="bundle exec rake db:migrate db:migrate:redo db:schema:dump db:test:prepare"
+
+# Postgres
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
