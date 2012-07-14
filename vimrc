@@ -17,8 +17,8 @@ set incsearch     " Do incremental searching.
 ino jj <esc>
 
 " Disable arrow keys in normal and visual mode.
-for prefix in ['n', 'v']
-  for key in ['<Up>', '<Down>', '<Left>', '<Right>']
+for prefix in ["n", "v"]
+  for key in ["<Up>", "<Down>", "<Left>", "<Right>"]
     exe prefix . "noremap " . key . " <Nop>"
   endfor
 endfor
@@ -33,8 +33,8 @@ endif
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
   " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
+  " Use the default filetype settings, so that mail gets "tw" set to 72,
+  " "cindent" is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
   filetype plugin indent on
 
@@ -42,7 +42,7 @@ if has("autocmd")
   augroup vimrcEx
   au!
 
-  " For all text files set 'textwidth' to 78 characters.
+  " For all text files set "textwidth" to 78 characters.
   autocmd FileType text setlocal textwidth=78
 
   " When editing a file, always jump to the last known cursor position.
@@ -136,3 +136,28 @@ set smartcase
 
 " Disable viminfo.
 :set viminfo=""
+
+" Disable mode in status line.
+set noshowmode
+
+" Start Vundle configuration.
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle "gmarik/vundle"
+Bundle "godlygeek/tabular"
+Bundle "Lokaltog/vim-powerline"
+Bundle "othree/html5.vim"
+Bundle "pangloss/vim-javascript"
+Bundle "tpope/vim-cucumber"
+Bundle "tpope/vim-endwise"
+Bundle "tpope/vim-markdown"
+Bundle "tpope/vim-rails"
+
+filetype plugin indent on
+" End Vundle configuration.
+
+" Enable fancy Powerline symbols.
+let g:Powerline_symbols = "fancy"
