@@ -4,6 +4,7 @@
   branch = auto
 [core]
   excludesfile = ~/.gitignore
+  pager = less -r
 [alias]
   c = commit -m
   pl = pull
