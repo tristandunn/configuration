@@ -29,7 +29,11 @@ setopt histignoredups
 export HISTSIZE=256
 
 # Use rbenv for Ruby management.
-eval "$(rbenv init -)"
+export RBENV_ROOT=/usr/local/opt/rbenv
+
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)";
+fi
 
 # Shut up Postgres.
 export PGOPTIONS='-c client_min_messages=WARNING'
