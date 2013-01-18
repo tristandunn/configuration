@@ -3,6 +3,7 @@ alias ls="ls -al"
 
 # git
 alias g="git"
+alias git="hub"
 alias gadd="git add -u && git add . && git status"
 
 # Bundler
