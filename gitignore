@@ -1,6 +1,7 @@
 .DS_Store
 .bundle
 .rspec
+.ruby-version
 .rvmrc
 .sass-cache
 .yardoc
