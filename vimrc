@@ -156,6 +156,7 @@ Bundle "tpope/vim-cucumber"
 Bundle "tpope/vim-endwise"
 Bundle "tpope/vim-markdown"
 Bundle "tpope/vim-rails"
+Bundle "airblade/vim-gitgutter"
 
 filetype plugin indent on
 " End Vundle configuration.
