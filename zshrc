@@ -43,3 +43,6 @@ export PATH="/usr/local/bin:$PATH"
 
 # hub configuration.
 export GITHUB_USER=tristandunn
+
+# Disable test benchmarking.
+export BENCHMARK=none
