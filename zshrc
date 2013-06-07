@@ -46,3 +46,9 @@ export GITHUB_USER=tristandunn
 
 # Disable test benchmarking.
 export BENCHMARK=none
+
+# Disable less file.
+export LESSHISTFILE=-
+
+# Disable TTY in Ruby 2.0 tests.
+export TESTOPTS="--tty=no"
