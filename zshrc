@@ -41,9 +41,6 @@ export PGOPTIONS='-c client_min_messages=WARNING'
 # Doctors orders.
 export PATH="/usr/local/bin:$PATH"
 
-# hub configuration.
-export GITHUB_USER=tristandunn
-
 # Disable test benchmarking.
 export BENCHMARK=none
 
