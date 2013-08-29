@@ -11,7 +11,7 @@
   ps = push
   plre = pull --rebase
   st = status
-  out = log origin..HEAD
+  out = !git log `bundle exec cap deploy:revision -q`..HEAD
 [push]
   default = nothing
 [user]
