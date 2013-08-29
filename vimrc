@@ -90,11 +90,11 @@ map <Leader>h :nohl <CR>
 
 " Opens an edit command with the path of the currently edited file filled in.
 " Normal mode: <Leader>e
-map <Leader>e :e +8 <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>e :e +9 <C-R>=expand("%:p:h") . "/" <CR>
 
 " Opens a tab edit command with the path of the currently edited file filled in.
 " Normal mode: <Leader>t
-map <Leader>te :tabe +8 <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>te :tabe +9 <C-R>=expand("%:p:h") . "/" <CR>
 
 " Maps autocomplete to tab.
 imap <Tab> <C-N>
@@ -163,3 +163,6 @@ filetype plugin indent on
 
 " Enable fancy Powerline symbols.
 let g:Powerline_symbols = "fancy"
+
+" Hide stupid files.
+let g:netrw_list_hide = ".git,^\.\/$"
