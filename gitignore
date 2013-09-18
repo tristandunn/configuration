@@ -1,12 +1,13 @@
 .DS_Store
 .bundle
+.env
 .rspec
 .ruby-version
-.rvmrc
 .sass-cache
 .todo
 .yardoc
 *.log
 *.sqlite3
+coverage
 node_modules
 pkg
