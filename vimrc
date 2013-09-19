@@ -166,3 +166,6 @@ let g:Powerline_symbols = "fancy"
 
 " Hide stupid files.
 let g:netrw_list_hide = ".git,^\.\/$"
+
+" Line buffer when scrolling vertically.
+set scrolloff=4
