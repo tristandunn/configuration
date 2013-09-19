@@ -155,8 +155,10 @@ Bundle "pangloss/vim-javascript"
 Bundle "tpope/vim-bundler"
 Bundle "tpope/vim-cucumber"
 Bundle "tpope/vim-endwise"
+Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-markdown"
 Bundle "tpope/vim-rails"
+Bundle "vim-ruby/vim-ruby"
 
 filetype plugin indent on
 " End Vundle configuration.
