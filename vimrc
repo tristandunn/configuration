@@ -146,17 +146,17 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Bundle "airblade/vim-gitgutter"
 Bundle "gmarik/vundle"
 Bundle "godlygeek/tabular"
 Bundle "Lokaltog/vim-powerline"
 Bundle "othree/html5.vim"
 Bundle "pangloss/vim-javascript"
-Bundle "scrooloose/syntastic"
+Bundle "tpope/vim-bundler"
 Bundle "tpope/vim-cucumber"
 Bundle "tpope/vim-endwise"
 Bundle "tpope/vim-markdown"
 Bundle "tpope/vim-rails"
-Bundle "airblade/vim-gitgutter"
 
 filetype plugin indent on
 " End Vundle configuration.
