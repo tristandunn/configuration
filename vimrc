@@ -140,6 +140,9 @@ set smartcase
 " Disable mode in status line.
 set noshowmode
 
+" Include built-in matchit plugin.
+runtime macros/matchit.vim
+
 " Start Vundle configuration.
 filetype off
 
@@ -149,7 +152,9 @@ call vundle#rc()
 Bundle "airblade/vim-gitgutter"
 Bundle "gmarik/vundle"
 Bundle "godlygeek/tabular"
+Bundle "kana/vim-textobj-user"
 Bundle "Lokaltog/vim-powerline"
+Bundle "nelstrom/vim-textobj-rubyblock"
 Bundle "othree/html5.vim"
 Bundle "pangloss/vim-javascript"
 Bundle "tpope/vim-bundler"
