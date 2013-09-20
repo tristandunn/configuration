@@ -49,3 +49,5 @@ export LESSHISTFILE=-
 
 # Disable TTY in Ruby 2.0 tests.
 export TESTOPTS="--tty=no"
+
+export SSL_CERT_FILE=$(brew --prefix curl-ca-bundle)/share/ca-bundle.crt
