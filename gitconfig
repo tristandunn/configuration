@@ -12,11 +12,11 @@
   plre = pull --rebase
   st = status
   out = !git log `bundle exec cap deploy:revision -q`..HEAD
-	ctags = !.git/hooks/ctags
+  ctags = !.git/hooks/ctags
 [push]
   default = nothing
 [user]
   name = Tristan Dunn
   email = tristanzdunn@gmail.com
 [init]
-	templatedir = ~/.configuration/git_template
+  templatedir = ~/.configuration/git_template
