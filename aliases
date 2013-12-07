@@ -12,7 +12,6 @@ alias br="bundle exec rake"
 # Rails
 alias m="bundle exec m"
 alias rc="bundle exec rails console"
-alias rd="bundle exec rake log:clear default"
 alias rg="bundle exec rails generate"
 alias rs="bundle exec rails server"
 alias cap="bundle exec cap"
