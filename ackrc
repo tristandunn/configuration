@@ -1,1 +1,4 @@
 --type-set=json=.json
+
+--ignore-dir=log
+--ignore-dir=tmp
