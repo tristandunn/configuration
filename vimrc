@@ -13,8 +13,9 @@ set ruler         " Show the cursor position all the time.
 set showcmd       " Display incomplete commands.
 set incsearch     " Do incremental searching.
 
-" Alternate to escape.
+" Alternates to escape.
 ino jj <esc>
+ino kk <esc>
 
 " Disable arrow keys in normal and visual mode.
 for prefix in ["n", "v"]
