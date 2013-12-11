@@ -151,6 +151,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle "airblade/vim-gitgutter"
+Bundle "dockyard/vim-easydir"
 Bundle "gmarik/vundle"
 Bundle "godlygeek/tabular"
 Bundle "kana/vim-textobj-user"
