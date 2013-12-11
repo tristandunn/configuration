@@ -3,7 +3,7 @@ set lines=44
 let &columns=143
 
 " Font
-set guifont=Droid_Sans_Mono_for_Powerline:h18.00
+set guifont=Droid_Sans_Mono:h16.00
 
 " No audible bell
 set vb

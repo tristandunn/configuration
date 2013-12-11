@@ -154,7 +154,6 @@ Bundle "airblade/vim-gitgutter"
 Bundle "gmarik/vundle"
 Bundle "godlygeek/tabular"
 Bundle "kana/vim-textobj-user"
-Bundle "Lokaltog/vim-powerline"
 Bundle "nelstrom/vim-textobj-rubyblock"
 Bundle "othree/html5.vim"
 Bundle "pangloss/vim-javascript"
@@ -168,9 +167,6 @@ Bundle "vim-ruby/vim-ruby"
 
 filetype plugin indent on
 " End Vundle configuration.
-
-" Enable fancy Powerline symbols.
-let g:Powerline_symbols = "fancy"
 
 " Hide stupid files.
 let g:netrw_list_hide = ".git,^\.\/$"
