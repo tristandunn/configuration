@@ -22,5 +22,9 @@ alias remigrate="bundle exec rake db:migrate db:migrate:redo db:schema:dump db:t
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 
+# Redis
+alias redis_start="redis-server /usr/local/etc/redis.conf --daemonize yes"
+alias redis_stop="redis-cli shutdown"
+
 # Miscellaneous
 alias iphone="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
