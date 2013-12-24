@@ -18,6 +18,10 @@ alias cap="bundle exec cap"
 alias migrate="bundle exec rake db:migrate db:test:prepare"
 alias remigrate="bundle exec rake db:migrate db:migrate:redo db:schema:dump db:test:prepare"
 
+# Heroku
+alias h="heroku"
+alias hr="heroku run bundle exec rake"
+
 # Postgres
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
