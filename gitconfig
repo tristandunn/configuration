@@ -1,10 +1,3 @@
-[color]
-  diff = auto
-  status = auto
-  branch = auto
-[core]
-  excludesfile = ~/.gitignore
-  pager = less -r
 [alias]
   c = commit -m
   pl = pull
@@ -13,10 +6,19 @@
   st = status
   out = !git log `bundle exec cap deploy:revision -q`..HEAD
   ctags = !.git/hooks/ctags
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[core]
+  excludesfile = ~/.gitignore
+  pager = less -r
+[init]
+  templatedir = ~/.configuration/git_template
+[merge]
+  ff = only
 [push]
   default = nothing
 [user]
   name = Tristan Dunn
   email = tristanzdunn@gmail.com
-[init]
-  templatedir = ~/.configuration/git_template
