@@ -1,2 +1,2 @@
-EXCLUDES="git_template"
+EXCLUDES="Brewfile git_template"
 DOTFILES_DIRS="$HOME/.configuration"
