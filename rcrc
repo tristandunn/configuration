@@ -1,0 +1,2 @@
+EXCLUDES="git_template"
+DOTFILES_DIRS="$HOME/.configuration"
