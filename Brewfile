@@ -4,6 +4,7 @@ install git
 install heroku-toolbelt
 install macvim
 install memcached
+install phantomjs
 install postgresql
 install rbenv
 install redis
