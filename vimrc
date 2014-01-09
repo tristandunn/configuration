@@ -171,7 +171,7 @@ filetype plugin indent on
 " End Vundle configuration.
 
 " Hide stupid files.
-let g:netrw_list_hide = ".git,^\.\/$"
+let g:netrw_list_hide = ".bundle,.git,^\.\/$"
 
 " Line buffer when scrolling vertically.
 set scrolloff=4
