@@ -1,5 +1,6 @@
 update
 
+install curl-ca-bundle
 install git
 install heroku-toolbelt
 install macvim
@@ -11,3 +12,4 @@ install redis
 install rtorrent
 install ruby-build
 install the_silver_searcher
+install webkit2png
