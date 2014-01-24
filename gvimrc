@@ -1,24 +1,17 @@
-" Window size
+" Default window size.
 set lines=44
 let &columns=143
 
-" Font
+" Custom font family and size.
 set guifont=Droid_Sans_Mono:h16.00
 
-" No audible bell
-set vb
+set vb            " No audible bell.
+set guioptions-=T " Remove toolbar.
+set guioptions+=c " Use console dialogs.
+set guioptions-=L " Remove left scrollbar.
+set guioptions-=r " Remove right scrollbar.
 
-" No toolbar
-set guioptions-=T
-
-" Use console dialogs
-set guioptions+=c
-
-" Remove scrollbars.
-set guioptions-=r
-set guioptions-=L
-
-" Open tabs with CMD + N.
+" Switch between tabs with CMD + N.
 map <D-1> :tabn 1<CR>
 map <D-2> :tabn 2<CR>
 map <D-3> :tabn 3<CR>
