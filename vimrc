@@ -13,6 +13,9 @@ set shiftwidth=2   " Two space indenting.
 
 " Display extra whitespace.
 set list listchars=tab:»·,trail:·
+
+" Allow backspacing over everything in insert mode.
+set backspace=indent,eol,start
 " }}}
 " Layout {{{
 set number        " Show line numbers.
@@ -21,6 +24,7 @@ set lazyredraw    " Redraw only when needed.
 set laststatus=2  " Always display status line.
 set scrolloff=4   " Vertical line buffer when scrolling.
 set noshowmode    " Disable mode in status line.
+set ruler         " Show the cursor position all the time.
 
 " Load file specific indent files.
 filetype plugin indent on
@@ -28,6 +32,10 @@ filetype plugin indent on
 " Search {{{
 set incsearch " Search as characters are entered.
 set hlsearch  " Highlight search matches.
+
+" Complete to longest unambiguous, and show a menu.
+set completeopt=longest,menu
+set wildmode=list:longest,list:full
 " }}}
 " Shortcuts {{{
 let mapleader=" " " Leader is space.
@@ -38,6 +46,12 @@ inoremap kk <esc>
 
 " Duplicate a selection.
 vmap D y'>p
+
+" Maps autocomplete to tab.
+imap <Tab> <C-N>
+
+" http://vim.wikia.com/wiki/Remove_unwanted_spaces
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " Hide search highlighting.
 map <Leader>h :nohl <CR>
@@ -62,6 +76,10 @@ set nowritebackup " Don't write backup files.
 set viminfo=""    " Disable viminfo.
 " }}}
 " Miscellaneous {{{
+" Case only matters with mixed case expressions.
+set ignorecase
+set smartcase
+
 " Hide stupid files.
 let g:netrw_list_hide = ".bundle,.git\/$,^\.\/$"
 " }}}
