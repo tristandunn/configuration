@@ -5,8 +5,9 @@ compinit -D
 # Automatically enter directories without `cd`.
 setopt auto_cd
 
-# Use vim as an editor.
-export EDITOR=vim
+# Use vim as the visual editor.
+export VISUAL=vim
+export EDITOR=$VISUAL
 
 # Aliases.
 if [ -e "$HOME/.aliases" ]; then
@@ -32,7 +33,7 @@ export HISTSIZE=256
 export RBENV_ROOT=/usr/local/opt/rbenv
 
 if which rbenv > /dev/null; then
-  eval "$(rbenv init -)";
+  eval "$(rbenv init - --no-rehash)";
 fi
 
 # Shut up Postgres.
