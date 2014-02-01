@@ -53,6 +53,9 @@ vmap D y'>p
 " Maps autocomplete to tab.
 imap <Tab> <C-N>
 
+" Look a word up in Dictionary.app
+nmap <silent> <Leader>d :!open dict://<cword><CR><CR>
+
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
