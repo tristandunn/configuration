@@ -3,6 +3,7 @@ update
 install curl-ca-bundle
 install git
 install heroku-toolbelt
+install imagemagick
 install macvim
 install memcached
 install phantomjs
