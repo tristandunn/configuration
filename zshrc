@@ -36,9 +36,6 @@ if which rbenv > /dev/null; then
   eval "$(rbenv init - --no-rehash)";
 fi
 
-# Shut up Postgres.
-export PGOPTIONS='-c client_min_messages=WARNING'
-
 # Doctors orders.
 export PATH="/usr/local/bin:$PATH"
 
@@ -51,4 +48,5 @@ export LESSHISTFILE=-
 # Disable TTY in Ruby 2.0 tests.
 export TESTOPTS="--tty=no"
 
+# Set certificate file for OpenSSL.
 export SSL_CERT_FILE=$(brew --prefix curl-ca-bundle)/share/ca-bundle.crt
