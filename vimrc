@@ -105,6 +105,7 @@ Bundle "tpope/vim-endwise"
 Bundle "tpope/vim-markdown"
 Bundle "tpope/vim-rails"
 Bundle "vim-ruby/vim-ruby"
+Bundle "wellle/targets.vim"
 
 filetype plugin indent on
 " }}}
