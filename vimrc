@@ -87,7 +87,7 @@ set ignorecase
 set smartcase
 
 " Hide stupid files.
-let g:netrw_list_hide = ".bundle,.git\/$,^\.\/$"
+let g:netrw_list_hide = ".bundle,.git,.sass-cache\/$,^\.\/$"
 " }}}
 " Bundles {{{
 filetype off
