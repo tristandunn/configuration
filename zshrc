@@ -37,7 +37,7 @@ if which rbenv > /dev/null; then
 fi
 
 # Doctors orders.
-export PATH="/usr/local/bin:$PATH"
+export PATH="$HOME/.configuration/bin:/usr/local/bin:$PATH"
 
 # Disable test benchmarking.
 export BENCHMARK=none
