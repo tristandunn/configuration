@@ -88,6 +88,9 @@ set smartcase
 
 " Hide stupid files.
 let g:netrw_list_hide = ".bundle,.git,.sass-cache\/$,^\.\/$"
+
+" Disable annoying tooltips.
+set noballooneval
 " }}}
 " Bundles {{{
 filetype off
