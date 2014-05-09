@@ -16,6 +16,9 @@ set list listchars=tab:»·,trail:·
 
 " Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
+
+" Strip whitespace on save.
+autocmd BufWritePre * :%s/\s\+$//e
 " }}}
 " Layout {{{
 set number        " Show line numbers.
