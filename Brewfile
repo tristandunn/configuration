@@ -1,6 +1,5 @@
 update
 
-install curl-ca-bundle
 install git
 install heroku-toolbelt
 install imagemagick
