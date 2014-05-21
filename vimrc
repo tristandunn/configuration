@@ -21,7 +21,7 @@ set list listchars=tab:»·,trail:·
 set backspace=indent,eol,start
 
 " Strip whitespace on save.
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * call Preserve("%s/\\s\\+$//e")
 " }}}
 " Layout {{{
 set number        " Show line numbers.
@@ -98,6 +98,18 @@ let g:netrw_list_hide = ".bundle,.git,.sass-cache\/$,^\.\/$"
 " Speed up vim-gitgutter.
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
+
+" Execute a command while preserving the cursor position.
+function! Preserve(command)
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+
+  execute a:command
+
+  let @/=_s
+  call cursor(l, c)
+endfunction
 " }}}
 " Bundles {{{
 filetype off
