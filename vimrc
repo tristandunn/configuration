@@ -80,6 +80,9 @@ for prefix in ["n", "v"]
     exe prefix . "noremap " . key . " <Nop>"
   endfor
 endfor
+
+" Toggle spell check.
+nmap <silent> <leader>s :set spell!<CR>
 " }}}
 " Backups {{{
 set nobackup      " No backup files.
