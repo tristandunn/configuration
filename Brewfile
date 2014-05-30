@@ -5,6 +5,7 @@ install heroku-toolbelt
 install imagemagick
 install macvim
 install memcached
+install node
 install phantomjs
 install postgresql
 install rbenv
