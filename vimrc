@@ -34,9 +34,6 @@ set ruler         " Show the cursor position all the time.
 
 " Load file specific indent files.
 filetype plugin indent on
-
-" Set text width for Markdown files.
-au BufRead,BufNewFile *.{md,markdown} setlocal textwidth=80
 " }}}
 " Search {{{
 set incsearch " Search as characters are entered.
@@ -113,6 +110,10 @@ function! Preserve(command)
   let @/=_s
   call cursor(l, c)
 endfunction
+" }}}
+" Formats {{{
+" Enable spell check and set text width for Markdown files.
+au BufRead,BufNewFile *.{md,markdown} setlocal spell textwidth=80
 " }}}
 " Bundles {{{
 filetype off
