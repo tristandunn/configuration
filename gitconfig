@@ -1,11 +1,13 @@
 [alias]
   c = commit -m
+  ca = commit --amend
+  ctags = !.git/hooks/ctags
+  out = !git log `bundle exec cap deploy:revision -q`..HEAD
   pl = pull
   ps = push
   plre = pull --rebase
   st = status
-  out = !git log `bundle exec cap deploy:revision -q`..HEAD
-  ctags = !.git/hooks/ctags
+  up = !git fetch origin && git rebase origin/master
 [color]
   diff = auto
   status = auto
