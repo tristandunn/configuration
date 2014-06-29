@@ -13,6 +13,8 @@
 [core]
   excludesfile = ~/.gitignore
   pager = less -r
+[fetch]
+  prune = true
 [init]
   templatedir = ~/.configuration/git_template
 [merge]
