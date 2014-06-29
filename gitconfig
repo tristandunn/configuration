@@ -9,9 +9,7 @@
   st = status
   up = !git fetch origin && git rebase origin/master
 [color]
-  diff = auto
-  status = auto
-  branch = auto
+  ui = auto
 [core]
   excludesfile = ~/.gitignore
   pager = less -r
