@@ -114,6 +114,9 @@ endfunction
 " Formats {{{
 " Enable spell check and set text width for Markdown files.
 au BufRead,BufNewFile *.{md,markdown} setlocal spell textwidth=80
+
+" Enable spell check and set text width for git commits.
+au FileType gitcommit setlocal spell textwidth=80
 " }}}
 " Bundles {{{
 filetype off
