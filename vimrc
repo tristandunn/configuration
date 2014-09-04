@@ -130,21 +130,13 @@ Bundle "gmarik/vundle"
 Bundle "godlygeek/tabular"
 Bundle "othree/html5.vim"
 Bundle "pangloss/vim-javascript"
-Bundle "rking/ag.vim"
 Bundle "tpope/vim-bundler"
 Bundle "tpope/vim-endwise"
 Bundle "tpope/vim-markdown"
 Bundle "tpope/vim-rails"
 Bundle "vim-ruby/vim-ruby"
-Bundle "vim-scripts/cmdalias.vim"
 
 filetype plugin indent on
-" }}}
-" Aliases {{{
-" Ignore case for Ag commmand.
-autocmd VimEnter * :Alias ag Ag
-autocmd VimEnter * :Alias aG Ag
-autocmd VimEnter * :Alias AG Ag
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
