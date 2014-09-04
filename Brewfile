@@ -23,4 +23,6 @@ install webkit2png
 cask install dropbox
 cask install google-chrome
 cask install onepassword
+cask install vagrant
+cask install virtualbox
 cask install vlc
