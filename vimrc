@@ -93,7 +93,15 @@ set ignorecase
 set smartcase
 
 " Hide stupid files.
-let g:netrw_list_hide = "^\.bundle,^\.git,^\.sass-cache\/$,^\.zeus,^\.\/$"
+let g:netrw_list_hide  = "^\.bundle\/,"
+let g:netrw_list_hide .= "^\.capistrano\/,"
+let g:netrw_list_hide .= "^\.chef\/,"
+let g:netrw_list_hide .= "^\.jekyll-assets-cache\/,"
+let g:netrw_list_hide .= "^\.git\/,"
+let g:netrw_list_hide .= "^\.sass-cache\/$,"
+let g:netrw_list_hide .= "^\.vagrant,"
+let g:netrw_list_hide .= "^\.\/$,"
+let g:netrw_list_hide .= "^tmp\/$"
 
 " Speed up vim-gitgutter.
 let g:gitgutter_realtime = 0
