@@ -127,25 +127,22 @@ au BufRead,BufNewFile *.{md,markdown} setlocal spell textwidth=80
 au FileType gitcommit setlocal spell textwidth=80
 " }}}
 " Bundles {{{
-filetype off
+call plug#begin('~/.vim/plugged')
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+Plug 'airblade/vim-gitgutter'
+Plug 'dockyard/vim-easydir'
+Plug 'godlygeek/tabular'
 
-Bundle "airblade/vim-gitgutter"
-Bundle "dockyard/vim-easydir"
-Bundle "gmarik/vundle"
-Bundle "godlygeek/tabular"
-Bundle "othree/html5.vim"
-Bundle "pangloss/vim-javascript"
-Bundle "robotvert/vim-nginx"
-Bundle "tpope/vim-bundler"
-Bundle "tpope/vim-endwise"
-Bundle "tpope/vim-markdown"
-Bundle "tpope/vim-rails"
-Bundle "vim-ruby/vim-ruby"
+Plug 'othree/html5.vim', { 'for' : ['eruby', 'html'] }
+Plug 'pangloss/vim-javascript', { 'for' : ['eruby', 'html', 'javascript'] }
+Plug 'robotvert/vim-nginx', { 'for' : 'nginx' }
+Plug 'tpope/vim-bundler', { 'for' : 'ruby' }
+Plug 'tpope/vim-endwise', { 'for' : 'ruby' }
+Plug 'tpope/vim-markdown', { 'for' : 'markdown' }
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby', { 'for' : 'ruby' }
 
-filetype plugin indent on
+call plug#end()
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
