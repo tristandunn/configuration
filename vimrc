@@ -4,9 +4,6 @@ set nocompatible  " Ensure we're in vim mode.
 " Colors {{{
 syntax      enable
 colorscheme ir_black
-
-" Custom vim-gitgutter highlighting.
-highlight SignColumn guibg=black ctermbg=black
 " }}}
 " Spacing {{{
 set tabstop=2      " Two spaces for tab.
