@@ -30,5 +30,4 @@ alias redis_start="redis-server /usr/local/etc/redis.conf --daemonize yes"
 alias redis_stop="redis-cli shutdown"
 
 # Miscellaneous
-alias iphone="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
 alias brewhaha="brew update && brew cleanup -s && brew outdated"
