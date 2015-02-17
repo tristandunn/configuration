@@ -10,12 +10,11 @@ alias be="bundle exec"
 alias br="bundle exec rake"
 
 # Rails
-alias m="bundle exec m"
-alias rc="bundle exec rails console"
-alias rg="bundle exec rails generate"
-alias rs="bundle exec rails server"
+alias rc="bin/rails console"
+alias rg="bin/rails generate"
+alias rs="bin/rails server"
 alias cap="bundle exec cap"
-alias migrate="bundle exec rake db:migrate db:test:prepare"
+alias migrate="bin/rake db:migrate"
 
 # Heroku
 alias h="heroku"
