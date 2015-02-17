@@ -45,5 +45,6 @@ export BENCHMARK=none
 # Disable less file.
 export LESSHISTFILE=-
 
-# Disable TTY in Ruby 2.0 tests.
-export TESTOPTS="--tty=no"
+# Custom testing options.
+export TEST_COLOR="true"
+export TEST_REPORTER="DefaultReporter"
