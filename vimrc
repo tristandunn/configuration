@@ -21,13 +21,14 @@ set backspace=indent,eol,start
 autocmd BufWritePre * call Preserve("%s/\\s\\+$//e")
 " }}}
 " Layout {{{
-set number        " Show line numbers.
-set numberwidth=5 " Width of gutter for line numbers.
-set lazyredraw    " Redraw only when needed.
-set laststatus=2  " Always display status line.
-set scrolloff=4   " Vertical line buffer when scrolling.
-set noshowmode    " Disable mode in status line.
-set ruler         " Show the cursor position all the time.
+set number         " Show line numbers.
+set numberwidth=5  " Width of gutter for line numbers.
+set relativenumber " Enable relative line numbers.
+set lazyredraw     " Redraw only when needed.
+set laststatus=2   " Always display status line.
+set scrolloff=4    " Vertical line buffer when scrolling.
+set noshowmode     " Disable mode in status line.
+set ruler          " Show the cursor position all the time.
 
 " Load file specific indent files.
 filetype plugin indent on
