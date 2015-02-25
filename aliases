@@ -7,14 +7,14 @@ alias gadd="git add -u && git add . && git status"
 
 # Bundler
 alias be="bundle exec"
-alias br="bundle exec rake"
+alias br="rake_command"
 
 # Rails
-alias rc="bin/rails console"
-alias rg="bin/rails generate"
-alias rs="bin/rails server"
+alias rc="rails_command console"
+alias rg="rails_command generate"
+alias rs="rails_command server"
 alias cap="bundle exec cap"
-alias migrate="bin/rake db:migrate"
+alias migrate="rake_command db:migrate"
 
 # Heroku
 alias h="heroku"
@@ -30,3 +30,20 @@ alias redis_stop="redis-cli shutdown"
 
 # Miscellaneous
 alias brewhaha="brew update && brew cleanup -s && brew outdated"
+
+# Helpers
+rails_command() {
+  if [ -f bin/rails ]; then
+    bin/rails "$@"
+  else
+    bundle exec rails "$@"
+  fi
+}
+
+rake_command() {
+  if [ -f bin/rake ]; then
+    bin/rake "$@"
+  else
+    bundle exec rake "$@"
+  fi
+}
