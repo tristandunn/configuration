@@ -18,7 +18,9 @@ set list listchars=tab:»·,trail:·
 set backspace=indent,eol,start
 
 " Strip whitespace on save.
+augroup StripeWhitespace
 autocmd BufWritePre * call Preserve("%s/\\s\\+$//e")
+augroup END
 " }}}
 " Layout {{{
 set number         " Show line numbers.
