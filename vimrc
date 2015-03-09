@@ -116,6 +116,12 @@ function! Preserve(command)
   let @/=_s
   call cursor(l, c)
 endfunction
+
+" Enable per-project .vimrc files.
+set exrc
+
+" Disable unsafe commands in local .vimrc files.
+set secure
 " }}}
 " Formats {{{
 " Enable spell check and set text width for Markdown files.
