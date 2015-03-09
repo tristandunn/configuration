@@ -5,6 +5,7 @@
 .ruby-version
 .sass-cache
 .todo
+.vimrc
 .yardoc
 *.log
 *.sqlite3
