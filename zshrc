@@ -45,6 +45,5 @@ export BENCHMARK=none
 # Disable less file.
 export LESSHISTFILE=-
 
-# Custom testing options.
-export TEST_COLOR="true"
-export TEST_REPORTER="DefaultReporter"
+# Custom options.
+export NODE_ENV="local"
