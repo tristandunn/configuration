@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+USERNAME = `git config --get user.name`.strip.freeze
+
 `git for-each-ref --sort=-committerdate refs/heads/`
   .split("\n")
   .reverse
@@ -7,7 +9,7 @@
     line.split("/").last
   end
   .map do |branch|
-    `git log #{branch} --format="%s" --author="Tristan Dunn" --since="24 hours ago"`
+    `git log #{branch} --format="%s" --author="#{USERNAME}" --since="24 hours ago"`
       .split("\n")
       .each.with_index do |log, index|
         if index == 0
