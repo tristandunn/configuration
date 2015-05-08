@@ -39,9 +39,6 @@ fi
 # Doctors orders.
 export PATH="$HOME/.configuration/bin:/usr/local/bin:$PATH"
 
-# Disable test benchmarking.
-export BENCHMARK=none
-
 # Disable less file.
 export LESSHISTFILE=-
 
