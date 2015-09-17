@@ -44,3 +44,6 @@ export LESSHISTFILE=-
 
 # Custom options.
 export NODE_ENV="local"
+
+# No emoji for Homebrew.
+export HOMEBREW_NO_EMOJI=1
