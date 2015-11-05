@@ -131,6 +131,9 @@ au BufRead,BufNewFile *.{md,markdown} setlocal spell textwidth=80
 
 " Enable spell check and set text width for git commits.
 au FileType gitcommit setlocal spell textwidth=80
+
+" Treat ES6 files as JavaScript.
+au BufNewFile,BufRead *.es6 set filetype=javascript
 " }}}
 " Bundles {{{
 call plug#begin('~/.vim/plugged')
