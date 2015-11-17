@@ -141,6 +141,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'dockyard/vim-easydir'
 Plug 'godlygeek/tabular'
+Plug 'tmatilai/vim-monit'
 
 Plug 'digitaltoad/vim-jade', { 'for' : ['jade'] }
 Plug 'othree/html5.vim', { 'for' : ['eruby', 'html'] }
