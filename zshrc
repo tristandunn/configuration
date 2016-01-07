@@ -47,3 +47,7 @@ export NODE_ENV="local"
 
 # No emoji for Homebrew.
 export HOMEBREW_NO_EMOJI=1
+
+# Use nvm for node.js management.
+export NVM_DIR=~/.nvm
+. /usr/local/opt/nvm/nvm.sh
