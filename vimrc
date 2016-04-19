@@ -4,6 +4,8 @@ set nocompatible  " Ensure we're in vim mode.
 " Colors {{{
 syntax      enable
 colorscheme ir_black
+
+let g:markdown_fenced_languages = ['javascript', 'ruby', 'sh', 'javascript', 'html', 'vim', 'json', 'diff']
 " }}}
 " Spacing {{{
 set tabstop=2      " Two spaces for tab.
