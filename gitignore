@@ -1,6 +1,7 @@
 .DS_Store
 .bundle
 .env
+.pryrc
 .rspec
 .ruby-version
 .sass-cache
