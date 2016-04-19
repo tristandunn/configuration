@@ -141,9 +141,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'dockyard/vim-easydir'
 Plug 'godlygeek/tabular'
-Plug 'tmatilai/vim-monit'
 
-Plug 'digitaltoad/vim-jade', { 'for' : ['jade'] }
+Plug 'mustache/vim-mustache-handlebars'
 Plug 'othree/html5.vim', { 'for' : ['eruby', 'html'] }
 Plug 'pangloss/vim-javascript', { 'for' : ['eruby', 'html', 'javascript'] }
 Plug 'robotvert/vim-nginx', { 'for' : 'nginx' }
@@ -152,7 +151,6 @@ Plug 'tpope/vim-endwise', { 'for' : 'ruby' }
 Plug 'tpope/vim-markdown', { 'for' : 'markdown' }
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby', { 'for' : 'ruby' }
-Plug 'wavded/vim-stylus', { 'for' : 'stylus' }
 
 call plug#end()
 
