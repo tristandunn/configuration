@@ -18,7 +18,7 @@ set list listchars=tab:»·,trail:·
 set backspace=indent,eol,start
 
 " Strip whitespace on save.
-augroup StripeWhitespace
+augroup StripWhitespace
   autocmd BufWritePre * call Preserve("%s/\\s\\+$//e")
 augroup END
 " }}}
