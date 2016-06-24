@@ -49,6 +49,8 @@ export NODE_ENV="local"
 export HOMEBREW_NO_EMOJI=1
 # No analytics for Homebrew.
 export HOMEBREW_NO_ANALYTICS=1
+# Use the old caskroom for now.
+export HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
 
 # Use nvm for node.js management.
 export NVM_DIR=~/.nvm
