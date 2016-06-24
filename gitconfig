@@ -13,6 +13,8 @@
 [core]
   excludesfile = ~/.gitignore
   pager = less -r
+[diff]
+  compactionHeuristic = true
 [fetch]
   prune = true
 [init]
