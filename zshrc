@@ -29,13 +29,6 @@ setopt histignoredups
 # Keep more history.
 export HISTSIZE=256
 
-# Use rbenv for Ruby management.
-export RBENV_ROOT=/usr/local/opt/rbenv
-
-if which rbenv > /dev/null; then
-  eval "$(rbenv init - --no-rehash)";
-fi
-
 # Doctors orders.
 export PATH="/usr/local/bin:$PATH"
 
@@ -55,3 +48,7 @@ export HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
 # Use nvm for node.js management.
 export NVM_DIR=~/.nvm
 . /usr/local/opt/nvm/nvm.sh
+
+# Load the chruby magic.
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
