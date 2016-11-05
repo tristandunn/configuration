@@ -1,7 +1,6 @@
 [alias]
   c = commit -m
   ca = commit --amend
-  ctags = !.git/hooks/ctags
   out = !git log `bundle exec cap deploy:revision -q`..HEAD
   pl = pull
   ps = push
@@ -17,8 +16,6 @@
   compactionHeuristic = true
 [fetch]
   prune = true
-[init]
-  templatedir = ~/.configuration/git_template
 [merge]
   ff = only
 [push]

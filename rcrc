@@ -1,2 +1,2 @@
-EXCLUDES="Brewfile README.markdown bin git_template"
+EXCLUDES="Brewfile README.markdown bin"
 DOTFILES_DIRS="$HOME/.configuration"
