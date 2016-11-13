@@ -14,6 +14,8 @@ alias rc="rails_command console"
 alias rg="rails_command generate"
 alias rs="rails_command server"
 alias cap="bundle exec cap"
+alias rake="rake_command"
+alias rspec="rspec_command"
 alias migrate="rake_command db:migrate"
 
 # Heroku
@@ -48,5 +50,13 @@ rake_command() {
     bin/rake "$@"
   else
     bundle exec rake "$@"
+  fi
+}
+
+rspec_command() {
+  if [ -f bin/rspec ]; then
+    bin/rspec "$@"
+  else
+    bundle exec rspec "$@"
   fi
 }
