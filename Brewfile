@@ -1,10 +1,12 @@
 # To use this Brewfile:
 #
-#   $ brew tap Homebrew/brewdler
-#   $ brew brewdle
+#   $ brew tap Homebrew/bundle
+#   $ brew bundle
 #
 
-brew "caskroom/cask/brew-cask"
+tap "caskroom/cask"
+tap "thoughtbot/formulae"
+
 brew "chruby"
 brew "gcc"
 brew "git"
@@ -12,7 +14,7 @@ brew "heroku"
 brew "macvim"
 brew "nvm"
 brew "postgresql"
-brew "thoughtbot/formulae/rcm"
+brew "rcm"
 brew "redis"
 brew "ruby-install"
 brew "the_silver_searcher"
