@@ -1,5 +1,6 @@
 # Unix
 alias ls="ls -al"
+alias rm="trash"
 
 # git
 alias g="git"

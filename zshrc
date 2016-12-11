@@ -52,3 +52,6 @@ export NVM_DIR=~/.nvm
 # Load the chruby magic.
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
+
+# Access to custom executables.
+export PATH="$PATH:$HOME/.configuration/bin"
