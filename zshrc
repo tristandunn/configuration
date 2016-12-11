@@ -47,7 +47,7 @@ export HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
 
 # Use nvm for node.js management.
 export NVM_DIR=~/.nvm
-. /usr/local/opt/nvm/nvm.sh
+. ~/.nvm/nvm.sh
 
 # Load the chruby magic.
 source /usr/local/opt/chruby/share/chruby/chruby.sh
