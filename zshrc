@@ -35,9 +35,6 @@ export PATH="/usr/local/bin:$PATH"
 # Disable less file.
 export LESSHISTFILE=-
 
-# Custom options.
-export NODE_ENV="local"
-
 # No emoji for Homebrew.
 export HOMEBREW_NO_EMOJI=1
 # No analytics for Homebrew.
