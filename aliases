@@ -13,7 +13,7 @@ alias br="rake_command"
 # Rails
 alias rc="rails_command console"
 alias rg="rails_command generate"
-alias rs="rails_command server"
+alias rs="foreman_command"
 alias cap="bundle exec cap"
 alias rake="rake_command"
 alias rspec="rspec_command"
@@ -38,6 +38,18 @@ alias mongo_start="mongod --config /usr/local/etc/mongod.conf"
 alias brewhaha="brew update && brew cleanup -s && brew cask cleanup && brew prune && brew outdated"
 
 # Helpers
+foreman_command() {
+  if [ -f Procfile.dev ]; then
+    foreman start -f Procfile.dev
+  else
+    if [ -f Procfile ]; then
+      foreman start
+    else
+      rails_command server
+    fi
+  fi
+}
+
 rails_command() {
   if [ -f bin/rails ]; then
     bin/rails "$@"
