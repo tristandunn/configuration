@@ -82,6 +82,9 @@ endfor
 
 " Toggle spell check.
 nmap <silent> <leader>s :set spell!<CR>
+
+" Add the current file to git.
+map <Leader>a :silent :windo !git add %<CR>
 " }}}
 " Backups {{{
 set nobackup      " No backup files.
