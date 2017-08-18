@@ -158,6 +158,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'dockyard/vim-easydir'
 Plug 'godlygeek/tabular'
 
+Plug 'elixir-lang/vim-elixir', { 'for' : ['eelixir', 'elixir'] }
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'othree/html5.vim', { 'for' : ['eruby', 'html'] }
 Plug 'pangloss/vim-javascript', { 'for' : ['eruby', 'html', 'javascript'] }
