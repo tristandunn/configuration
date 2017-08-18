@@ -35,7 +35,7 @@ alias redis_stop="redis-cli shutdown"
 alias mongo_start="mongod --config /usr/local/etc/mongod.conf"
 
 # Miscellaneous
-alias brewhaha="brew update && brew cleanup -s && brew cask cleanup && brew prune && brew outdated"
+alias brewhaha="brew update && brew cleanup -s && brew prune && brew outdated"
 
 # Helpers
 foreman_command() {
