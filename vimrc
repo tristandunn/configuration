@@ -157,6 +157,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'dockyard/vim-easydir'
 Plug 'godlygeek/tabular'
+Plug 'w0rp/ale'
 
 Plug 'elixir-lang/vim-elixir', { 'for' : ['eelixir', 'elixir'] }
 Plug 'kchmck/vim-coffee-script', { 'for' : 'coffee' }
