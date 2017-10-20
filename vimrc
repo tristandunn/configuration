@@ -159,10 +159,9 @@ Plug 'dockyard/vim-easydir'
 Plug 'godlygeek/tabular'
 
 Plug 'elixir-lang/vim-elixir', { 'for' : ['eelixir', 'elixir'] }
-Plug 'mustache/vim-mustache-handlebars'
+Plug 'kchmck/vim-coffee-script', { 'for' : 'coffee' }
 Plug 'othree/html5.vim', { 'for' : ['eruby', 'html'] }
 Plug 'pangloss/vim-javascript', { 'for' : ['eruby', 'html', 'javascript'] }
-Plug 'robotvert/vim-nginx', { 'for' : 'nginx' }
 Plug 'tpope/vim-bundler', { 'for' : 'ruby' }
 Plug 'tpope/vim-endwise', { 'for' : 'ruby' }
 Plug 'tpope/vim-markdown', { 'for' : 'markdown' }
