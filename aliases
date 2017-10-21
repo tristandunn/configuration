@@ -31,6 +31,9 @@ alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 alias redis_start="redis-server /usr/local/etc/redis.conf --daemonize yes"
 alias redis_stop="redis-cli shutdown"
 
+# InfluxDB
+alias influx_start="influxd -config /usr/local/etc/influxdb.conf"
+
 # MongoDB
 alias mongo_start="mongod --config /usr/local/etc/mongod.conf"
 
