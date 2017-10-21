@@ -52,3 +52,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Access to custom executables.
 export PATH="$PATH:$HOME/.configuration/bin"
+
+# Export paths for Go.
+export GOPATH="$HOME/.go"
+export PATH="$GOPATH/bin:$PATH"
