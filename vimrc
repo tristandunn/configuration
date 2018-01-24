@@ -85,6 +85,14 @@ nmap <silent> <leader>s :set spell!<CR>
 
 " Add the current file to git.
 map <Leader>a :silent :windo !git add %<CR>
+
+" Run the CtrlP plug-in.
+nnoremap <leader>p :CtrlP<CR>
+
+let g:ctrlp_prompt_mappings = {
+  \ 'AcceptSelection("e")': ['<c-t>'],
+  \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+  \ }
 " }}}
 " Backups {{{
 set nobackup      " No backup files.
@@ -150,11 +158,24 @@ au FileType gitcommit setlocal spell textwidth=80
 
 " Treat ES6 files as JavaScript.
 au BufNewFile,BufRead *.es6 set filetype=javascript
+
+" UsetThe Silver Searcher for grepping.
+if executable('ag')
+  " Use ag command over grep command.
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files.
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " The ag command is fast enough that CtrlP doesn't need to cache.
+  let g:ctrlp_use_caching = 0
+endif
 " }}}
 " Bundles {{{
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dockyard/vim-easydir'
 Plug 'godlygeek/tabular'
 Plug 'w0rp/ale'
