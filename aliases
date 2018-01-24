@@ -14,7 +14,6 @@ alias br="rake_command"
 alias rc="rails_command console"
 alias rg="rails_command generate"
 alias rs="foreman_command"
-alias cap="bundle exec cap"
 alias rake="rake_command"
 alias rspec="rspec_command"
 alias migrate="rake_command db:migrate"
@@ -30,12 +29,6 @@ alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 # Redis
 alias redis_start="redis-server /usr/local/etc/redis.conf --daemonize yes"
 alias redis_stop="redis-cli shutdown"
-
-# InfluxDB
-alias influx_start="influxd -config /usr/local/etc/influxdb.conf"
-
-# MongoDB
-alias mongo_start="mongod --config /usr/local/etc/mongod.conf"
 
 # Miscellaneous
 alias brewhaha="brew update && brew cleanup -s && brew prune && brew outdated"
