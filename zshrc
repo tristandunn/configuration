@@ -46,10 +46,6 @@ export HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 
-# Use nvm for node.js management.
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
-
 # Access to custom executables.
 export PATH="$PATH:$HOME/.configuration/bin"
 
