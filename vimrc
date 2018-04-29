@@ -89,6 +89,7 @@ map <Leader>a :silent :windo !git add %<CR>
 " Run the CtrlP plug-in.
 nnoremap <leader>p :CtrlP<CR>
 
+let g:ctrlp_cache_dir = '/tmp/vim_ctrlp_cache_dir'
 let g:ctrlp_prompt_mappings = {
   \ 'AcceptSelection("e")': ['<c-t>'],
   \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
