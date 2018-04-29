@@ -49,10 +49,6 @@ source /usr/local/opt/chruby/share/chruby/auto.sh
 # Access to custom executables.
 export PATH="$PATH:$HOME/.configuration/bin"
 
-# Export paths for Go.
-export GOPATH="$HOME/.go"
-export PATH="$GOPATH/bin:$PATH"
-
 if [ -f "$HOME/.zshrc.private" ]; then
   source "$HOME/.zshrc.private"
 fi
