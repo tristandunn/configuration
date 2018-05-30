@@ -39,8 +39,6 @@ export LESSHISTFILE=-
 export HOMEBREW_NO_EMOJI=1
 # No analytics for Homebrew.
 export HOMEBREW_NO_ANALYTICS=1
-# Use the old caskroom for now.
-export HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
 
 # Load the chruby magic.
 source /usr/local/opt/chruby/share/chruby/chruby.sh
