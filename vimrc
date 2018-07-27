@@ -181,10 +181,10 @@ Plug 'dockyard/vim-easydir'
 Plug 'godlygeek/tabular'
 Plug 'w0rp/ale'
 
-Plug 'elixir-lang/vim-elixir', { 'for' : ['eelixir', 'elixir'] }
 Plug 'kchmck/vim-coffee-script', { 'for' : 'coffee' }
 Plug 'othree/html5.vim', { 'for' : ['eruby', 'html'] }
 Plug 'pangloss/vim-javascript', { 'for' : ['eruby', 'html', 'javascript'] }
+Plug 'rhysd/vim-crystal', { 'for' : 'crystal' }
 Plug 'tpope/vim-bundler', { 'for' : 'ruby' }
 Plug 'tpope/vim-endwise', { 'for' : 'ruby' }
 Plug 'tpope/vim-markdown', { 'for' : 'markdown' }
