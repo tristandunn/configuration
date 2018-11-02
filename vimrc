@@ -106,8 +106,9 @@ set viminfo=""    " Disable viminfo.
 set ignorecase
 set smartcase
 
-" Hide stupid files.
+" Hide uncommon directories and files.
 let g:netrw_list_hide  = "^\.babelrc$,"
+let g:netrw_list_hide .= "^\.buildkite\/,"
 let g:netrw_list_hide .= "^\.bundle\/,"
 let g:netrw_list_hide .= "^\.capistrano\/,"
 let g:netrw_list_hide .= "^\.chef\/,"
