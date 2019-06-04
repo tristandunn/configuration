@@ -175,6 +175,13 @@ if executable('ag')
 endif
 " }}}
 " Bundles {{{
+let g:projectionist_heuristics = {
+  \ "app/&spec/": {
+    \ "app/*.rb": {"alternate": "spec/{}_spec.rb"},
+    \ "spec/*_spec.rb": {"alternate": "app/{}.rb"}
+  \ }
+\ }
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
@@ -190,6 +197,7 @@ Plug 'rhysd/vim-crystal', { 'for' : 'crystal' }
 Plug 'tpope/vim-bundler', { 'for' : 'ruby' }
 Plug 'tpope/vim-endwise', { 'for' : 'ruby' }
 Plug 'tpope/vim-markdown', { 'for' : 'markdown' }
+Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby', { 'for' : 'ruby' }
 
