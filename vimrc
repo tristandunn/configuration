@@ -1,5 +1,6 @@
 " General {{{
 set nocompatible  " Ensure we're in vim mode.
+set nomodeline    " Disable modelines for security.
 " }}}
 " Colors {{{
 syntax      enable
