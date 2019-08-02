@@ -11,7 +11,7 @@ alias be="bundle exec"
 alias br="rake_command"
 
 # Rails
-alias rc="rails_command console"
+alias rc="console_command"
 alias rg="rails_command generate"
 alias rs="foreman_command"
 alias rake="rake_command"
@@ -34,6 +34,14 @@ alias redis_stop="redis-cli shutdown"
 alias brewhaha="brew update && brew cleanup -s && brew outdated && brew cask outdated"
 
 # Helpers
+console_command() {
+  if [ -f app.rb ]; then
+    irb -r./app.rb
+  else
+    rails_command console
+  fi
+}
+
 foreman_command() {
   if [ -f Procfile.dev ]; then
     foreman start -f Procfile.dev
