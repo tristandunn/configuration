@@ -1,3 +1,4 @@
+bin/ngrok
 vim/.netrwhist
 vim/plugged
 zshrc.private
