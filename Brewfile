@@ -1,14 +1,12 @@
 # To use this Brewfile:
 #
-#   $ brew tap Homebrew/bundle
 #   $ brew bundle
 #
 
-tap "caskroom/cask"
+tap "heroku/brew"
 tap "thoughtbot/formulae"
 
 brew "chruby"
-brew "gcc"
 brew "git"
 brew "heroku"
 brew "macvim"
@@ -17,12 +15,12 @@ brew "rcm"
 brew "redis"
 brew "ruby-install"
 brew "the_silver_searcher"
+brew "yarn"
 
 cask "1password"
 cask "divvy"
-cask "dropbox"
 cask "google-chrome"
 cask "imageoptim"
-cask "postman"
-cask "sketch"
+cask "insomnia"
+cask "transmission"
 cask "vlc"
