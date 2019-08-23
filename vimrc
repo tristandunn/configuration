@@ -38,14 +38,6 @@ set ruler          " Show the cursor position all the time.
 " Load file specific indent files.
 filetype plugin indent on
 " }}}
-" Search {{{
-set incsearch " Search as characters are entered.
-set hlsearch  " Highlight search matches.
-
-" Complete to longest unambiguous, and show a menu.
-set completeopt=longest,menu
-set wildmode=list:longest,list:full
-" }}}
 " Shortcuts {{{
 let mapleader=" " " Leader is space.
 
@@ -86,15 +78,32 @@ nmap <silent> <leader>s :set spell!<CR>
 
 " Add the current file to git.
 map <Leader>a :silent :windo !git add %<CR>
+" }}}
+" Search {{{
+set incsearch " Search as characters are entered.
+set hlsearch  " Highlight search matches.
+
+" Complete to longest unambiguous, and show a menu.
+set completeopt=longest,menu
+set wildmode=list:longest,list:full
 
 " Run the CtrlP plug-in.
 nnoremap <leader>p :CtrlP<CR>
 
+" Configure the CtrlP plug-in.
 let g:ctrlp_cache_dir = '/tmp/vim_ctrlp_cache_dir'
 let g:ctrlp_prompt_mappings = {
   \ 'AcceptSelection("e")': ['<c-t>'],
   \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
   \ }
+
+if executable("ag")
+  " Use ag over grep for search.
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files.
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 " }}}
 " Backups {{{
 set nobackup      " No backup files.
@@ -151,6 +160,11 @@ set exrc
 
 " Disable unsafe commands in local .vimrc files.
 set secure
+
+" Customize ALE configuration.
+let g:ale_fix_on_save = 1
+let g:ale_fixers = { "ruby": ["rubocop"] }
+let g:ale_ruby_rubocop_executable = "bundle"
 " }}}
 " Formats {{{
 " Enable spell check and set text width for Markdown files.
