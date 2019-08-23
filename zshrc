@@ -39,6 +39,10 @@ export LESSHISTFILE=-
 export HOMEBREW_NO_EMOJI=1
 # No analytics for Homebrew.
 export HOMEBREW_NO_ANALYTICS=1
+# Enable auto-complete for Homebrew.
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
 
 # Load the chruby magic.
 source /usr/local/opt/chruby/share/chruby/chruby.sh
