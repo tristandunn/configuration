@@ -117,12 +117,14 @@ set ignorecase
 set smartcase
 
 " Hide uncommon directories and files.
-let g:netrw_list_hide  = "^\.babelrc$,"
+let g:netrw_list_hide  = "^\.apt-update,"
+let g:netrw_list_hide .= "^\.babelrc$,"
 let g:netrw_list_hide .= "^\.buildkite\/,"
 let g:netrw_list_hide .= "^\.bundle\/,"
 let g:netrw_list_hide .= "^\.capistrano\/,"
 let g:netrw_list_hide .= "^\.chef\/,"
 let g:netrw_list_hide .= "^\.circleci\/,"
+let g:netrw_list_hide .= "^\.dockerignore,"
 let g:netrw_list_hide .= "^\.eslintignore$,"
 let g:netrw_list_hide .= "^\.eslintrc$,"
 let g:netrw_list_hide .= "^\.jekyll-assets-cache\/,"
@@ -135,6 +137,7 @@ let g:netrw_list_hide .= "^\.sass-cache\/$,"
 let g:netrw_list_hide .= "^\.sass-lint.yml$,"
 let g:netrw_list_hide .= "^\.slugignore$,"
 let g:netrw_list_hide .= "^\.vagrant,"
+let g:netrw_list_hide .= "^\.yarnrc,"
 let g:netrw_list_hide .= "^\.\/$,"
 let g:netrw_list_hide .= "^node_modules\/$,"
 let g:netrw_list_hide .= "^tmp\/$"
