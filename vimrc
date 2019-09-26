@@ -28,7 +28,6 @@ augroup END
 " Layout {{{
 set number         " Show line numbers.
 set numberwidth=5  " Width of gutter for line numbers.
-set relativenumber " Enable relative line numbers.
 set lazyredraw     " Redraw only when needed.
 set laststatus=2   " Always display status line.
 set scrolloff=4    " Vertical line buffer when scrolling.
