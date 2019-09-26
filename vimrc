@@ -82,6 +82,18 @@ map <Leader>a :silent :windo !git add %<CR>
 noremap  <silent> <C-S> :update<CR>
 vnoremap <silent> <C-S> <C-C>:update<CR>
 inoremap <silent> <C-S> <C-O>:update<CR>
+
+" Tab shortcuts.
+noremap <Leader>1 :tabn 1<CR>
+noremap <Leader>2 :tabn 2<CR>
+noremap <Leader>3 :tabn 3<CR>
+noremap <Leader>4 :tabn 4<CR>
+noremap <Leader>5 :tabn 5<CR>
+noremap <Leader>6 :tabn 6<CR>
+noremap <Leader>7 :tabn 7<CR>
+noremap <Leader>8 :tabn 8<CR>
+noremap <Leader>9 :tabn 9<CR>
+noremap <Leader>0 :tablast<CR>
 " }}}
 " Search {{{
 set incsearch " Search as characters are entered.
