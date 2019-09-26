@@ -54,3 +54,6 @@ export PATH="$PATH:$HOME/.configuration/bin"
 if [ -f "$HOME/.zshrc.private" ]; then
   source "$HOME/.zshrc.private"
 fi
+
+# Fix CMD+S shortcut.
+stty -ixon
