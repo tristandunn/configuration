@@ -243,12 +243,6 @@ Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby', { 'for' : 'ruby' }
 
 call plug#end()
-
-if has('gui_macvim') && has('gui_running')
-  " Disable tool tips.
-  set noballooneval
-  set balloonexpr=
-endif
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
