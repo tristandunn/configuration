@@ -3,8 +3,13 @@ set nocompatible  " Ensure we're in vim mode.
 set mouse+=a      " Enable text selection.
 " }}}
 " Colors {{{
+set t_Co=256
+
 syntax      enable
 colorscheme ir_black
+
+highlight Pmenu ctermbg=lightgrey ctermfg=black
+highlight PmenuSel ctermbg=green ctermfg=black cterm=bold
 
 let g:markdown_fenced_languages = ['javascript', 'ruby', 'sh', 'html', 'vim', 'json', 'diff']
 " }}}
