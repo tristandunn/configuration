@@ -1,5 +1,6 @@
 " General {{{
 set nocompatible  " Ensure we're in vim mode.
+set mouse+=a      " Enable text selection.
 " }}}
 " Colors {{{
 syntax      enable
