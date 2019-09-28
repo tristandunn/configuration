@@ -1,6 +1,10 @@
 " General {{{
 set nocompatible  " Ensure we're in vim mode.
 set mouse+=a      " Enable text selection.
+
+let &t_SI = "\<esc>[5 q" " Beam for insert mode.
+let &t_EI = "\<esc>[2 q" " Block for normal mode.
+let &t_SR = "\<esc>[3 q" " Underline for replace mode.
 " }}}
 " Colors {{{
 set t_Co=256
