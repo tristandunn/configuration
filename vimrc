@@ -190,6 +190,9 @@ set exrc
 " Disable unsafe commands in local .vimrc files.
 set secure
 
+" Lower the key sequence delay.
+set ttimeoutlen=50
+
 " Customize ALE configuration.
 let g:ale_fix_on_save = 1
 let g:ale_fixers = { "ruby": ["rubocop"] }
