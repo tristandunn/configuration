@@ -57,3 +57,9 @@ fi
 
 # Fix CMD+S shortcut.
 stty -ixon
+
+# Force usage of the Kitty terminal.
+if [ "$TERM" != "xterm-kitty" ]; then
+  open -a "Kitty"
+  killall "Terminal"
+fi
