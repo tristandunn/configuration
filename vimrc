@@ -89,6 +89,7 @@ vnoremap <silent> <C-S> <C-C>:update<CR>
 inoremap <silent> <C-S> <C-O>:update<CR>
 
 " Tab shortcuts.
+noremap <Leader>w :quit<CR>
 noremap <Leader>1 :tabn 1<CR>
 noremap <Leader>2 :tabn 2<CR>
 noremap <Leader>3 :tabn 3<CR>
