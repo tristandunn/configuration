@@ -29,6 +29,9 @@ setopt histignoredups
 # Keep more history.
 export HISTSIZE=256
 
+# Hide the history file.
+export HISTFILE="/tmp/.zsh_history"
+
 # Doctors orders.
 export PATH="/usr/local/bin:$PATH"
 
