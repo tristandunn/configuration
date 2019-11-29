@@ -12,6 +12,11 @@ set t_Co=256
 syntax      enable
 colorscheme ir_black
 
+highlight ALEError ctermbg=black ctermfg=lightred
+highlight ALEInfo ctermbg=black ctermfg=lightred
+highlight ALEStyleError ctermbg=black ctermfg=lightred
+highlight ALEStyleWarning ctermbg=black ctermfg=lightred
+highlight ALEWarning ctermbg=black ctermfg=lightred
 highlight Pmenu ctermbg=lightgrey ctermfg=black
 highlight PmenuSel ctermbg=green ctermfg=black cterm=bold
 
