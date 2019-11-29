@@ -92,6 +92,8 @@ nmap <silent> <leader>s :set spell!<CR>
 " Add the current file to git.
 map <Leader>a :silent :windo !git add %<CR>
 
+vmap <Leader>c "*y
+
 " Shortcuts for CMD+S forwarding support.
 noremap  <silent> <C-S> :update<CR>
 vnoremap <silent> <C-S> <C-C>:update<CR>
