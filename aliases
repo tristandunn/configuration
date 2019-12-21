@@ -37,7 +37,7 @@ alias logs="stern_comand"
 # Helpers
 console_command() {
   if [ -f app.rb ]; then
-    irb -r./app.rb
+    bundle exec irb --multiline -r./app.rb
   else
     rails_command console
   fi
