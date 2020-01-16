@@ -32,7 +32,6 @@ alias redis_stop="redis-cli shutdown"
 
 # Miscellaneous
 alias brewhaha="brew update && brew cleanup -s && brew outdated && brew cask outdated"
-alias logs="stern_comand"
 
 # Helpers
 console_command() {
@@ -76,15 +75,5 @@ rspec_command() {
     bin/rspec "$@"
   else
     bundle exec rspec "$@"
-  fi
-}
-
-stern_comand() {
-  application=${PWD##*/}
-
-  if [ $# -eq 0 ]; then
-    stern -n "$application" .+
-  else
-    stern -n "$application" -c "$1" .+
   fi
 }
