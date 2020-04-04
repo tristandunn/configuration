@@ -1,7 +1,6 @@
 [alias]
   c = commit -m
   ca = commit --amend
-  out = !git log `bundle exec cap deploy:revision -q`..HEAD
   pl = pull
   ps = push
   plre = pull --rebase
