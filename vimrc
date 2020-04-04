@@ -20,6 +20,9 @@ highlight ALEWarning ctermbg=black ctermfg=lightred
 highlight Pmenu ctermbg=lightgrey ctermfg=black
 highlight PmenuSel ctermbg=green ctermfg=black cterm=bold
 
+highlight clear SpellBad
+highlight SpellBad ctermbg=lightred ctermfg=black
+
 let g:markdown_fenced_languages = ['javascript', 'ruby', 'sh', 'html', 'vim', 'json', 'diff']
 " }}}
 " Spacing {{{
