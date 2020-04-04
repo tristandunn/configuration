@@ -1,4 +1,5 @@
 [alias]
+  a = !git add -A && git status
   c = commit -m
   ca = commit --amend
   pl = pull

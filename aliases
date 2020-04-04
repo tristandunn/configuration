@@ -4,7 +4,7 @@ alias rm="trash"
 
 # git
 alias g="git"
-alias gadd="git add -u && git add . && git status"
+alias gadd="git a"
 
 # Bundler
 alias be="bundle exec"
