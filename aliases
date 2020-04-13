@@ -17,6 +17,7 @@ alias rs="foreman_command"
 alias rake="rake_command"
 alias rspec="rspec_command"
 alias migrate="rake_command db:migrate"
+alias rubocop="rubocop_command"
 
 # Heroku
 alias h="heroku"
@@ -75,5 +76,17 @@ rspec_command() {
     bin/rspec "$@"
   else
     bundle exec rspec "$@"
+  fi
+}
+
+rubocop_command() {
+  if [ -f bin/rubocop ]; then
+    bin/rubocop -P "$@"
+  else
+    if [ -f Gemfile ]; then
+      bundle exec rubocop -P "$@"
+    else
+      rubocop -P "$@"
+    fi
   fi
 }
