@@ -4,7 +4,6 @@
 #
 
 tap "heroku/brew"
-tap "thoughtbot/formulae"
 
 brew "chruby"
 brew "git"
@@ -12,7 +11,6 @@ brew "heroku"
 brew "jq"
 brew "memcached"
 brew "postgresql"
-brew "rcm"
 brew "redis"
 brew "ruby-install"
 brew "the_silver_searcher"
