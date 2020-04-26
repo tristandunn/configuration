@@ -1,6 +1,7 @@
 " General {{{
-set nocompatible  " Ensure we're in vim mode.
-set mouse+=a      " Enable text selection.
+set mouse+=a     " Enable text selection.
+set nocompatible " Ensure we're in vim mode.
+set shortmess+=c " Don't pass messages to |ins-completion-menu|.
 
 let &t_SI = "\<esc>[5 q" " Beam for insert mode.
 let &t_EI = "\<esc>[2 q" " Block for normal mode.
@@ -65,7 +66,23 @@ inoremap kk <esc>
 vmap D y'>p
 
 " Maps autocomplete to tab.
-imap <Tab> <C-N>
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <CR> to confirm completion.
+if exists('*complete_info')
+  imap <expr> <CR> (complete_info()["selected"] != "-1" ? "\<C-y>" : "\<CR>\<Plug>DiscretionaryEnd")
+else
+  imap <expr> <CR> (pumvisible() ? "\<C-y>" : "\<CR>\<Plug>DiscretionaryEnd")
+end
 
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
@@ -209,6 +226,9 @@ set ttimeoutlen=50
 let g:ale_fix_on_save = 1
 let g:ale_fixers = { "ruby": ["rubocop"] }
 let g:ale_ruby_rubocop_executable = "bundle"
+
+" Disable mapping to not break coc.nvim completion.
+let g:endwise_no_mappings = 1
 " }}}
 " Formats {{{
 " Enable spell check and set text width for Markdown files.
@@ -246,6 +266,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dockyard/vim-easydir'
 Plug 'godlygeek/tabular'
+Plug 'iamcco/coc-tailwindcss', { 'do' : 'yarn install --frozen-lockfile && yarn run build' }
+Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
 Plug 'w0rp/ale'
 
 Plug 'kchmck/vim-coffee-script', { 'for' : 'coffee' }
