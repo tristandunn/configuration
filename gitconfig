@@ -2,6 +2,8 @@
   a = !git add -A && git status
   c = commit -m
   ca = commit --amend
+  d = diff
+  dc = diff --cached
   pl = pull
   ps = push
   plre = pull --rebase
