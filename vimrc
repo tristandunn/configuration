@@ -79,9 +79,9 @@ endfunction
 
 " Use <CR> to confirm completion.
 if exists('*complete_info')
-  imap <expr> <CR> (complete_info()["selected"] != "-1" ? "\<C-y>" : "\<CR>\<Plug>DiscretionaryEnd")
+  imap <expr> <CR> (complete_info()["selected"] != "-1" ? "\<C-y>" : "\<CR>")
 else
-  imap <expr> <CR> (pumvisible() ? "\<C-y>" : "\<CR>\<Plug>DiscretionaryEnd")
+  imap <expr> <CR> (pumvisible() ? "\<C-y>" : "\<CR>")
 end
 
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
