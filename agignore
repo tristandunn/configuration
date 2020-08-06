@@ -3,6 +3,7 @@ log
 node_modules
 spec/cassettes
 tmp
+vendor/
 
 *.svg
 *min.js
