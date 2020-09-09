@@ -32,7 +32,7 @@ alias redis_start="redis-server /usr/local/etc/redis.conf --daemonize yes"
 alias redis_stop="redis-cli shutdown"
 
 # Miscellaneous
-alias brewhaha="brew update && brew cleanup -s && brew outdated && brew cask outdated"
+alias brewhaha="brew update && brew cleanup -s && brew outdated"
 
 # Helpers
 console_command() {
