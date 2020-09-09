@@ -266,18 +266,13 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dockyard/vim-easydir'
 Plug 'godlygeek/tabular'
-Plug 'iamcco/coc-tailwindcss', { 'do' : 'yarn install --frozen-lockfile && yarn run build' }
 Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
 Plug 'w0rp/ale'
 
-Plug 'kchmck/vim-coffee-script', { 'for' : 'coffee' }
-Plug 'leafgarland/typescript-vim', { 'for' : 'typescript' }
 Plug 'othree/html5.vim', { 'for' : ['eruby', 'html'] }
 Plug 'pangloss/vim-javascript', { 'for' : ['eruby', 'html', 'javascript'] }
-Plug 'peitalin/vim-jsx-typescript', { 'for' : 'typescript' }
-Plug 'rhysd/vim-crystal', { 'for' : 'crystal' }
 Plug 'slim-template/vim-slim', { 'for' : 'slim' }
-Plug 'tpope/vim-bundler', { 'for' : 'ruby' }
+Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise', { 'for' : 'ruby' }
 Plug 'tpope/vim-markdown', { 'for' : 'markdown' }
 Plug 'tpope/vim-projectionist'
