@@ -11,6 +11,6 @@
 .vimrc
 .yardoc
 Procfile.dev
-coverage
-node_modules
-pkg
+coverage/
+node_modules/
+pkg/

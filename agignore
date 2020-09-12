@@ -1,10 +1,7 @@
-client/dist
-log
-node_modules
-spec/cassettes
-tmp
-vendor/
-
 *.svg
 *min.js
 yarn.lock
+log/
+node_modules/
+tmp/
+vendor/
