@@ -32,12 +32,11 @@ export HISTSIZE=256
 # Hide the history file.
 export HISTFILE="/tmp/.zsh_history"
 
-# Doctors orders.
-export PATH="/usr/local/bin:$PATH"
-
 # Disable less file.
 export LESSHISTFILE=-
 
+# Homebrew doctors orders.
+export PATH="/usr/local/bin:$PATH"
 # No emoji for Homebrew.
 export HOMEBREW_NO_EMOJI=1
 # No analytics for Homebrew.
@@ -54,6 +53,7 @@ source /usr/local/opt/chruby/share/chruby/auto.sh
 # Access to custom executables.
 export PATH="$PATH:$HOME/.configuration/bin"
 
+# Load private shell configuration.
 if [ -f "$HOME/.zshrc.private" ]; then
   source "$HOME/.zshrc.private"
 fi
