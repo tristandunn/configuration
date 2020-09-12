@@ -20,6 +20,8 @@
   prune = true
 [merge]
   ff = only
+[pull]
+  ff = only
 [push]
   default = nothing
 [user]
@@ -27,5 +29,3 @@
   email = tristanzdunn@gmail.com
 [url "git@github.com:clearbit"]
   insteadof = https://github.com/clearbit
-[pull]
-	ff = only
