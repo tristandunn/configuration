@@ -38,6 +38,32 @@ function hs.window.bottom(window)
   window:setFrame(frame)
 end
 
+-- Decrease the window size by 10% of the screen size.
+function hs.window.decrease(window)
+  local frame  = window:frame()
+  local screen = window:screen():fullFrame()
+
+  frame.x = frame.x + (screen.w * 0.05)
+  frame.y = frame.y + (screen.h * 0.05)
+  frame.w = frame.w - (screen.w * 0.1)
+  frame.h = frame.h - (screen.h * 0.1)
+
+  window:setFrame(frame)
+end
+
+-- Increase the window size by 10% of the screen size.
+function hs.window.increase(window)
+  local frame  = window:frame()
+  local screen = window:screen():fullFrame()
+
+  frame.x = frame.x - (screen.w * 0.05)
+  frame.y = frame.y - (screen.h * 0.05)
+  frame.w = frame.w + (screen.w * 0.1)
+  frame.h = frame.h + (screen.h * 0.1)
+
+  window:setFrame(frame)
+end
+
 -- Move and resize the window to the left half of the screen.
 function hs.window.left(window)
   local frame  = window:frame()

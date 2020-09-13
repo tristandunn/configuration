@@ -22,13 +22,15 @@ and position.
 
 Key    | Description
 ------ | ------------
+a      | Increase the window size by 10% of the screen size.
 c      | Move window to the center of the screen.
+d      | Resize window to 80% of the screen and center it.
 h      | Move and resize the window to the left half of the screen.
 j      | Move and resize the window to the bottom half of the screen.
 k      | Move and resize the window to the top half of the screen.
 l      | Move and resize the window to the right half of the screen.
 return | Resize window the fill the entire screen.
-s      | Resize window to 80% of the screen and center it.
+s      | Decrease the window size by 10% of the screen size.
 
 ### Utilities
 
