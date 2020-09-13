@@ -110,7 +110,7 @@ endfor
 nmap <silent> <leader>s :set spell!<CR>
 
 " Add the current file to git.
-map <Leader>a :silent :windo !git add %<CR>
+map <Leader>a :silent :windo :Git add %<CR>
 
 vmap <Leader>c "*y
 
@@ -274,6 +274,7 @@ Plug 'pangloss/vim-javascript', { 'for' : ['eruby', 'html', 'javascript'] }
 Plug 'slim-template/vim-slim', { 'for' : 'slim' }
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise', { 'for' : 'ruby' }
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown', { 'for' : 'markdown' }
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
