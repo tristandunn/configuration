@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# Halt on errors.
+set -eo pipefail
+
+# Install the required applications.
+brew bundle check --file keyboard/Brewfile ||
+  brew bundle --file keyboard/Brewfile
+
+# Prepare custom settings for Hammerspoon.
+mkdir -p ~/.hammerspoon
+
+# Load the keyboard configuration in the Hammerspoon initializer.
+if ! grep -sq "require(\"keyboard\")" ~/.hammerspoon/init.lua; then
+  echo "require(\"keyboard\")" >> ~/.hammerspoon/init.lua
+fi
+ln -sfn $PWD/keyboard/hammerspoon ~/.hammerspoon/keyboard
+
+# Prepare custom settings for Karabiner-Elements application.
+mkdir -p ~/.config
+ln -sfn $PWD/keyboard/karabiner ~/.config/
+
+# Disable the Dock icon for Hammerspoon.
+defaults write org.hammerspoon.Hammerspoon MJShowDockIconKey -bool FALSE
+
+# If Hammerspoon is already running, kill it so we can pick up the new
+# configuration when opening Hammerspoon below.
+killall Hammerspoon || true
+
+# Open the applications.
+open -a Hammerspoon
+open -a Karabiner-Elements
