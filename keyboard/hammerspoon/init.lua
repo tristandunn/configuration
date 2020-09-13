@@ -1,4 +1,5 @@
 -- Load the customization scripts.
+require("keyboard.chrome")
 require("keyboard.windows")
 
 -- Bind Control+` to reload the Hammerspoon configuration.
