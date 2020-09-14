@@ -6,41 +6,41 @@ function onApplicationEvent(name, event, application)
 
   if event == hs.application.watcher.launched then
     -- Start watching Chrome when launched.
-    watchChrome(application)
+    watchApplication(application)
   elseif event == hs.application.watcher.terminated then
     -- Stop watching Chrome when terminated.
-    if chromeWatcher then
-      chromeWatcher:stop()
-      chromeWatcher = nil
+    if applicationWatcher then
+      applicationWatcher:stop()
+      applicationWatcher = nil
     end
   end
 end
 
-function watchChrome(application, initializing)
+function watchApplication(application, initializing)
   -- Create a watcher for the Chrome application.
-  chromeWatcher = application:newWatcher(function(window)
+  applicationWatcher = application:newWatcher(function(window)
     -- Only reposition browser windows.
-    if string.match(window:title(), "New Tab") then
+    if string.match(window:title(), "New Tab") or string.match(window:title(), "Untitled") then
       -- Move the window to the default size and position.
       hs.window.default(window)
     end
   end)
 
   -- Start watching for windows being created.
-  chromeWatcher:start({hs.uielement.watcher.windowCreated})
+  applicationWatcher:start({hs.uielement.watcher.windowCreated})
 end
 
 -- Create an application watcher to watch for Chrome launching.
-local applicationWatcher = hs.application.watcher.new(onApplicationEvent)
-local chromeWatcher      = nil
+local applicationWatcher  = nil
+local applicationsWatcher = hs.application.watcher.new(onApplicationEvent)
 
 -- Start watching all applications.
-applicationWatcher:start()
+applicationsWatcher:start()
 
 -- Attempt to find running Chrome application.
-local chrome = hs.appfinder.appFromName("Google Chrome")
+local application = hs.appfinder.appFromName("Google Chrome")
 
 -- Watch the application if found.
-if chrome then
-  watchChrome(chrome)
+if application then
+  watchApplication(application)
 end
