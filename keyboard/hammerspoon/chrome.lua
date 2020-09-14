@@ -19,8 +19,8 @@ end
 function watchChrome(application, initializing)
   -- Create a watcher for the Chrome application.
   chromeWatcher = application:newWatcher(function(window)
-    -- Ignore windows without titles, such as the quit confirmation message.
-    if window:title() ~= "" then
+    -- Only reposition browser windows.
+    if string.match(window:title(), "New Tab") then
       -- Move the window to the default size and position.
       hs.window.default(window)
     end
