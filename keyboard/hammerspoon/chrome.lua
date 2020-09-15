@@ -16,11 +16,18 @@ function onApplicationEvent(name, event, application)
   end
 end
 
-function watchApplication(application, initializing)
+function watchApplication(application)
   -- Create a watcher for the Chrome application.
   applicationWatcher = application:newWatcher(function(window)
+    -- Sometimes window appears to be nil, but not sure why.
+    if not window then
+      return
+    end
+
+    local title = window:title()
+
     -- Only reposition browser windows.
-    if string.match(window:title(), "New Tab") or string.match(window:title(), "Untitled") then
+    if string.match(title, "New Tab") or string.match(title, "Untitled") then
       -- Move the window to the default size and position.
       hs.window.default(window)
     end
