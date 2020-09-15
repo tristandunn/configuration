@@ -112,6 +112,10 @@ nmap <silent> <leader>s :set spell!<CR>
 " Add the current file to git.
 map <Leader>a :silent :windo :Git add %<CR>
 
+" Look up the documentation for the word under the cursor.
+nmap <silent> <leader>g <Plug>DashSearch
+
+" Copy selection to the clipboard.
 vmap <Leader>c "*y
 
 " Shortcuts for CMD+S forwarding support.
@@ -267,6 +271,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dockyard/vim-easydir'
 Plug 'godlygeek/tabular'
 Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
+Plug 'rizzatti/dash.vim'
 Plug 'w0rp/ale'
 
 Plug 'othree/html5.vim', { 'for' : ['eruby', 'html'] }

@@ -18,6 +18,7 @@ brew "vim"
 brew "yarn"
 
 cask "1password"
+cask "dash"
 cask "imageoptim"
 cask "insomnia"
 cask "vlc"
