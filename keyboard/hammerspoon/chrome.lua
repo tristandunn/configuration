@@ -27,7 +27,7 @@ function watchApplication(application)
     local title = window:title()
 
     -- Only reposition browser windows.
-    if string.match(title, "New Tab") or string.match(title, "Untitled") then
+    if title and string.match(title, "New Tab") or string.match(title, "Untitled") then
       -- Move the window to the default size and position.
       hs.window.default(window)
     end
