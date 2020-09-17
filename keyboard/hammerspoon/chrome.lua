@@ -20,7 +20,7 @@ function watchApplication(application)
   -- Create a watcher for the Chrome application.
   applicationWatcher = application:newWatcher(function(window)
     -- Sometimes window appears to be nil, but not sure why.
-    if not window then
+    if window == nil then
       return
     end
 
