@@ -62,7 +62,7 @@ fi
 stty -ixon
 
 # Force usage of the Kitty terminal.
-if [ "$TERM" != "xterm-kitty" ]; then
+if [ "$TERM" = "xterm-256color" ]; then
   open -a "Kitty"
   killall "Terminal"
 fi
