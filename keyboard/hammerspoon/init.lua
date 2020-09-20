@@ -1,5 +1,6 @@
 -- Load the customization scripts.
 require("keyboard.1password")
+require("keyboard.capslock")
 require("keyboard.chrome")
 require("keyboard.windows")
 
