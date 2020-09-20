@@ -7,7 +7,7 @@ session_exists() {
 }
 
 if [ -z "$TMUX" ]; then
-  if !session_exists; then
+  if ! session_exists; then
     # Create a new session.
     tmux new-session -d -s "$SESSION_NAME"
 
@@ -22,7 +22,7 @@ if [ -z "$TMUX" ]; then
     tmux select-pane -t 1
 
     # Wait for the panes to initialize.
-    sleep 0.25
+    sleep 0.5
 
     # Launch vim and attach vim-tmux-runner to the second pane.
     tmux send-keys -t 1 'vim .' C-m
@@ -30,12 +30,6 @@ if [ -z "$TMUX" ]; then
 
     # Display the git status in the terminal pane.
     tmux send-keys -t 3 'git status' C-m
-
-    # If a services file exists, create a window and execute it.
-    if [ -f .services ]; then
-      tmux new-window -t $SESSION_NAME:2 -n services
-      tmux send-keys -t 2 './.services' C-m
-    fi
   fi
 
   # Attach to the session.
