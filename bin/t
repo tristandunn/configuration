@@ -1,0 +1,17 @@
+#!/bin/sh
+
+SESSION_NAME="$(basename "$PWD" | tr . -)"
+
+session_exists() {
+  tmux list-sessions | sed -E 's/:.*$//' | grep -q "^$SESSION_NAME$"
+}
+
+if [ -z "$TMUX" ]; then
+  tmux new-session -As "$SESSION_NAME"
+else
+  if !session_exists; then
+    (TMUX='' tmux new-session -Ad -s "$SESSION_NAME")
+  fi
+
+  tmux switch-client -t "$SESSION_NAME"
+fi

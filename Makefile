@@ -11,6 +11,7 @@ install:
 	make $(HOME)/.inputrc
 	make $(HOME)/.psqlrc
 	make $(HOME)/.rspec
+	make $(HOME)/.tmux.conf
 	make $(HOME)/.vim/autoload
 	make $(HOME)/.vim/colors
 	make $(HOME)/.vim/spell
@@ -38,6 +39,7 @@ uninstall:
 	-test -L $(HOME)/.inputrc && rm -fv $(HOME)/.inputrc
 	-test -L $(HOME)/.psqlrc && rm -fv $(HOME)/.psqlrc
 	-test -L $(HOME)/.rspec && rm -fv $(HOME)/.rspec
+	-test -L $(HOME)/.tmux.conf && rm -fv $(HOME)/.tmux.conf
 	-test -L $(HOME)/.vim/autoload/plug.vim && rm -fvr $(HOME)/.vim/autoload/plug.vim
 	-test -L $(HOME)/.vim/colors/ir_black.vim && rm -fvr $(HOME)/.vim/colors/ir_black.vim
 	-test -L $(HOME)/.vim/spell/en.utf-8.add && rm -fvr $(HOME)/.vim/spell/en.utf-8.add
@@ -76,6 +78,9 @@ $(HOME)/.psqlrc:
 
 $(HOME)/.rspec:
 	ln -sv $(CWD)/rspec $(HOME)/.rspec
+
+$(HOME)/.tmux.conf:
+	ln -sv $(CWD)/tmux.conf $(HOME)/.tmux.conf
 
 $(HOME)/.vim/autoload:
 	mkdir -p $(HOME)/.vim/autoload && \

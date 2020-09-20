@@ -137,6 +137,12 @@ noremap <Leader>7 :tabn 7<CR>
 noremap <Leader>8 :tabn 8<CR>
 noremap <Leader>9 :tabn 9<CR>
 noremap <Leader>0 :tablast<CR>
+
+" Shortcuts for the RSpec plug-in.
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>n :call RunNearestSpec()<CR>
+map <Leader>s :call RunAllSpecs()<CR>
+map <Leader>t :call RunCurrentSpecFile()<CR>
 " }}}
 " Search {{{
 set incsearch " Search as characters are entered.
@@ -256,6 +262,20 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 " }}}
+" tmux {{{
+" Enable the default vim-tmux-runner bindings.
+let g:VtrUseVtrMaps = 1
+
+" Set default orientation and precentage for vim-tmux-runner pane.
+let g:VtrOrientation = "h"
+let g:VtrPercentage = 40
+
+" Run RSpec in vim-tmux-runner pane.
+let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
+
+" Automatically rebalance windows on vim resize.
+autocmd VimResized * :wincmd =
+" }}}
 " Bundles {{{
 let g:projectionist_heuristics = {
   \ "app/&spec/": {
@@ -267,6 +287,8 @@ let g:projectionist_heuristics = {
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-runner'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dockyard/vim-easydir'
 Plug 'godlygeek/tabular'
@@ -277,6 +299,7 @@ Plug 'w0rp/ale'
 Plug 'othree/html5.vim', { 'for' : ['eruby', 'html'] }
 Plug 'pangloss/vim-javascript', { 'for' : ['eruby', 'html', 'javascript'] }
 Plug 'slim-template/vim-slim', { 'for' : 'slim' }
+Plug 'thoughtbot/vim-rspec', { 'for' : 'ruby' }
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise', { 'for' : 'ruby' }
 Plug 'tpope/vim-fugitive'
