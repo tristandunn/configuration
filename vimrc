@@ -275,6 +275,9 @@ let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
 
 " Automatically rebalance windows on vim resize.
 autocmd VimResized * :wincmd =
+
+" Remap NetrwRefresh to allow <C-l> to be used by vim-tmux-navigator.
+nmap <leader><leader><leader><leader><leader><leader>l <Plug>NetrwRefresh
 " }}}
 " Bundles {{{
 let g:projectionist_heuristics = {
