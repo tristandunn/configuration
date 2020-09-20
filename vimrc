@@ -293,11 +293,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dockyard/vim-easydir'
 Plug 'godlygeek/tabular'
 Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
-Plug 'rizzatti/dash.vim'
-Plug 'w0rp/ale'
-
 Plug 'othree/html5.vim', { 'for' : ['eruby', 'html'] }
 Plug 'pangloss/vim-javascript', { 'for' : ['eruby', 'html', 'javascript'] }
+Plug 'rizzatti/dash.vim'
 Plug 'slim-template/vim-slim', { 'for' : 'slim' }
 Plug 'thoughtbot/vim-rspec', { 'for' : 'ruby' }
 Plug 'tpope/vim-bundler'
@@ -307,6 +305,7 @@ Plug 'tpope/vim-markdown', { 'for' : 'markdown' }
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby', { 'for' : 'ruby' }
+Plug 'w0rp/ale'
 
 call plug#end()
 " }}}
