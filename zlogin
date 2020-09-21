@@ -9,14 +9,18 @@ export CLICOLOR=1
 setopt prompt_subst
 
 # Custom prompt.
-export PS1='$(git_prompt_info)[%{$fg_bold[blue]%}%~%{$reset_color%}] '
+if [ -z "$TMUX" ]; then
+  export PS1='$(git_prompt_info)[%{$fg_bold[blue]%}%~%{$reset_color%}] '
+else
+  export PS1='%{$fg_bold[blue]%}$%{$reset_color%} '
+fi
 
 git_prompt_info() {
   if [[ -d .git ]]; then
-    ref=$(git symbolic-ref HEAD 2> /dev/null)
+    ref=$(git rev-parse --abbrev-ref HEAD)
 
     if [[ -n $ref ]]; then
-      echo "[%{$fg_bold[green]%}${ref#refs/heads/}%{$reset_color%}]"
+      echo "[%{$fg_bold[green]%}${ref}%{$reset_color%}]"
     fi
   fi
 }
