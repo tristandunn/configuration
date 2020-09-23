@@ -1,4 +1,5 @@
 # Unix
+alias c="clear"
 alias ls="ls -l"
 alias rm="trash"
 
