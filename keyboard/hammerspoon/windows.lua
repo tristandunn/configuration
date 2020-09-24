@@ -126,7 +126,10 @@ for index, mapping in ipairs(bindings.mappings) do
   windowLayoutModal:bindWithAutomaticExit(modifiers, trigger, function()
     local focusedWindow = hs.window.focusedWindow()
 
-    focusedWindow[method](focusedWindow)
+    -- Ensure the method exists on the focused window.
+    if focusedWindow[method] then
+      focusedWindow[method](focusedWindow)
+    end
   end)
 end
 
