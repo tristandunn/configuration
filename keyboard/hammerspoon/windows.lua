@@ -77,6 +77,19 @@ function hs.window.left(window)
   window:setFrame(frame)
 end
 
+-- Resize window to 100% of the screen.
+function hs.window.fullscreen(window)
+  local frame  = window:frame()
+  local screen = window:screen():fullFrame()
+
+  frame.w = screen.w
+  frame.h = screen.h
+  frame.x = 0
+  frame.y = 0
+
+  window:setFrame(frame)
+end
+
 -- Move and resize the window to the right half of the screen.
 function hs.window.right(window)
   local frame  = window:frame()
@@ -108,7 +121,7 @@ windowLayoutModal = hs.hotkey.modal.new({}, "F16")
 
 -- Bind the given key to call the given function and exit the window layout mode.
 function windowLayoutModal.bindWithAutomaticExit(modal, modifiers, key, fn)
-  modal:bind(modifiers, key, function()
+  modal:bind(modifiers, key, nil, function()
     modal:exit()
     fn()
   end)
@@ -126,10 +139,7 @@ for index, mapping in ipairs(bindings.mappings) do
   windowLayoutModal:bindWithAutomaticExit(modifiers, trigger, function()
     local focusedWindow = hs.window.focusedWindow()
 
-    -- Ensure the method exists on the focused window.
-    if focusedWindow[method] then
-      focusedWindow[method](focusedWindow)
-    end
+    hs.window[method](focusedWindow)
   end)
 end
 
