@@ -1,6 +1,8 @@
 *.svg
 *min.js
 yarn.lock
+.git/
+coverage/
 log/
 node_modules/
 tmp/

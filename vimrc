@@ -168,23 +168,18 @@ set hlsearch  " Highlight search matches.
 set completeopt=longest,menu
 set wildmode=list:longest,list:full
 
-" Run the CtrlP plug-in.
-nnoremap <leader>p :CtrlP<CR>
+" Run the fzf plug-in.
+nnoremap <leader>p :call fzf#run(fzf#wrap('FZF', {'sink': 'tabedit'}))<CR>
 
-" Configure the CtrlP plug-in.
-let g:ctrlp_cache_dir = '/tmp/vim_ctrlp_cache_dir'
-let g:ctrlp_prompt_mappings = {
-  \ 'AcceptSelection("e")': ['<c-t>'],
-  \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-  \ }
+if executable("rg")
+  " Use rg over grep for search.
+  set grepprg="rg --files --hidden"
 
-if executable("ag")
-  " Use ag over grep for search.
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files.
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " Use rg in fzf.
+  let $FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden"
 endif
+
+let $FZF_DEFAULT_OPTS="--inline-info --layout=reverse --tabstop=2"
 " }}}
 " Backups {{{
 set nobackup      " No backup files.
@@ -265,18 +260,6 @@ au FileType gitcommit setlocal spell textwidth=80
 
 " Treat ES6 files as JavaScript.
 au BufNewFile,BufRead *.es6 set filetype=javascript
-
-" UsetThe Silver Searcher for grepping.
-if executable('ag')
-  " Use ag command over grep command.
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files.
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " The ag command is fast enough that CtrlP doesn't need to cache.
-  let g:ctrlp_use_caching = 0
-endif
 " }}}
 " tmux {{{
 " Enable the default vim-tmux-runner bindings.
@@ -308,9 +291,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dockyard/vim-easydir'
 Plug 'godlygeek/tabular'
+Plug 'junegunn/fzf'
 Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
 Plug 'othree/html5.vim', { 'for' : ['eruby', 'html'] }
 Plug 'pangloss/vim-javascript', { 'for' : ['eruby', 'html', 'javascript'] }

@@ -1,7 +1,7 @@
 CWD=$(shell pwd)
 
 install:
-	make $(HOME)/.agignore
+	make $(HOME)/.rgignore
 	make $(HOME)/.aliases
 	make $(HOME)/.config/kitty/kitty.conf
 	make $(HOME)/.gemrc
@@ -29,7 +29,7 @@ homebrew-bundle:
 	brew bundle -v
 
 uninstall:
-	-test -L $(HOME)/.agignore && rm -fv $(HOME)/.agignore
+	-test -L $(HOME)/.rgignore && rm -fv $(HOME)/.rgignore
 	-test -L $(HOME)/.aliases && rm -fv $(HOME)/.aliases
 	-test -L $(HOME)/.config/kitty/kitty.conf && rm -fv $(HOME)/.config/kitty/kitty.conf
 	-test -L $(HOME)/.gemrc && rm -fv $(HOME)/.gemrc
@@ -48,8 +48,8 @@ uninstall:
 	-test -L $(HOME)/.zlogin && rm -fv $(HOME)/.zlogin
 	-test -L $(HOME)/.zshrc && rm -fv $(HOME)/.zshrc
 
-$(HOME)/.agignore:
-	ln -sv $(CWD)/agignore $(HOME)/.agignore
+$(HOME)/.rgignore:
+	ln -sv $(CWD)/rgignore $(HOME)/.rgignore
 
 $(HOME)/.aliases:
 	ln -sv $(CWD)/aliases $(HOME)/.aliases
