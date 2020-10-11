@@ -169,7 +169,7 @@ set completeopt=longest,menu
 set wildmode=list:longest,list:full
 
 " Run the fzf plug-in.
-nnoremap <leader>p :call fzf#run(fzf#wrap('FZF', {'sink': 'tabedit'}))<CR>
+nnoremap <leader>p :FZF<CR>
 
 if executable("rg")
   " Use rg over grep for search.
@@ -179,7 +179,15 @@ if executable("rg")
   let $FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden"
 endif
 
+" Customize the default fzf options.
 let $FZF_DEFAULT_OPTS="--inline-info --layout=reverse --tabstop=2"
+
+" Swap fzf options to open in tab by default.
+let g:fzf_action = {
+  \ 'return': 'tabe',
+  \ 'ctrl-t': 'e',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
 " }}}
 " Backups {{{
 set nobackup      " No backup files.
