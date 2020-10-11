@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 SESSION_NAME="$(basename "$PWD" | tr . -)"
 
@@ -7,7 +7,37 @@ session_exists() {
 }
 
 if [ -z "$TMUX" ]; then
-  if ! session_exists; then
+  if [ "$PWD" = "$HOME" ]; then
+    SESSION_NAMES=()
+    while IFS='' read -r line; do
+      SESSION_NAMES+=("$line")
+    done < <(tmux list-sessions -F\#S)
+
+    if [ "${#SESSION_NAMES[@]}" -eq 0 ]; then
+      exit 0
+    fi
+
+    k=0
+
+    echo
+    echo "Choose a session to attach to:"
+
+    for name in "${SESSION_NAMES[@]}"; do
+      k=$((k+1))
+
+      echo "  [$k] $name"
+    done
+
+    echo
+
+    read -r input
+
+    if [[ $input =~ ^[0-9]+$ ]] && [ "$input" -gt 0 ] && [ "$input" -le $k ]; then
+      SESSION_NAME="${SESSION_NAMES[input - 1]}"
+    else
+      exit 0
+    fi
+  elif ! session_exists; then
     # Create a new session.
     tmux new-session -d -s "$SESSION_NAME"
 
@@ -33,7 +63,7 @@ if [ -z "$TMUX" ]; then
   fi
 
   # Attach to the session.
-  tmux attach-session -t $SESSION_NAME:1
+  tmux attach-session -t "$SESSION_NAME:1"
 else
   tmux switch-client -t "$SESSION_NAME"
 fi
