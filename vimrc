@@ -18,13 +18,29 @@ highlight ALEInfo ctermbg=black ctermfg=lightred
 highlight ALEStyleError ctermbg=black ctermfg=lightred
 highlight ALEStyleWarning ctermbg=black ctermfg=lightred
 highlight ALEWarning ctermbg=black ctermfg=lightred
-highlight Pmenu ctermbg=lightgrey ctermfg=black
-highlight PmenuSel ctermbg=green ctermfg=black cterm=bold
+highlight Pmenu ctermbg=black ctermfg=grey
+highlight PmenuSel ctermbg=darkgrey ctermfg=green cterm=bold
 
 highlight clear SpellBad
 highlight SpellBad ctermbg=lightred ctermfg=black
 
 let g:markdown_fenced_languages = ['javascript', 'ruby', 'sh', 'html', 'vim', 'json', 'diff']
+
+let g:any_jump_colors = {
+      \"plain_text":         "Operator",
+      \"preview":            "Operator",
+      \"preview_keyword":    "Operator",
+      \"heading_text":       "Keyword",
+      \"heading_keyword":    "Operator",
+      \"group_text":         "Operator",
+      \"group_name":         "Function",
+      \"more_button":        "Operator",
+      \"more_explain":       "Operator",
+      \"result_line_number": "Operator",
+      \"result_text":        "Title",
+      \"result_path":        "Operator",
+      \"help":               "Title"
+      \}
 " }}}
 " Spacing {{{
 set tabstop=2      " Two spaces for tab.
@@ -298,6 +314,7 @@ Plug 'godlygeek/tabular'
 Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
 Plug 'othree/html5.vim', { 'for' : ['eruby', 'html'] }
 Plug 'pangloss/vim-javascript', { 'for' : ['eruby', 'html', 'javascript'] }
+Plug 'pechorin/any-jump.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'slim-template/vim-slim', { 'for' : 'slim' }
 Plug 'thoughtbot/vim-rspec', { 'for' : 'ruby' }
