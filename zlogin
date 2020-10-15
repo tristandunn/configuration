@@ -17,7 +17,7 @@ fi
 
 git_prompt_info() {
   if [[ -d .git ]]; then
-    ref=$(git rev-parse --abbrev-ref HEAD)
+    ref=$(git branch --show-current)
 
     if [[ -n $ref ]]; then
       echo "[%{$fg_bold[green]%}${ref}%{$reset_color%}]"
