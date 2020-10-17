@@ -53,6 +53,9 @@ source /usr/local/opt/chruby/share/chruby/auto.sh
 # Access to custom executables.
 export PATH="$PATH:$HOME/.configuration/bin"
 
+# Set the ripgrep configuration path.
+export RIPGREP_CONFIG_PATH="$HOME/.configuration/ripgreprc"
+
 # Load private shell configuration.
 if [ -f "$HOME/.zshrc.private" ]; then
   source "$HOME/.zshrc.private"

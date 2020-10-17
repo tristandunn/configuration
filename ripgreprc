@@ -1,0 +1,11 @@
+# Limit result lines to 120 characters.
+--max-columns=120
+
+# Display preview of result lines.
+--max-columns-preview
+
+# Ignore files larger than two megabytes.
+--max-filesize=2M
+
+# Ignore case if search is all lowercase.
+--smart-case
