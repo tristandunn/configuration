@@ -1,7 +1,6 @@
 CWD=$(shell pwd)
 
 install:
-	make $(HOME)/.rgignore
 	make $(HOME)/.aliases
 	make $(HOME)/.config/kitty/kitty.conf
 	make $(HOME)/.gemrc
@@ -10,6 +9,7 @@ install:
 	make $(HOME)/.hushlogin
 	make $(HOME)/.inputrc
 	make $(HOME)/.psqlrc
+	make $(HOME)/.rgignore
 	make $(HOME)/.rspec
 	make $(HOME)/.tmux.conf
 	make $(HOME)/.vim/autoload
@@ -29,7 +29,6 @@ homebrew-bundle:
 	brew bundle -v
 
 uninstall:
-	-test -L $(HOME)/.rgignore && rm -fv $(HOME)/.rgignore
 	-test -L $(HOME)/.aliases && rm -fv $(HOME)/.aliases
 	-test -L $(HOME)/.config/kitty/kitty.conf && rm -fv $(HOME)/.config/kitty/kitty.conf
 	-test -L $(HOME)/.gemrc && rm -fv $(HOME)/.gemrc
@@ -38,6 +37,7 @@ uninstall:
 	-test -L $(HOME)/.hushlogin && rm -fv $(HOME)/.hushlogin
 	-test -L $(HOME)/.inputrc && rm -fv $(HOME)/.inputrc
 	-test -L $(HOME)/.psqlrc && rm -fv $(HOME)/.psqlrc
+	-test -L $(HOME)/.rgignore && rm -fv $(HOME)/.rgignore
 	-test -L $(HOME)/.rspec && rm -fv $(HOME)/.rspec
 	-test -L $(HOME)/.tmux.conf && rm -fv $(HOME)/.tmux.conf
 	-test -L $(HOME)/.vim/autoload/plug.vim && rm -fvr $(HOME)/.vim/autoload/plug.vim
@@ -47,9 +47,6 @@ uninstall:
 	-test -L $(HOME)/.vimrc && rm -fv $(HOME)/.vimrc
 	-test -L $(HOME)/.zlogin && rm -fv $(HOME)/.zlogin
 	-test -L $(HOME)/.zshrc && rm -fv $(HOME)/.zshrc
-
-$(HOME)/.rgignore:
-	ln -sv $(CWD)/rgignore $(HOME)/.rgignore
 
 $(HOME)/.aliases:
 	ln -sv $(CWD)/aliases $(HOME)/.aliases
@@ -75,6 +72,9 @@ $(HOME)/.inputrc:
 
 $(HOME)/.psqlrc:
 	ln -sv $(CWD)/psqlrc $(HOME)/.psqlrc
+
+$(HOME)/.rgignore:
+	ln -sv $(CWD)/rgignore $(HOME)/.rgignore
 
 $(HOME)/.rspec:
 	ln -sv $(CWD)/rspec $(HOME)/.rspec
