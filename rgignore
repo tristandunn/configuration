@@ -1,5 +1,7 @@
 *.svg
 *min.js
+package-lock.json
+tags
 yarn.lock
 .git/
 coverage/
