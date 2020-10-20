@@ -14,3 +14,4 @@ Procfile.dev
 coverage/
 node_modules/
 pkg/
+tags
