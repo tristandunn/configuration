@@ -5,7 +5,6 @@ install:
 	make $(HOME)/.config/kitty/kitty.conf
 	make $(HOME)/.gemrc
 	make $(HOME)/.gitconfig
-	make $(HOME)/.gitignore
 	make $(HOME)/.hushlogin
 	make $(HOME)/.inputrc
 	make $(HOME)/.psqlrc
@@ -33,7 +32,6 @@ uninstall:
 	-test -L $(HOME)/.config/kitty/kitty.conf && rm -fv $(HOME)/.config/kitty/kitty.conf
 	-test -L $(HOME)/.gemrc && rm -fv $(HOME)/.gemrc
 	-test -L $(HOME)/.gitconfig && rm -fv $(HOME)/.gitconfig
-	-test -L $(HOME)/.gitignore && rm -fv $(HOME)/.gitignore
 	-test -L $(HOME)/.hushlogin && rm -fv $(HOME)/.hushlogin
 	-test -L $(HOME)/.inputrc && rm -fv $(HOME)/.inputrc
 	-test -L $(HOME)/.psqlrc && rm -fv $(HOME)/.psqlrc
@@ -60,9 +58,6 @@ $(HOME)/.gemrc:
 
 $(HOME)/.gitconfig:
 	ln -sv $(CWD)/gitconfig $(HOME)/.gitconfig
-
-$(HOME)/.gitignore:
-	ln -sv $(CWD)/gitignore $(HOME)/.gitignore
 
 $(HOME)/.hushlogin:
 	ln -sv $(CWD)/hushlogin $(HOME)/.hushlogin

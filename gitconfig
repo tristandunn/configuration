@@ -12,7 +12,8 @@
 [color]
   ui = auto
 [core]
-  excludesfile = ~/.gitignore
+  attributesfile = ~/.configuration/gitattributes
+  excludesfile = ~/.configuration/gitignore
   pager = less -r
 [diff]
   compactionHeuristic = true
