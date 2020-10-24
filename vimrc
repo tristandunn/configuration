@@ -259,6 +259,7 @@ let g:ale_ruby_rubocop_executable = "bundle"
 " Disable mapping to not break coc.nvim completion.
 let g:endwise_no_mappings = 1
 
+" Only jump to references of the same file type.
 let g:any_jump_references_only_for_current_filetype = 1
 " }}}
 " Formats {{{
