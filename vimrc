@@ -6,6 +6,9 @@ set shortmess+=c " Don't pass messages to |ins-completion-menu|.
 let &t_SI = "\<esc>[5 q" " Beam for insert mode.
 let &t_EI = "\<esc>[2 q" " Block for normal mode.
 let &t_SR = "\<esc>[3 q" " Underline for replace mode.
+
+" Add directory to path to help with going to files.
+set path+=app
 " }}}
 " Colors {{{
 set t_Co=256
