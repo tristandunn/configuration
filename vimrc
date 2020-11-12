@@ -227,6 +227,7 @@ let g:netrw_list_hide .= "^\.vagrant,"
 let g:netrw_list_hide .= "^\.yarnrc,"
 let g:netrw_list_hide .= "^\.\/$,"
 let g:netrw_list_hide .= "^node_modules\/$,"
+let g:netrw_list_hide .= "^tags$,"
 let g:netrw_list_hide .= "^tmp\/$"
 
 " Speed up vim-gitgutter.
