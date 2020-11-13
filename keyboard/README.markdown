@@ -1,13 +1,15 @@
 # Keyboard Customization
 
-Adds support for rebinding keys with [Karabiner-Elements][] and execute scripts
-with [Hammerspoon][]. Based on [jasonrudolph/keyboard][].
+Adds support for executing scripts with [Hammerspoon][]. Based on
+[jasonrudolph/keyboard][].
 
 [Hammerspoon]: https://github.com/Hammerspoon/hammerspoon
 [jasonrudolph/keyboard]: https://github.com/jasonrudolph/keyboard
-[Karabiner-Elements]: https://github.com/pqrs-org/Karabiner-Elements
 
 ## Installation
+
+Go to `System Preferences -> Keyboard -> Modifier Keys` and to change `Caps
+Lock` to send `Control` instead.
 
 Run the setup script to install the applications and link configuration.
 

@@ -1,14 +1,14 @@
-send_escape       = false
-previous_modifies = {}
+send_escape        = false
+previous_modifiers = {}
 
 modifier_handler = function(evt)
-  local current_modifies = evt:getFlags()
+  local current_modifiers = evt:getFlags()
 
-  if current_modifies["ctrl"] and count(current_modifies) == 1 and count(previous_modifies) == 0 then
+  if current_modifiers["ctrl"] and count(current_modifiers) == 1 and count(previous_modifiers) == 0 then
     -- If the control key is being held with no other modifies, mark escape to
     -- be sent.
     send_escape = true
-  elseif previous_modifies["ctrl"]  and count(current_modifies) == 0 and send_escape then
+  elseif previous_modifiers["ctrl"] and count(current_modifiers) == 0 and send_escape then
     -- If control key was being held, no modifies are held, and escape was
     -- marked to be sent then send escape.
     send_escape = false
@@ -20,7 +20,7 @@ modifier_handler = function(evt)
   end
 
   -- Store the previous modifiers for comparison.
-  previous_modifies = current_modifies
+  previous_modifiers = current_modifiers
 
   -- Propagate the key press.
   return false

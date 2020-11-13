@@ -16,10 +16,6 @@ if ! grep -sq "require(\"keyboard\")" ~/.hammerspoon/init.lua; then
 fi
 ln -sfn $PWD/keyboard/hammerspoon ~/.hammerspoon/keyboard
 
-# Prepare custom settings for Karabiner-Elements application.
-mkdir -p ~/.config
-ln -sfn $PWD/keyboard/karabiner ~/.config/
-
 # Disable the Dock icon for Hammerspoon.
 defaults write org.hammerspoon.Hammerspoon MJShowDockIconKey -bool FALSE
 
@@ -27,6 +23,5 @@ defaults write org.hammerspoon.Hammerspoon MJShowDockIconKey -bool FALSE
 # configuration when opening Hammerspoon below.
 killall Hammerspoon || true
 
-# Open the applications.
+# Open the application.
 open -a Hammerspoon
-open -a Karabiner-Elements
