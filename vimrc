@@ -131,9 +131,6 @@ nmap <silent> <leader>s :set spell!<CR>
 " Add the current file to git.
 map <Leader>a :silent :windo :Git add %<CR>
 
-" Look up the documentation for the word under the cursor.
-nmap <silent> <leader>g <Plug>DashSearch
-
 " Copy selection to the clipboard.
 vmap <Leader>c "*y
 
@@ -313,7 +310,6 @@ Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
 Plug 'othree/html5.vim', { 'for' : ['eruby', 'html'] }
 Plug 'pangloss/vim-javascript', { 'for' : ['eruby', 'html', 'javascript'] }
 Plug 'pechorin/any-jump.vim'
-Plug 'rizzatti/dash.vim'
 Plug 'slim-template/vim-slim', { 'for' : 'slim' }
 Plug 'thoughtbot/vim-rspec', { 'for' : 'ruby' }
 Plug 'tpope/vim-bundler'
