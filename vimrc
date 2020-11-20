@@ -307,6 +307,7 @@ Plug 'dockyard/vim-easydir'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/fzf'
 Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
+Plug 'obcat/vim-hitspop'
 Plug 'othree/html5.vim', { 'for' : ['eruby', 'html'] }
 Plug 'pangloss/vim-javascript', { 'for' : ['eruby', 'html', 'javascript'] }
 Plug 'pechorin/any-jump.vim'
