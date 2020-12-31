@@ -7,5 +7,6 @@ yarn.lock
 coverage/
 log/
 node_modules/
+public/{packs,packs-test}/
 tmp/
 vendor/
