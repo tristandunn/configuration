@@ -188,6 +188,10 @@ let g:fzf_action = {
   \ 'ctrl-t': 'e',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
+
+if exists('$TMUX')
+  let g:fzf_layout = { 'tmux': '-p50%,60%' }
+endif
 " }}}
 " Backups {{{
 set nobackup      " No backup files.
