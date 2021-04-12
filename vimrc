@@ -192,6 +192,13 @@ let g:fzf_action = {
 if exists('$TMUX')
   let g:fzf_layout = { 'tmux': '-p50%,60%' }
 endif
+
+" Automatically center search results.
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
 " }}}
 " Backups {{{
 set nobackup      " No backup files.
