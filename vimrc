@@ -156,6 +156,9 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>n :call RunNearestSpec()<CR>
 map <Leader>s :call RunAllSpecs()<CR>
 map <Leader>t :call RunCurrentSpecFile()<CR>
+
+" Custom shortcuts.
+map <Leader>r :VtrSendCommandToRunner! bundle exec rubocop<CR>
 " }}}
 " Search {{{
 set incsearch " Search as characters are entered.
