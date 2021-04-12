@@ -93,19 +93,13 @@ rubocop_command() {
 }
 
 services-start() {
-  brew services start elasticsearch
   brew services start memcached
   brew services start postgresql
   brew services start redis
-  brew services start zookeeper
-  brew services start kafka
 }
 
 services-stop() {
-  brew services stop elasticsearch
   brew services stop memcached
   brew services stop postgresql
   brew services stop redis
-  brew services stop zookeeper
-  brew services stop kafka
 }
