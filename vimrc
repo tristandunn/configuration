@@ -112,9 +112,6 @@ map <Leader>h :nohl <CR>
 " Opens an edit command with the path of the currently edited file filled in.
 map <Leader>e :e +9 <C-R>=escape(expand("%:p:h") . "/", " ") <CR>
 
-" Reload all tabs.
-map <Leader>r :tabdo edit \| :tabdo syntax on <CR>
-
 " Opens a tab edit command with the path of the currently edited file filled in.
 map <Leader>te :tabe +9 <C-R>=escape(expand("%:p:h") . "/", " ") <CR>
 
