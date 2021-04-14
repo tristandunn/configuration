@@ -125,8 +125,11 @@ endfor
 " Toggle spell check.
 nmap <silent> <leader>s :set spell!<CR>
 
-" Add the current file to git.
-map <Leader>a :silent :windo :Git add %<CR>
+" Shortcuts for git commands.
+map <Leader>ga :silent Gwrite<CR>
+map <Leader>gc :silent Gcommit<CR>
+map <Leader>gd :silent Gdiff<CR>
+map <Leader>gs :silent Gstatus<CR>
 
 " Copy selection to the clipboard.
 vmap <Leader>c "*y
