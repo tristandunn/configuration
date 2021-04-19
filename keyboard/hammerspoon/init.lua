@@ -1,7 +1,7 @@
 -- Load the customization scripts.
 require("keyboard.1password")
 require("keyboard.capslock")
-require("keyboard.chrome")
+require("keyboard.safari")
 require("keyboard.windows")
 
 -- Bind Control+` to reload the Hammerspoon configuration.
