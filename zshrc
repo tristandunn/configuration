@@ -37,6 +37,7 @@ export LESSHISTFILE=-
 
 # Homebrew doctors orders.
 export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 # No emoji for Homebrew.
 export HOMEBREW_NO_EMOJI=1
 # No analytics for Homebrew.
