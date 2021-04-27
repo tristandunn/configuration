@@ -5,7 +5,7 @@
 
 tap "heroku/brew"
 
-brew "chruby"
+brew "asdf"
 brew "ctags"
 brew "fzf"
 brew "git"
@@ -15,10 +15,8 @@ brew "memcached"
 brew "postgresql"
 brew "redis"
 brew "ripgrep"
-brew "ruby-install"
 brew "tmux"
 brew "vim"
-brew "yarn"
 
 cask "1password"
 cask "imageoptim"

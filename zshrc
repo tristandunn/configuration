@@ -47,9 +47,8 @@ if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
-# Load the chruby magic.
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
+# Load the asdf magic.
+source $(brew --prefix asdf)/asdf.sh
 
 # Access to custom executables.
 export PATH="$PATH:$HOME/.configuration/bin"
