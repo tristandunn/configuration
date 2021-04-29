@@ -56,6 +56,9 @@ export PATH="$PATH:$HOME/.configuration/bin"
 # Set the ripgrep configuration path.
 export RIPGREP_CONFIG_PATH="$HOME/.configuration/ripgreprc"
 
+# Use all available CPU cores for compiling to speed up Bundler and more.
+export MAKE="make -j$(nproc)"
+
 # Load private shell configuration.
 if [ -f "$HOME/.zshrc.private" ]; then
   source "$HOME/.zshrc.private"
