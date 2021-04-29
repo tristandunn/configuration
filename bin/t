@@ -51,12 +51,8 @@ if [ -z "$TMUX" ]; then
     # Select the vim pane.
     tmux select-pane -t 1
 
-    # Wait for the panes to initialize.
-    sleep 0.5
-
     # Launch vim and attach vim-tmux-runner to the second pane.
-    tmux send-keys -t 1 'vim .' C-m
-    tmux send-keys -t 1 ':VtrAttachToPane 2' C-m
+    tmux send-keys -t 1 'vim -c "silent VtrAttachToPane 2" .' C-m
 
     # Display the git status in the terminal pane.
     tmux send-keys -t 3 'git status' C-m
