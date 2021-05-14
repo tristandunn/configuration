@@ -1,3 +1,9 @@
+# Force usage of the Kitty terminal.
+if [ "$TERM" = "xterm-256color" ]; then
+  open -a "Kitty"
+  killall "Terminal"
+fi
+
 # Completion.
 autoload -U compinit
 compinit -D
@@ -67,8 +73,3 @@ fi
 # Fix CMD+S shortcut.
 stty -ixon
 
-# Force usage of the Kitty terminal.
-if [ "$TERM" = "xterm-256color" ]; then
-  open -a "Kitty"
-  killall "Terminal"
-fi
