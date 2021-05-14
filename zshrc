@@ -53,9 +53,6 @@ if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
-# Load the asdf magic.
-source $(brew --prefix asdf)/asdf.sh
-
 # Access to custom executables.
 export PATH="$PATH:$HOME/.configuration/bin"
 
@@ -73,3 +70,5 @@ fi
 # Fix CMD+S shortcut.
 stty -ixon
 
+# Load the asdf magic.
+source $(brew --prefix asdf)/asdf.sh
