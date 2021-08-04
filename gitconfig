@@ -4,11 +4,12 @@
   ca = commit --amend
   d = !clear && git diff
   dc = !clear && git diff --cached
+  default-branch-name = !git remote show origin | awk '/HEAD branch/ {print $NF}'
   pl = pull
   ps = push
   plre = pull --rebase
   st = status
-  up = !git fetch origin && git rebase origin/master
+  up = !git fetch origin && git rebase origin/`git default-branch-name`
 [color]
   ui = auto
 [core]
