@@ -1,4 +1,5 @@
 ---
+:concurrent_downloads: 16
 :sources:
 - https://rubygems.org
 :update_sources: true
