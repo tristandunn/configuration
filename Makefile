@@ -11,6 +11,7 @@ install:
 	make $(HOME)/.rgignore
 	make $(HOME)/.rspec
 	make $(HOME)/.tmux.conf
+	make $(HOME)/.tool-versions
 	make $(HOME)/.vim/autoload
 	make $(HOME)/.vim/colors
 	make $(HOME)/.vim/spell
@@ -38,6 +39,7 @@ uninstall:
 	-test -L $(HOME)/.rgignore && rm -fv $(HOME)/.rgignore
 	-test -L $(HOME)/.rspec && rm -fv $(HOME)/.rspec
 	-test -L $(HOME)/.tmux.conf && rm -fv $(HOME)/.tmux.conf
+	-test -L $(HOME)/.tool-versions && rm -fv $(HOME)/.tool-versions
 	-test -L $(HOME)/.vim/autoload/plug.vim && rm -fvr $(HOME)/.vim/autoload/plug.vim
 	-test -L $(HOME)/.vim/colors/ir_black.vim && rm -fvr $(HOME)/.vim/colors/ir_black.vim
 	-test -L $(HOME)/.vim/spell/en.utf-8.add && rm -fvr $(HOME)/.vim/spell/en.utf-8.add
@@ -76,6 +78,9 @@ $(HOME)/.rspec:
 
 $(HOME)/.tmux.conf:
 	ln -sv $(CWD)/tmux.conf $(HOME)/.tmux.conf
+
+$(HOME)/.tool-versions:
+	ln -sv $(CWD)/tool-versions $(HOME)/.tool-versions
 
 $(HOME)/.vim/autoload:
 	mkdir -p $(HOME)/.vim/autoload && \
