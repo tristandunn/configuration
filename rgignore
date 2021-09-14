@@ -4,6 +4,9 @@ package-lock.json
 tags
 yarn.lock
 .git/
+.jekyll-cache/
+.lighthouseci/
+_site/
 coverage/
 log/
 node_modules/
