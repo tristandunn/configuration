@@ -321,6 +321,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'dockyard/vim-easydir'
 Plug 'godlygeek/tabular'
+Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf'
 Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
 Plug 'obcat/vim-hitspop'
