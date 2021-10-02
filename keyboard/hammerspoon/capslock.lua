@@ -41,7 +41,7 @@ end
 modifier_tap = hs.eventtap.new({hs.eventtap.event.types.flagsChanged}, modifier_handler)
 modifier_tap:start()
 
--- If any no modifier key is pressed, unmark escape to be sent.
+-- If any non-modifier key is pressed, unmark escape to be sent.
 non_modifier_tap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, function(evt)
   send_escape = false
   return false
