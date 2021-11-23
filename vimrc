@@ -161,7 +161,7 @@ map <Leader>s :call RunAllSpecs()<CR>
 map <Leader>t :call RunCurrentSpecFile()<CR>
 
 " Custom shortcuts.
-map <Leader>r :VtrSendCommandToRunner! bundle exec rubocop<CR>
+map <Leader>r :VtrSendCommandToRunner! rubocop<CR>
 " }}}
 " Search {{{
 set incsearch " Search as characters are entered.
