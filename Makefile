@@ -93,7 +93,6 @@ $(HOME)/.vim/colors:
 $(HOME)/.vim/spell:
 	mkdir -p $(HOME)/.vim/spell && \
 		ln -sv $(CWD)/vim/spell/en.utf-8.add $(HOME)/.vim/spell/en.utf-8.add && \
-		ln -sv $(CWD)/vim/spell/en.utf-8.add.spl $(HOME)/.vim/spell/en.utf-8.add.spl
 
 $(HOME)/.vimrc:
 	ln -sv $(CWD)/vimrc $(HOME)/.vimrc
