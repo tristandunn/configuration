@@ -45,8 +45,8 @@ if [ -z "$TMUX" ]; then
     tmux rename-window -t 1 code
 
     # Split window for test and terminal panes.
-    tmux split-window -t 1 -p 40 -h
-    tmux split-window -t 2 -p 30 -v
+    tmux split-window -t 1 -hl 80
+    tmux split-window -t 2 -vl 14
 
     # Select the vim pane.
     tmux select-pane -t 1
