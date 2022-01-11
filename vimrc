@@ -160,8 +160,14 @@ map <Leader>n :call RunNearestSpec()<CR>
 map <Leader>s :call RunAllSpecs()<CR>
 map <Leader>t :call RunCurrentSpecFile()<CR>
 
-" Custom shortcuts.
-map <Leader>r :VtrSendCommandToRunner! rubocop<CR>
+" Shortcuts for git commands.
+map <Leader>gd  :VtrSendCommandToRunner! git diff<CR><C-l>
+map <Leader>gdc :VtrSendCommandToRunner! git diff --cached<CR><C-l>
+map <Leader>gs  :VtrSendCommandToRunner! git status<CR>
+
+" Shortcuts for Rails commands.
+map <Leader>r   :VtrSendCommandToRunner! rubocop<CR>
+map <Leader>rc  :VtrSendCommandToRunner! bundle exec rake check<CR>
 " }}}
 " Search {{{
 set incsearch " Search as characters are entered.
