@@ -66,6 +66,11 @@ if [ -f "$HOME/.zshrc.private" ]; then
   source "$HOME/.zshrc.private"
 fi
 
+# Load private Rubygems configuration.
+if [ -f "${HOME}/.gemrc.private" ]; then
+  export GEMRC="${HOME}/.gemrc.private"
+fi
+
 # Fix CMD+S shortcut.
 stty -ixon
 
