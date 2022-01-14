@@ -76,3 +76,18 @@ stty -ixon
 
 # Load the asdf magic.
 source $(brew --prefix asdf)/asdf.sh
+
+# Automatically set the window title with a hook executed before each prompt.
+precmd() {
+  local name=$PWD
+
+  if [[ $PWD/ = $HOME/* ]]; then
+    name=$(basename $name)
+
+    if [ $name = $USER ]; then
+      name="~"
+    fi
+  fi
+
+  printf "\e]0;$name\a"
+}
