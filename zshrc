@@ -83,8 +83,9 @@ precmd() {
 
   if [[ $PWD/ = $HOME/* ]]; then
     name=$(basename $name)
+    lower=${name:l}
 
-    if [ $name = $USER ]; then
+    if [ $name = $USER -o $lower = $USER ]; then
       name="~"
     fi
   fi
