@@ -163,6 +163,7 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 " Shortcuts for git commands.
 map <Leader>gd  :VtrSendCommandToRunner! git diff<CR><C-l>
 map <Leader>gdc :VtrSendCommandToRunner! git diff --cached<CR><C-l>
+map <Leader>gp  :VtrSendCommandToRunner! git pull<CR>
 map <Leader>gs  :VtrSendCommandToRunner! git status<CR>
 
 " Shortcuts for Rails commands.
