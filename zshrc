@@ -42,18 +42,13 @@ export HISTFILE="/tmp/.zsh_history"
 export LESSHISTFILE=-
 
 # Homebrew doctors orders.
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 # No emoji for Homebrew.
 export HOMEBREW_NO_EMOJI=1
 # No analytics for Homebrew.
 export HOMEBREW_NO_ANALYTICS=1
 # No hints for Homebrew.
 export HOMEBREW_NO_ENV_HINTS=1
-# Enable auto-complete for Homebrew.
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
 
 # Access to custom executables.
 export PATH="$PATH:$HOME/.configuration/bin"
