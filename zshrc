@@ -49,6 +49,10 @@ export HOMEBREW_NO_EMOJI=1
 export HOMEBREW_NO_ANALYTICS=1
 # No hints for Homebrew.
 export HOMEBREW_NO_ENV_HINTS=1
+# Enable auto-complete for Homebrew.
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
 
 # Access to custom executables.
 export PATH="$PATH:$HOME/.configuration/bin"
