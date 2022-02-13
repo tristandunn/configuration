@@ -19,7 +19,6 @@ brew "ripgrep"
 brew "tmux"
 brew "vim"
 
-cask "1password"
 cask "chromedriver"
 cask "imageoptim"
 cask "kitty"
