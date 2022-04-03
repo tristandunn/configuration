@@ -14,7 +14,6 @@ install:
 	make $(HOME)/.tool-versions
 	make $(HOME)/.vim/autoload
 	make $(HOME)/.vim/colors
-	make $(HOME)/.vim/spell
 	make $(HOME)/.vimrc
 	make $(HOME)/.zlogin
 	make $(HOME)/.zshrc
@@ -42,8 +41,6 @@ uninstall:
 	-test -L $(HOME)/.tool-versions && rm -fv $(HOME)/.tool-versions
 	-test -L $(HOME)/.vim/autoload/plug.vim && rm -fvr $(HOME)/.vim/autoload/plug.vim
 	-test -L $(HOME)/.vim/colors/ir_black.vim && rm -fvr $(HOME)/.vim/colors/ir_black.vim
-	-test -L $(HOME)/.vim/spell/en.utf-8.add && rm -fvr $(HOME)/.vim/spell/en.utf-8.add
-	-test -L $(HOME)/.vim/spell/en.utf-8.add.spl && rm -fvr $(HOME)/.vim/spell/en.utf-8.add.spl
 	-test -L $(HOME)/.vimrc && rm -fv $(HOME)/.vimrc
 	-test -L $(HOME)/.zlogin && rm -fv $(HOME)/.zlogin
 	-test -L $(HOME)/.zshrc && rm -fv $(HOME)/.zshrc
@@ -89,10 +86,6 @@ $(HOME)/.vim/autoload:
 $(HOME)/.vim/colors:
 	mkdir -p $(HOME)/.vim/colors && \
 		ln -sv $(CWD)/vim/colors/ir_black.vim $(HOME)/.vim/colors/ir_black.vim
-
-$(HOME)/.vim/spell:
-	mkdir -p $(HOME)/.vim/spell && \
-		ln -sv $(CWD)/vim/spell/en.utf-8.add $(HOME)/.vim/spell/en.utf-8.add && \
 
 $(HOME)/.vimrc:
 	ln -sv $(CWD)/vimrc $(HOME)/.vimrc

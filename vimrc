@@ -123,7 +123,7 @@ for prefix in ["n", "v"]
 endfor
 
 " Toggle spell check.
-nmap <silent> <leader>s :set spell!<CR>
+nmap <silent> <leader>ts :set spell!<CR>
 
 " Shortcuts for git commands.
 map <Leader>ga :silent Gwrite<CR>
