@@ -33,6 +33,8 @@ alias redis_stop="redis-cli shutdown"
 
 # Miscellaneous
 alias brewhaha="brew update && brew cleanup -s && brew outdated"
+alias icloud="cd ~/Library/Mobile\ Documents"
+alias icloud-obsidian="cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Personal"
 
 # Helpers
 console_command() {
