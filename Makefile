@@ -16,6 +16,7 @@ install:
 	make $(HOME)/.vim/colors
 	make $(HOME)/.vimrc
 	make $(HOME)/.zlogin
+	make $(HOME)/.zshenv
 	make $(HOME)/.zshrc
 	make homebrew
 	make homebrew-bundle
@@ -43,6 +44,7 @@ uninstall:
 	-test -L $(HOME)/.vim/colors/ir_black.vim && rm -fvr $(HOME)/.vim/colors/ir_black.vim
 	-test -L $(HOME)/.vimrc && rm -fv $(HOME)/.vimrc
 	-test -L $(HOME)/.zlogin && rm -fv $(HOME)/.zlogin
+	-test -L $(HOME)/.zshenv && rm -fv $(HOME)/.zshenv
 	-test -L $(HOME)/.zshrc && rm -fv $(HOME)/.zshrc
 
 $(HOME)/.aliases:
@@ -92,6 +94,9 @@ $(HOME)/.vimrc:
 
 $(HOME)/.zlogin:
 	ln -sv $(CWD)/zlogin $(HOME)/.zlogin
+
+$(HOME)/.zshenv:
+	ln -sv $(CWD)/zshenv $(HOME)/.zshenv
 
 $(HOME)/.zshrc:
 	ln -sv $(CWD)/zshrc $(HOME)/.zshrc
