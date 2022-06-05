@@ -54,13 +54,10 @@ source $(brew --prefix asdf)/asdf.sh
 precmd() {
   local name=$PWD
 
-  if [[ $PWD/ = $HOME/* ]]; then
+  if [[ $name/ = $HOME/ ]]; then
+    name="~"
+  else
     name=$(basename $name)
-    lower=${name:l}
-
-    if [ $name = $USER -o $lower = $USER ]; then
-      name="~"
-    fi
   fi
 
   printf "\e]0;$name\a"
