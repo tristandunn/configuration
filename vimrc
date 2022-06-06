@@ -345,6 +345,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby', { 'for' : 'ruby' }
 Plug 'w0rp/ale'
+Plug 'wsdjeg/vim-fetch'
 
 call plug#end()
 " }}}
