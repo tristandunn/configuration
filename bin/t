@@ -51,6 +51,9 @@ if [ -z "$TMUX" ]; then
     # Select the vim pane.
     tmux select-pane -t 1
 
+    # Wait for the panes to initialize.
+    sleep 0.5
+
     # Launch vim and attach vim-tmux-runner to the second pane. If there's a
     # `.todo` file, open it.
     if [ -f .todo ]; then
