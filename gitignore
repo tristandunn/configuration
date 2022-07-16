@@ -1,17 +1,1 @@
-*.log
-*.sqlite3
 .DS_Store
-.bundle
-.env
-.pryrc
-.rspec
-.ruby-version
-.sass-cache
-.todo
-.vimrc
-.yardoc
-Procfile.dev
-coverage/
-node_modules/
-pkg/
-tags
