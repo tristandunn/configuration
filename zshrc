@@ -4,6 +4,10 @@ if [ "$TERM" = "xterm-256color" ]; then
   killall "Terminal"
 fi
 
+# Hide the history file.
+fc -p /tmp/.zsh_history
+rm ~/.zsh_history
+
 # Completion.
 autoload -U compinit
 compinit -D

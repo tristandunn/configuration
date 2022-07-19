@@ -6,10 +6,7 @@ export VISUAL=vim
 export EDITOR=$VISUAL
 
 # Keep more history.
-export HISTSIZE=256
-
-# Hide the history file.
-export HISTFILE="/tmp/.zsh_history"
+export HISTSIZE=1024
 
 # Disable less file.
 export LESSHISTFILE=-
