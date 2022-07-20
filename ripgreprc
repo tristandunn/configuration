@@ -4,8 +4,8 @@
 # Display preview of result lines.
 --max-columns-preview
 
-# Ignore files larger than two megabytes.
---max-filesize=2M
+# Ignore files larger than 64 kilobytes.
+--max-filesize=64K
 
 # Ignore case if search is all lowercase.
 --smart-case
