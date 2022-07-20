@@ -4,14 +4,6 @@ if [ "$TERM" = "xterm-256color" ]; then
   killall "Terminal"
 fi
 
-# Move the history file to hide it.
-fc -p /tmp/.zsh_history
-
-# Remove the old history file.
-if [ -e "$HOME/.zsh_history" ]; then
-  rm "$HOME/.zsh_history"
-fi
-
 # Completion.
 autoload -U compinit
 compinit -D
