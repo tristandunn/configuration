@@ -231,14 +231,17 @@ let g:netrw_list_hide .= "^\.jekyll-cache\/,"
 let g:netrw_list_hide .= "^\.git\/,"
 let g:netrw_list_hide .= "^\.gitattributes,"
 let g:netrw_list_hide .= "^\.gitignore$,"
+let g:netrw_list_hide .= "^\.lighthouseci,"
 let g:netrw_list_hide .= "^\.pryrc$,"
 let g:netrw_list_hide .= "^\.rspec$,"
 let g:netrw_list_hide .= "^\.yarnrc,"
 let g:netrw_list_hide .= "^\.\/$,"
 let g:netrw_list_hide .= "^coverage\/$,"
+let g:netrw_list_hide .= "^Gemfile.lock,"
 let g:netrw_list_hide .= "^node_modules\/$,"
 let g:netrw_list_hide .= "^tags$,"
-let g:netrw_list_hide .= "^tmp\/$"
+let g:netrw_list_hide .= "^tmp\/$,"
+let g:netrw_list_hide .= "^\yarn.lock"
 
 " Speed up vim-gitgutter.
 let g:gitgutter_realtime = 0
