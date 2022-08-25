@@ -3,14 +3,11 @@
 #   $ brew bundle
 #
 
-tap "heroku/brew"
-
 brew "asdf"
 brew "ctags"
 brew "fzf"
 brew "git"
 brew "gpg"
-brew "heroku"
 brew "macos-trash"
 brew "memcached"
 brew "postgresql"

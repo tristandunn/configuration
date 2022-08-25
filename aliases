@@ -19,10 +19,6 @@ alias rspec="rspec_command"
 alias migrate="rake_command db:migrate"
 alias rubocop="rubocop_command"
 
-# Heroku
-alias h="heroku"
-alias hr="heroku run bundle exec rake"
-
 # Postgres
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
