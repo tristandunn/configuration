@@ -84,12 +84,12 @@ inoremap kk <esc>
 " Duplicate a selection.
 vmap D y'>p
 
-" Maps autocomplete to tab.
+" Use <TAB> and <S+TAB> for autocomplete.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -97,11 +97,7 @@ function! s:check_back_space() abort
 endfunction
 
 " Use <CR> to confirm completion.
-if exists('*complete_info')
-  imap <expr> <CR> (complete_info()["selected"] != "-1" ? "\<C-y>" : "\<CR>")
-else
-  imap <expr> <CR> (pumvisible() ? "\<C-y>" : "\<CR>")
-end
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
