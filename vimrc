@@ -9,6 +9,9 @@ let &t_SR = "\<esc>[3 q" " Underline for replace mode.
 
 " Add directory to path to help with going to files.
 set path+=app
+
+" Assume POSIX shell in vim.
+let g:is_posix=1
 " }}}
 " Colors {{{
 set t_Co=256
