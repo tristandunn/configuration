@@ -1,6 +1,3 @@
 Brewfile.lock.json
-bin/ngrok
-keyboard/karabiner/automatic_backups
 vim/.netrwhist
 vim/plugged
-zshrc.private
