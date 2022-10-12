@@ -51,7 +51,7 @@ fi
 stty -ixon
 
 # Load the asdf magic.
-source $(brew --prefix asdf)/asdf.sh
+source $(brew --prefix asdf)/libexec/asdf.sh
 
 # Automatically set the window title with a hook executed before each prompt.
 precmd() {
