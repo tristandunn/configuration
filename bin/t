@@ -8,9 +8,7 @@ session_exists() {
 
 if [ -z "$TMUX" ]; then
   if [ "$PWD" = "$HOME" ]; then
-    $(tmux list-sessions > /dev/null 2>&1)
-
-    if [ "$?" -gt 0 ]; then
+    if [ ! "$(tmux list-sessions > /dev/null 2>&1)" ]; then
       echo "No sessions available."
       exit 1
     fi
