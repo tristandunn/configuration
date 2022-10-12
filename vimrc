@@ -25,7 +25,9 @@ highlight ALEStyleError ctermbg=black ctermfg=lightred
 highlight ALEStyleWarning ctermbg=black ctermfg=lightred
 highlight ALEWarning ctermbg=black ctermfg=lightred
 highlight Pmenu ctermbg=black ctermfg=grey
-highlight PmenuSel ctermbg=darkgrey ctermfg=green cterm=bold
+highlight PmenuSel ctermbg=black ctermfg=white cterm=bold
+highlight CocSearch ctermbg=black ctermfg=white cterm=bold
+highlight CocMenuSel ctermbg=blue ctermfg=black
 
 highlight clear SpellBad
 highlight SpellBad ctermbg=lightred ctermfg=black
