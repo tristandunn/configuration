@@ -22,7 +22,7 @@ function watchApplication(application)
   -- Create a watcher for the Safari application.
   safariWatcher = application:newWatcher(function(window)
     -- Sometimes window appears to be missing.
-    if not window then
+    if not window or not window["title"] then
       return
     end
 
