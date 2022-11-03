@@ -44,7 +44,7 @@ if [ -z "$TMUX" ]; then
     fi
   elif ! session_exists; then
     # Create a new session.
-    tmux new-session -d -s "$SESSION_NAME"
+    tmux new-session -d -s "$SESSION_NAME" -x "$(tput cols)" -y "$(tput lines)"
 
     # Rename the window.
     tmux rename-window -t 1 code
