@@ -176,20 +176,21 @@ function! ExecuteCommandInPane(...)
   end
 
   let command = a:1
-  let pane    = a:0 < 2 ? 3 : a:2
-  let focus   = a:0 < 3 ? 0 : a:3
+  let focus   = a:0 < 2 ? 0 : a:2
+  let pane    = a:0 < 3 ? 3 : a:3
 
   call system("tmux send-keys -t " . pane . " clear Enter")
   call system("tmux send-keys -t " . pane . " '" . command . "' Enter")
 
   if focus
     call system("tmux select-pane -t " . pane)
+    call system("tmux resize-pane -t " . pane . " -Z")
   end
 endfunction
 
 " Shortcuts for git commands.
-map <Leader>gd  :call ExecuteCommandInPane("git diff", 3, 1)<CR>
-map <Leader>gdc :call ExecuteCommandInPane("git diff --cached", 3, 1)<CR>
+map <Leader>gd  :call ExecuteCommandInPane("git diff", 1)<CR>
+map <Leader>gdc :call ExecuteCommandInPane("git diff --cached", 1)<CR>
 map <Leader>gp  :call ExecuteCommandInPane("git pull")<CR>
 map <Leader>gs  :call ExecuteCommandInPane("git status")<CR>
 " }}}
