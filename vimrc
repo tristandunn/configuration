@@ -161,15 +161,37 @@ map <Leader>n :call RunNearestSpec()<CR>
 map <Leader>s :call RunAllSpecs()<CR>
 map <Leader>t :call RunCurrentSpecFile()<CR>
 
-" Shortcuts for git commands.
-map <Leader>gd  :VtrSendCommandToRunner! git diff<CR><C-l>
-map <Leader>gdc :VtrSendCommandToRunner! git diff --cached<CR><C-l>
-map <Leader>gp  :VtrSendCommandToRunner! git pull<CR>
-map <Leader>gs  :VtrSendCommandToRunner! git status<CR>
-
 " Shortcuts for Rails commands.
 map <Leader>r   :VtrSendCommandToRunner! rubocop<CR>
 map <Leader>rc  :VtrSendCommandToRunner! bundle exec rake check<CR>
+
+" Define function to execute command in specific tmux pane.
+function! ExecuteCommandInPane(...)
+  if !a:0
+    echohl ErrorMsg |
+      echo "\rExecuteCommandInPane: No command provided." |
+    echohl None
+
+    return 0
+  end
+
+  let command = a:1
+  let pane    = a:0 < 2 ? 3 : a:2
+  let focus   = a:0 < 3 ? 0 : a:3
+
+  call system("tmux send-keys -t " . pane . " clear Enter")
+  call system("tmux send-keys -t " . pane . " '" . command . "' Enter")
+
+  if focus
+    call system("tmux select-pane -t " . pane)
+  end
+endfunction
+
+" Shortcuts for git commands.
+map <Leader>gd  :call ExecuteCommandInPane("git diff", 3, 1)<CR>
+map <Leader>gdc :call ExecuteCommandInPane("git diff --cached", 3, 1)<CR>
+map <Leader>gp  :call ExecuteCommandInPane("git pull")<CR>
+map <Leader>gs  :call ExecuteCommandInPane("git status")<CR>
 " }}}
 " Search {{{
 set incsearch " Search as characters are entered.
