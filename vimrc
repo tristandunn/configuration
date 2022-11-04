@@ -126,12 +126,6 @@ endfor
 " Toggle spell check.
 nmap <silent> <leader>ts :set spell!<CR>
 
-" Shortcuts for git commands.
-map <Leader>ga :silent Gwrite<CR>
-map <Leader>gc :silent Gcommit<CR>
-map <Leader>gd :silent Gdiff<CR>
-map <Leader>gs :silent Gstatus<CR>
-
 " Copy selection to the clipboard.
 vmap <Leader>c "*y
 
@@ -357,7 +351,6 @@ Plug 'pechorin/any-jump.vim'
 Plug 'thoughtbot/vim-rspec', { 'for' : 'ruby' }
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise', { 'for' : 'ruby' }
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown', { 'for' : 'markdown' }
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
