@@ -155,38 +155,17 @@ map <Leader>n :call RunNearestSpec()<CR>
 map <Leader>s :call RunAllSpecs()<CR>
 map <Leader>t :call RunCurrentSpecFile()<CR>
 
-" Shortcuts for Rails commands.
-map <Leader>r   :VtrSendCommandToRunner! rubocop<CR>
-map <Leader>rc  :VtrSendCommandToRunner! bundle exec rake check<CR>
-
-" Define function to execute command in specific tmux pane.
-function! ExecuteCommandInPane(...)
-  if !a:0
-    echohl ErrorMsg |
-      echo "\rExecuteCommandInPane: No command provided." |
-    echohl None
-
-    return 0
-  end
-
-  let command = a:1
-  let focus   = a:0 < 2 ? 0 : a:2
-  let pane    = a:0 < 3 ? 3 : a:3
-
-  call system("tmux send-keys -t " . pane . " clear Enter")
-  call system("tmux send-keys -t " . pane . " '" . command . "' Enter")
-
-  if focus
-    call system("tmux select-pane -t " . pane)
-    call system("tmux resize-pane -t " . pane . " -Z")
-  end
-endfunction
-
 " Shortcuts for git commands.
 map <Leader>gd  :call ExecuteCommandInPane("git diff", 1)<CR>
 map <Leader>gdc :call ExecuteCommandInPane("git diff --cached", 1)<CR>
 map <Leader>gp  :call ExecuteCommandInPane("git pull")<CR>
 map <Leader>gs  :call ExecuteCommandInPane("git status")<CR>
+
+" Shortcuts for Rails commands.
+map <Leader>bo :call ExecuteCommandInPane("bundle outdated", 0, 2)<CR>
+map <Leader>r  :call ExecuteCommandInPane("rubocop", 0, 2)<CR>
+map <Leader>rc :call ExecuteCommandInPane("bundle exec rake check", 0, 2)<CR>
+map <Leader>yo :call ExecuteCommandInPane("yarn outdated", 0, 2)<CR>
 " }}}
 " Search {{{
 set incsearch " Search as characters are entered.
@@ -311,21 +290,37 @@ au FileType gitcommit setlocal spell textwidth=80
 au BufNewFile,BufRead *.es6 set filetype=javascript
 " }}}
 " tmux {{{
-" Enable the default vim-tmux-runner bindings.
-let g:VtrUseVtrMaps = 1
-
-" Set default orientation and precentage for vim-tmux-runner pane.
-let g:VtrOrientation = "h"
-let g:VtrPercentage = 40
-
-" Run RSpec in vim-tmux-runner pane.
-let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
+" Run RSpec in the second pane.
+let g:rspec_command = "call ExecuteCommandInPane(\"rspec {spec}\", 0, 2)"
 
 " Automatically rebalance windows on vim resize.
 autocmd VimResized * :wincmd =
 
 " Remap NetrwRefresh to allow <C-l> to be used by vim-tmux-navigator.
 nmap <leader><leader><leader><leader><leader><leader>l <Plug>NetrwRefresh
+
+" Define function to execute command in specific tmux pane.
+function! ExecuteCommandInPane(...)
+  if !a:0
+    echohl ErrorMsg |
+      echo "\rExecuteCommandInPane: No command provided." |
+    echohl None
+
+    return 0
+  end
+
+  let command = a:1
+  let focus   = a:0 < 2 ? 0 : a:2
+  let pane    = a:0 < 3 ? 3 : a:3
+
+  call system("tmux send-keys -t " . pane . " clear Enter")
+  call system("tmux send-keys -t " . pane . " '" . command . "' Enter")
+
+  if focus
+    call system("tmux select-pane -t " . pane)
+    call system("tmux resize-pane -t " . pane . " -Z")
+  end
+endfunction
 " }}}
 " Bundles {{{
 let g:projectionist_heuristics = {
@@ -339,7 +334,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'christoomey/vim-tmux-runner'
 Plug 'dockyard/vim-easydir'
 Plug 'godlygeek/tabular'
 Plug 'jparise/vim-graphql'

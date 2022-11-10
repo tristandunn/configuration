@@ -46,26 +46,15 @@ if [ -z "$TMUX" ]; then
     # Create a new session.
     tmux new-session -d -s "$SESSION_NAME" -x "$(tput cols)" -y "$(tput lines)"
 
-    # Rename the window.
-    tmux rename-window -t 1 code
-
     # Split window for test and terminal panes.
     tmux split-window -t 1 -hl 84
     tmux split-window -t 2 -vl 16
 
-    # Select the vim pane.
+    # Select the code pane.
     tmux select-pane -t 1
 
-    # Wait for the panes to initialize.
-    sleep 0.5
-
-    # Launch vim and attach vim-tmux-runner to the second pane. If there's a
-    # `.todo` file, open it.
-    if [ -f .todo ]; then
-      tmux send-keys -t 1 'vim -c "silent VtrAttachToPane 2" .todo' C-m
-    else
-      tmux send-keys -t 1 'vim -c "silent VtrAttachToPane 2" .' C-m
-    fi
+    # Launch vim in the code pane.
+    tmux send-keys -t 1 'vim .' C-m
 
     # Display the git status in the terminal pane.
     tmux send-keys -t 3 'git status' C-m
