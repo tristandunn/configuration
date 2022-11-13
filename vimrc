@@ -156,16 +156,16 @@ map <Leader>s :call RunAllSpecs()<CR>
 map <Leader>t :call RunCurrentSpecFile()<CR>
 
 " Shortcuts for git commands.
-map <Leader>gd  :call ExecuteCommandInPane("git diff", 1)<CR>
-map <Leader>gdc :call ExecuteCommandInPane("git diff --cached", 1)<CR>
+map <Leader>gd  :call ExecuteCommandInPane("git diff", 1, 1)<CR>
+map <Leader>gdc :call ExecuteCommandInPane("git diff --cached", 1, 1)<CR>
 map <Leader>gp  :call ExecuteCommandInPane("git pull")<CR>
 map <Leader>gs  :call ExecuteCommandInPane("git status")<CR>
 
 " Shortcuts for Rails commands.
-map <Leader>bo :call ExecuteCommandInPane("bundle outdated", 0, 2)<CR>
-map <Leader>r  :call ExecuteCommandInPane("rubocop", 0, 2)<CR>
-map <Leader>rc :call ExecuteCommandInPane("bundle exec rake check", 0, 2)<CR>
-map <Leader>yo :call ExecuteCommandInPane("yarn outdated", 0, 2)<CR>
+map <Leader>bo :call ExecuteCommandInPane("bundle outdated", 0, 0, 2)<CR>
+map <Leader>r  :call ExecuteCommandInPane("rubocop", 0, 0, 2)<CR>
+map <Leader>rc :call ExecuteCommandInPane("bundle exec rake check", 0, 0, 2)<CR>
+map <Leader>yo :call ExecuteCommandInPane("yarn outdated", 1, 0, 2)<CR>
 " }}}
 " Search {{{
 set incsearch " Search as characters are entered.
@@ -311,7 +311,8 @@ function! ExecuteCommandInPane(...)
 
   let command = a:1
   let focus   = a:0 < 2 ? 0 : a:2
-  let pane    = a:0 < 3 ? 3 : a:3
+  let zoom    = a:0 < 3 ? 0 : a:3
+  let pane    = a:0 < 4 ? 3 : a:4
 
   call system("tmux send-keys -t " . pane . " C-c")
   call system("tmux send-keys -t " . pane . " clear Enter")
@@ -319,6 +320,9 @@ function! ExecuteCommandInPane(...)
 
   if focus
     call system("tmux select-pane -t " . pane)
+  end
+
+  if zoom
     call system("tmux resize-pane -t " . pane . " -Z")
   end
 endfunction
