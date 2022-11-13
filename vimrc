@@ -313,6 +313,7 @@ function! ExecuteCommandInPane(...)
   let focus   = a:0 < 2 ? 0 : a:2
   let pane    = a:0 < 3 ? 3 : a:3
 
+  call system("tmux send-keys -t " . pane . " C-c")
   call system("tmux send-keys -t " . pane . " clear Enter")
   call system("tmux send-keys -t " . pane . " '" . command . "' Enter")
 
