@@ -291,7 +291,7 @@ au BufNewFile,BufRead *.es6 set filetype=javascript
 " }}}
 " tmux {{{
 " Run RSpec in the second pane.
-let g:rspec_command = "call ExecuteCommandInPane(\"rspec {spec}\", 0, 2)"
+let g:rspec_command = "call ExecuteCommandInPane(\"rspec {spec}\", 0, 0, 2)"
 
 " Automatically rebalance windows on vim resize.
 autocmd VimResized * :wincmd =
