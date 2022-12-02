@@ -14,6 +14,7 @@ install:
 	make $(HOME)/.tool-versions
 	make $(HOME)/.vim/autoload
 	make $(HOME)/.vim/colors
+	make $(HOME)/.vim/coc-settings.json
 	make $(HOME)/.vimrc
 	make $(HOME)/.zlogin
 	make $(HOME)/.zshenv
@@ -42,6 +43,7 @@ uninstall:
 	-test -L $(HOME)/.tool-versions && rm -fv $(HOME)/.tool-versions
 	-test -L $(HOME)/.vim/autoload/plug.vim && rm -fvr $(HOME)/.vim/autoload/plug.vim
 	-test -L $(HOME)/.vim/colors/ir_black.vim && rm -fvr $(HOME)/.vim/colors/ir_black.vim
+	-test -L $(HOME)/.vim/coc-settings.json && rm -fvr $(HOME)/.vim/coc-settings.json
 	-test -L $(HOME)/.vimrc && rm -fv $(HOME)/.vimrc
 	-test -L $(HOME)/.zlogin && rm -fv $(HOME)/.zlogin
 	-test -L $(HOME)/.zshenv && rm -fv $(HOME)/.zshenv
@@ -88,6 +90,10 @@ $(HOME)/.vim/autoload:
 $(HOME)/.vim/colors:
 	mkdir -p $(HOME)/.vim/colors && \
 		ln -sv $(CWD)/vim/colors/ir_black.vim $(HOME)/.vim/colors/ir_black.vim
+
+$(HOME)/.vim/coc-settings.json:
+	mkdir -p $(HOME)/.vim && \
+		ln -sv $(CWD)/vim/coc-settings.json $(HOME)/.vim/coc-settings.json
 
 $(HOME)/.vimrc:
 	ln -sv $(CWD)/vimrc $(HOME)/.vimrc
