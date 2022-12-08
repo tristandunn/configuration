@@ -47,8 +47,13 @@ if [ -z "$TMUX" ]; then
     tmux new-session -d -s "$SESSION_NAME" -x "$(tput cols)" -y "$(tput lines)"
 
     # Split window for test and terminal panes.
-    tmux split-window -t 1 -hl 84
-    tmux split-window -t 2 -vl 16
+    if [ "$(hostname)" == "MacBook-Air" ]; then
+      tmux split-window -t 1 -hl 60
+      tmux split-window -t 2 -vl 16
+    else
+      tmux split-window -t 1 -hl 84
+      tmux split-window -t 2 -vl 16
+    fi
 
     # Select the code pane.
     tmux select-pane -t 1

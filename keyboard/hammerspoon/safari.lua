@@ -30,8 +30,15 @@ function watchApplication(application)
 
     -- Only reposition browser windows.
     if string.match(title, "Untitled") then
-      -- Move the window to the default size and position.
-      hs.window.default(window)
+      local laptop = hs.screen.primaryScreen():fullFrame().w == 1470.0
+
+      if laptop then
+        -- Move the window to the full screen size.
+        hs.window.fullscreen(window)
+      else
+        -- Move the window to the default size and position.
+        hs.window.default(window)
+      end
     end
   end)
 
