@@ -321,7 +321,7 @@ function! ExecuteCommandInPane(...)
 
   call system("tmux send-keys -t " . pane . " C-c")
   call system("tmux send-keys -t " . pane . " clear Enter")
-  call system("tmux send-keys -t " . pane . " \"" . command . "\" Enter")
+  call system("tmux send-keys -t " . pane . " " . fnameescape(command) . " Enter")
 
   if focus
     call system("tmux select-pane -t " . pane)
