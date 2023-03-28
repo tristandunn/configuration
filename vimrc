@@ -150,16 +150,16 @@ noremap <Leader>9 :tabn 9<CR>
 noremap <Leader>0 :tablast<CR>
 
 " Shortcuts for the RSpec plug-in.
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>n :call RunNearestSpec()<CR>
-map <Leader>s :call RunAllSpecs()<CR>
-map <Leader>t :call RunCurrentSpecFile()<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>n :TestNearest<CR>
+nmap <silent> <leader>s :TestSuite<CR>
+nmap <silent> <leader>t :TestFile<CR>
 
 " Shortcuts for git commands.
 map <Leader>gd  :call ExecuteCommandInPane("git diff", 1, 1)<CR>
 map <Leader>gdc :call ExecuteCommandInPane("git diff --cached", 1, 1)<CR>
-map <Leader>gp  :call ExecuteCommandInPane("git pull")<CR>
-map <Leader>gs  :call ExecuteCommandInPane("git status")<CR>
+map <Leader>gp  :call ExecuteCommandInPane("git pull", 0, 0, 3)<CR>
+map <Leader>gs  :call ExecuteCommandInPane("git status", 0, 0, 3)<CR>
 
 " Shortcuts for Rails commands.
 map <Leader>bo :call ExecuteCommandInPane("bundle outdated", 0, 0, 2)<CR>
@@ -279,6 +279,10 @@ let g:endwise_no_mappings = 1
 
 " Only jump to references of the same file type.
 let g:any_jump_references_only_for_current_filetype = 1
+
+" Customize the mocha executable and file pattern for vim-test.
+let g:test#javascript#mocha#executable = 'bin/mocha'
+let g:test#javascript#mocha#file_pattern = 'spec\/javascripts\/.*\.spec\.js$'
 " }}}
 " Formats {{{
 " Enable spell check and set text width for Markdown files.
@@ -313,11 +317,11 @@ function! ExecuteCommandInPane(...)
   let command = a:1
   let focus   = a:0 < 2 ? 0 : a:2
   let zoom    = a:0 < 3 ? 0 : a:3
-  let pane    = a:0 < 4 ? 3 : a:4
+  let pane    = a:0 < 4 ? 2 : a:4
 
   call system("tmux send-keys -t " . pane . " C-c")
   call system("tmux send-keys -t " . pane . " clear Enter")
-  call system("tmux send-keys -t " . pane . " '" . command . "' Enter")
+  call system("tmux send-keys -t " . pane . " \"" . command . "\" Enter")
 
   if focus
     call system("tmux select-pane -t " . pane)
@@ -327,6 +331,10 @@ function! ExecuteCommandInPane(...)
     call system("tmux resize-pane -t " . pane . " -Z")
   end
 endfunction
+
+" Use the custom pane runner in vim-test.
+let g:test#custom_strategies = {"pane": function("ExecuteCommandInPane")}
+let g:test#strategy = "pane"
 " }}}
 " Bundles {{{
 let g:projectionist_heuristics = {
@@ -349,13 +357,13 @@ Plug 'othree/html5.vim', { 'for' : ['eruby', 'html'] }
 Plug 'pangloss/vim-javascript', { 'for' : ['eruby', 'html', 'javascript'] }
 Plug 'pechorin/any-jump.vim'
 Plug 'slim-template/vim-slim', { 'for' : 'slim' }
-Plug 'thoughtbot/vim-rspec', { 'for' : 'ruby' }
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise', { 'for' : 'ruby' }
 Plug 'tpope/vim-markdown', { 'for' : 'markdown' }
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby', { 'for' : 'ruby' }
+Plug 'vim-test/vim-test'
 Plug 'w0rp/ale'
 Plug 'wsdjeg/vim-fetch'
 
