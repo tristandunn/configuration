@@ -150,10 +150,10 @@ noremap <Leader>9 :tabn 9<CR>
 noremap <Leader>0 :tablast<CR>
 
 " Shortcuts for the RSpec plug-in.
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>n :TestNearest<CR>
-nmap <silent> <leader>s :TestSuite<CR>
-nmap <silent> <leader>t :TestFile<CR>
+nmap <silent> <Leader>l :TestLast<CR>
+nmap <silent> <Leader>n :TestNearest<CR>
+nmap <silent> <Leader>s :TestSuite<CR>
+nmap <silent> <Leader>t :TestFile<CR>
 
 " Shortcuts for git commands.
 map <Leader>gd  :call ExecuteCommandInPane("git diff", 1, 1)<CR>
