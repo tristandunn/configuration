@@ -156,6 +156,12 @@ nmap <silent> <Leader>s :TestSuite<CR>
 nmap <silent> <Leader>t :TestFile<CR>
 
 " Shortcuts for git commands.
+function! GitAddFile()
+  call ExecuteCommandInPane("git add " . expand("%:~:."), 0, 0, 3)
+  call ExecuteCommandInPane("git status", 0, 0, 3)
+endfunction
+
+map <Leader>ga  :call GitAddFile()<CR>
 map <Leader>gd  :call ExecuteCommandInPane("git diff", 1, 1)<CR>
 map <Leader>gdc :call ExecuteCommandInPane("git diff --cached", 1, 1)<CR>
 map <Leader>gp  :call ExecuteCommandInPane("git pull", 0, 0, 3)<CR>
