@@ -8,6 +8,7 @@
   pl = pull
   ps = push
   plre = pull --rebase
+  s = switch
   st = status
   up = !git fetch origin && git rebase origin/`git default-branch-name`
 [color]
