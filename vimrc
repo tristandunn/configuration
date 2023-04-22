@@ -159,6 +159,7 @@ nmap <silent> <Leader>t :TestFile<CR>
 function! GitAddFile()
   call ExecuteCommandInPane("git add " . expand("%:~:."), 0, 0, 3)
   call ExecuteCommandInPane("git status", 0, 0, 3)
+  GitGutter
 endfunction
 
 map <Leader>ga  :call GitAddFile()<CR>
