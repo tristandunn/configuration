@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 
 class Old
+  UPGRADE_ARGUMENTS = %w(up update upgrade).freeze
+
   def initialize(command)
     @command = command
   end
@@ -67,12 +69,12 @@ class Old
   end
 
   def update
-    puts("brew upgrade #{upgrades.join(" ")}")
-    puts("brew reinstall #{reinstalls.join(" ")}")
+    puts("brew upgrade #{upgrades.join(" ")}") if upgrades.any?
+    puts("brew reinstall #{reinstalls.join(" ")}") if reinstalls.any?
   end
 
   def update?
-    ARGV.first == "update"
+    UPGRADE_ARGUMENTS.include?(ARGV.first)
   end
 
   def upgrades
