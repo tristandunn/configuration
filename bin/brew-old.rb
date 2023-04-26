@@ -65,7 +65,7 @@ class Old
   end
 
   def reinstalls
-    @reinstalls ||= (uses & leaves)
+    @reinstalls ||= (uses & leaves) - upgrades
   end
 
   def update
