@@ -65,3 +65,11 @@ precmd() {
 
   printf "\e]0;$name\a"
 }
+
+git() {
+  if [[ $1 == "d" || $1 == "dc" ]]; then
+    clear
+  fi
+
+  command git "$@"
+}
