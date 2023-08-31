@@ -2,6 +2,7 @@
 alias c="clear"
 alias ls="ls -l"
 alias rm="trash"
+alias vim="nvim"
 
 # git
 alias g="git"
