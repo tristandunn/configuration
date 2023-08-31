@@ -62,11 +62,6 @@ endif
 
 let colors_name = "ir_black"
 
-" Custom vim-gitgutter highlighting.
-highlight SignColumn guibg=black gui=NONE ctermfg=black ctermbg=NONE cterm=NONE
-
-"hi Example         guifg=NONE        guibg=NONE        gui=NONE      ctermfg=NONE        ctermbg=NONE        cterm=NONE
-
 " General colors
 hi Normal           guifg=#f6f3e8     guibg=black       gui=NONE      ctermfg=NONE        ctermbg=NONE        cterm=NONE
 hi NonText          guifg=#070707     guibg=black       gui=NONE      ctermfg=black       ctermbg=NONE        cterm=NONE
@@ -212,4 +207,17 @@ hi link javaScriptNumber      Number
 hi  link csXmlTag             Keyword
 
 
-" Special for PHP
+" Spelling.
+highlight clear SpellBad
+highlight SpellBad ctermbg=lightred ctermfg=black
+
+" Pop-up menu.
+highlight Pmenu ctermbg=black ctermfg=grey
+highlight PmenuSel ctermbg=black ctermfg=white cterm=bold
+
+
+" Custom gitsigns highlighting.
+highlight GitSignsAdd guibg=black gui=NONE ctermfg=green ctermbg=NONE cterm=NONE
+highlight GitSignsChange guibg=black gui=NONE ctermfg=yellow ctermbg=NONE cterm=NONE
+highlight GitSignsDelete guibg=black gui=NONE ctermfg=red ctermbg=NONE cterm=NONE
+highlight SignColumn guibg=black gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE

@@ -61,8 +61,8 @@ if [ -z "$TMUX" ]; then
     # Select the code pane.
     tmux select-pane -t 1
 
-    # Launch vim in the code pane.
-    tmux send-keys -t 1 'vim .' C-m
+    # Launch neovim in the code pane.
+    tmux send-keys -t 1 'nvim .' C-m
 
     # Display the git status in the terminal pane.
     tmux send-keys -t 3 'git status' C-m

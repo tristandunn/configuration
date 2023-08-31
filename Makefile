@@ -3,6 +3,7 @@ CWD=$(shell pwd)
 install:
 	make $(HOME)/.aliases
 	make $(HOME)/.config/kitty/kitty.conf
+	make $(HOME)/.config/nvim/init.lua
 	make $(HOME)/.gemrc
 	make $(HOME)/.gitconfig
 	make $(HOME)/.hushlogin
@@ -12,10 +13,6 @@ install:
 	make $(HOME)/.rspec
 	make $(HOME)/.tmux.conf
 	make $(HOME)/.tool-versions
-	make $(HOME)/.vim/autoload
-	make $(HOME)/.vim/colors
-	make $(HOME)/.vim/coc-settings.json
-	make $(HOME)/.vimrc
 	make $(HOME)/.zlogin
 	make $(HOME)/.zshenv
 	make $(HOME)/.zshrc
@@ -32,6 +29,7 @@ homebrew-bundle:
 uninstall:
 	-test -L $(HOME)/.aliases && rm -fv $(HOME)/.aliases
 	-test -L $(HOME)/.config/kitty/kitty.conf && rm -fv $(HOME)/.config/kitty/kitty.conf
+	-test -L $(HOME)/.config/nvim/init.lua && rm -fv $(HOME)/.config/nvim
 	-test -L $(HOME)/.gemrc && rm -fv $(HOME)/.gemrc
 	-test -L $(HOME)/.gitconfig && rm -fv $(HOME)/.gitconfig
 	-test -L $(HOME)/.hushlogin && rm -fv $(HOME)/.hushlogin
@@ -41,10 +39,6 @@ uninstall:
 	-test -L $(HOME)/.rspec && rm -fv $(HOME)/.rspec
 	-test -L $(HOME)/.tmux.conf && rm -fv $(HOME)/.tmux.conf
 	-test -L $(HOME)/.tool-versions && rm -fv $(HOME)/.tool-versions
-	-test -L $(HOME)/.vim/autoload/plug.vim && rm -fvr $(HOME)/.vim/autoload/plug.vim
-	-test -L $(HOME)/.vim/colors/ir_black.vim && rm -fvr $(HOME)/.vim/colors/ir_black.vim
-	-test -L $(HOME)/.vim/coc-settings.json && rm -fvr $(HOME)/.vim/coc-settings.json
-	-test -L $(HOME)/.vimrc && rm -fv $(HOME)/.vimrc
 	-test -L $(HOME)/.zlogin && rm -fv $(HOME)/.zlogin
 	-test -L $(HOME)/.zshenv && rm -fv $(HOME)/.zshenv
 	-test -L $(HOME)/.zshrc && rm -fv $(HOME)/.zshrc
@@ -55,6 +49,14 @@ $(HOME)/.aliases:
 $(HOME)/.config/kitty/kitty.conf:
 	mkdir -p $(HOME)/.config/kitty && \
 		ln -sv $(CWD)/kitty.conf $(HOME)/.config/kitty/kitty.conf
+
+$(HOME)/.config/nvim/init.lua:
+	mkdir -p $(HOME)/.config/nvim && \
+		mkdir -p $(HOME)/.config/nvim/colors && \
+		mkdir -p $(HOME)/.config/nvim/lua && \
+		ln -sv $(CWD)/nvim/init.lua $(HOME)/.config/nvim/init.lua && \
+		ln -sv $(CWD)/nvim/colors/ir_black.vim $(HOME)/.config/nvim/colors/ir_black.vim && \
+		ln -sv $(CWD)/nvim/plug-ins $(HOME)/.config/nvim/lua/plug-ins
 
 $(HOME)/.gemrc:
 	ln -sv $(CWD)/gemrc $(HOME)/.gemrc
@@ -82,21 +84,6 @@ $(HOME)/.tmux.conf:
 
 $(HOME)/.tool-versions:
 	ln -sv $(CWD)/tool-versions $(HOME)/.tool-versions
-
-$(HOME)/.vim/autoload:
-	mkdir -p $(HOME)/.vim/autoload && \
-		ln -sv $(CWD)/vim/autoload/plug.vim $(HOME)/.vim/autoload/plug.vim
-
-$(HOME)/.vim/colors:
-	mkdir -p $(HOME)/.vim/colors && \
-		ln -sv $(CWD)/vim/colors/ir_black.vim $(HOME)/.vim/colors/ir_black.vim
-
-$(HOME)/.vim/coc-settings.json:
-	mkdir -p $(HOME)/.vim && \
-		ln -sv $(CWD)/vim/coc-settings.json $(HOME)/.vim/coc-settings.json
-
-$(HOME)/.vimrc:
-	ln -sv $(CWD)/vimrc $(HOME)/.vimrc
 
 $(HOME)/.zlogin:
 	ln -sv $(CWD)/zlogin $(HOME)/.zlogin

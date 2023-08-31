@@ -1,8 +1,8 @@
 # Disable sessions.
 export SHELL_SESSIONS_DISABLE=1
 
-# Use vim as the visual editor.
-export VISUAL=vim
+# Use neovim as the visual editor.
+export VISUAL=nvim
 export EDITOR=$VISUAL
 
 # Keep more history.
