@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# frozen_string_literal: true
+
 class Old
   UPGRADE_ARGUMENTS = %w(up update upgrade).freeze
 
@@ -68,7 +70,12 @@ class Old
     @reinstalls ||= (uses & leaves) - upgrades
   end
 
+  def uninstalls
+    @uninstalls ||= (dependencies - leaves - upgrades)
+  end
+
   def update
+    puts("brew uninstall --ignore-dependencies #{uninstalls.join(" ")}") if uninstalls.any?
     puts("brew upgrade #{upgrades.join(" ")}") if upgrades.any?
     puts("brew reinstall #{reinstalls.join(" ")}") if reinstalls.any?
   end
