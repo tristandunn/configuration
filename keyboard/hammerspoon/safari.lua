@@ -30,7 +30,8 @@ function watchApplication(application)
 
     -- Only reposition browser windows.
     if string.match(title, "Untitled") then
-      local laptop = hs.screen.primaryScreen():fullFrame().w == 1470.0
+      local width  = hs.screen.primaryScreen():fullFrame().w
+      local laptop = width == 1470.0 or width == 1728.0
 
       if laptop then
         -- Move the window to the full screen size.
