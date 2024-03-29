@@ -32,3 +32,5 @@
 [user]
   name = Tristan Dunn
   email = tristanzdunn@gmail.com
+[includeIf "gitdir:~/Sites/"]
+  path = ~/Sites/gitconfig.inc
