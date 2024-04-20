@@ -99,7 +99,7 @@ return {
 
     -- Set up LSP servers.
     lspconfig.rubocop.setup({})
-    lspconfig.ruby_ls.setup({})
+    lspconfig.ruby_lsp.setup({})
     lspconfig.lua_ls.setup({
       on_init = function(client)
         client.notify(
