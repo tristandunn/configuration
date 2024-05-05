@@ -98,8 +98,11 @@ return {
     )
 
     -- Set up LSP servers.
+    lspconfig.eslint.setup({})
+    lspconfig.jsonls.setup({})
     lspconfig.rubocop.setup({})
     lspconfig.ruby_lsp.setup({})
+    lspconfig.stylelint_lsp.setup({})
     lspconfig.lua_ls.setup({
       on_init = function(client)
         client.notify(
