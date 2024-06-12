@@ -174,6 +174,10 @@ highlight SpellBad ctermbg=lightred ctermfg=black
 highlight Pmenu ctermbg=black ctermfg=grey
 highlight PmenuSel ctermbg=black ctermfg=white cterm=bold
 
+" Tabs.
+hi TabLine guifg=white guibg=grey
+hi TabLineSel guifg=white guibg=black
+
 " Custom gitsigns highlighting.
 highlight GitSignsAdd guibg=black gui=NONE ctermfg=green ctermbg=NONE cterm=NONE
 highlight GitSignsChange guibg=black gui=NONE ctermfg=yellow ctermbg=NONE cterm=NONE
