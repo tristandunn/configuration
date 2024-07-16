@@ -1,5 +1,16 @@
-send_escape        = false
-previous_modifiers = {}
+local send_escape = false
+local previous_modifiers = {}
+
+-- Count the number entries in a table.
+local count = function(table)
+  local length = 0
+
+  for _ in pairs(table) do
+    length = length + 1
+  end
+
+  return length
+end
 
 modifier_handler = function(evt)
   local current_modifiers = evt:getFlags()
@@ -26,23 +37,12 @@ modifier_handler = function(evt)
   return false
 end
 
--- Count the number entries in a table.
-count = function(table)
-  local length = 0
-
-  for _ in pairs(table) do
-    length = length + 1
-  end
-
-  return length
-end
-
 -- Call the modifier handler when a modifier key is pressed or released.
-modifier_tap = hs.eventtap.new({hs.eventtap.event.types.flagsChanged}, modifier_handler)
+modifier_tap = hs.eventtap.new({ hs.eventtap.event.types.flagsChanged }, modifier_handler)
 modifier_tap:start()
 
 -- If any non-modifier key is pressed, unmark escape to be sent.
-non_modifier_tap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, function(evt)
+non_modifier_tap = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function(evt)
   send_escape = false
   return false
 end)

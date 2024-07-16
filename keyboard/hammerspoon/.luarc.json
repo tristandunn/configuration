@@ -1,0 +1,8 @@
+{
+  "diagnostics.globals": [
+    "hs"
+  ],
+  "format.defaultConfig": {
+    "align_continuous_assign_statement": "false"
+  }
+}

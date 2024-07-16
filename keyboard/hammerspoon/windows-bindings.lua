@@ -1,5 +1,5 @@
 return {
-  modifiers = {"ctrl"},
+  modifiers = { "ctrl" },
   trigger   = "s",
   mappings  = {
     { {}, "a",      "increase" },

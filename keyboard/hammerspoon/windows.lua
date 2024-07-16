@@ -3,7 +3,7 @@ hs.window.animationDuration = 0
 
 -- Move window to the center of the screen.
 function hs.window.center(window)
-  local frame  = window:frame()
+  local frame = window:frame()
   local screen = window:screen():fullFrame()
 
   frame.x = (screen.w / 2) - (frame.w / 2)
@@ -14,7 +14,7 @@ end
 
 -- Resize window to 80% of the screen and center.
 function hs.window.default(window)
-  local frame  = window:frame()
+  local frame = window:frame()
   local screen = window:screen():fullFrame()
 
   frame.w = (screen.w / 10) * 8
@@ -27,7 +27,7 @@ end
 
 -- Move and resize the window to the bottom half of the screen.
 function hs.window.bottom(window)
-  local frame  = window:frame()
+  local frame = window:frame()
   local screen = window:screen():fullFrame()
 
   frame.x = screen.x
@@ -40,7 +40,7 @@ end
 
 -- Decrease the window size by 10% of the screen size.
 function hs.window.decrease(window)
-  local frame  = window:frame()
+  local frame = window:frame()
   local screen = window:screen():fullFrame()
 
   frame.x = frame.x + (screen.w * 0.05)
@@ -53,7 +53,7 @@ end
 
 -- Increase the window size by 10% of the screen size.
 function hs.window.increase(window)
-  local frame  = window:frame()
+  local frame = window:frame()
   local screen = window:screen():fullFrame()
 
   frame.x = frame.x - (screen.w * 0.05)
@@ -66,7 +66,7 @@ end
 
 -- Move and resize the window to the left half of the screen.
 function hs.window.left(window)
-  local frame  = window:frame()
+  local frame = window:frame()
   local screen = window:screen():fullFrame()
 
   frame.x = screen.x
@@ -79,7 +79,7 @@ end
 
 -- Resize window to 100% of the screen.
 function hs.window.fullscreen(window)
-  local frame  = window:frame()
+  local frame = window:frame()
   local screen = window:screen():fullFrame()
 
   frame.w = screen.w
@@ -92,7 +92,7 @@ end
 
 -- Move and resize the window to the right half of the screen.
 function hs.window.right(window)
-  local frame  = window:frame()
+  local frame = window:frame()
   local screen = window:screen():fullFrame()
 
   frame.x = screen.x + (screen.w / 2)
@@ -105,7 +105,7 @@ end
 
 -- Move and resize the window to the top half of the screen.
 function hs.window.top(window)
-  local frame  = window:frame()
+  local frame = window:frame()
   local screen = window:screen():fullFrame()
 
   frame.x = screen.x
@@ -117,7 +117,7 @@ function hs.window.top(window)
 end
 
 -- Create a window layout mode.
-windowLayoutModal = hs.hotkey.modal.new({}, "F16")
+local windowLayoutModal = hs.hotkey.modal.new({}, "F16")
 
 -- Bind the given key to call the given function and exit the window layout mode.
 function windowLayoutModal.bindWithAutomaticExit(modal, modifiers, key, fn)
@@ -130,7 +130,7 @@ end
 -- Load the window bindings.
 local _, bindings = pcall(require, "keyboard.windows-bindings")
 local modifiers = bindings.modifiers
-local trigger   = bindings.trigger
+local trigger = bindings.trigger
 
 -- Bind the window bindings to the window layout mode and exit after execution.
 for index, mapping in ipairs(bindings.mappings) do

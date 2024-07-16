@@ -30,7 +30,7 @@ function watchApplication(application)
 
     -- Only reposition browser windows.
     if string.match(title, "Untitled") then
-      local width  = hs.screen.primaryScreen():fullFrame().w
+      local width = hs.screen.primaryScreen():fullFrame().w
       local laptop = width == 1470.0 or width == 1728.0
 
       if laptop then
@@ -44,11 +44,11 @@ function watchApplication(application)
   end)
 
   -- Start watching for windows being created.
-  safariWatcher:start({hs.uielement.watcher.windowCreated})
+  safariWatcher:start({ hs.uielement.watcher.windowCreated })
 end
 
 -- Create an application watcher to watch for Safari launching.
-applicationsWatcherForSafari = hs.application.watcher.new(onApplicationEvent)
+local applicationsWatcherForSafari = hs.application.watcher.new(onApplicationEvent)
 
 -- Start watching all applications.
 applicationsWatcherForSafari:start()
