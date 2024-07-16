@@ -91,6 +91,7 @@ vim.keymap.set("i", "kk", "<ESC>k")
 
 -- Shortcuts for Rails commands.
 vim.keymap.set("n", "<Leader>bo", ":ExecuteCommandInPane bundle\\ outdated 0 0 2<CR>")
+vim.keymap.set("n", "<Leader>bu", ":ExecuteCommandInPane bundle\\ update 0 0 2<CR>")
 vim.keymap.set("n", "<Leader>r", ":ExecuteCommandInPane rubocop 0 0 2<CR>")
 vim.keymap.set("n", "<Leader>rc", ":ExecuteCommandInPane bundle\\ exec\\ rake\\ check 0 0 2<CR>")
 vim.keymap.set("n", "<Leader>yo", ":ExecuteCommandInPane yarn\\ outdated 1 0 2<CR>")
