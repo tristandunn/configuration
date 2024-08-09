@@ -4,17 +4,19 @@
 set -eo pipefail
 
 # Install the required applications.
-brew bundle check --file keyboard/Brewfile ||
-  brew bundle --file keyboard/Brewfile
+brew bundle check --file $PWD/hammerspoon/Brewfile ||
+  brew bundle --file $PWD/hammerspoon/Brewfile
 
 # Prepare custom settings for Hammerspoon.
 mkdir -p ~/.hammerspoon
+
+# Link the configuration directories.
+ln -sfn "$PWD/hammerspoon/keyboard" ~/.hammerspoon/keyboard
 
 # Load the keyboard configuration in the Hammerspoon initializer.
 if ! grep -sq "require(\"keyboard\")" ~/.hammerspoon/init.lua; then
   echo "require(\"keyboard\")" >> ~/.hammerspoon/init.lua
 fi
-ln -sfn $PWD/keyboard/hammerspoon ~/.hammerspoon/keyboard
 
 # Disable the Dock icon for Hammerspoon.
 defaults write org.hammerspoon.Hammerspoon MJShowDockIconKey -bool FALSE

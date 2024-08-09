@@ -1,23 +1,26 @@
-# Keyboard Customization
+# Hammerspoon
 
-Adds support for executing scripts with [Hammerspoon][]. Based on
-[jasonrudolph/keyboard][].
-
-[Hammerspoon]: https://github.com/Hammerspoon/hammerspoon
-[jasonrudolph/keyboard]: https://github.com/jasonrudolph/keyboard
+My custom [Hammerspoon][] configuration.
 
 ## Installation
+
+Run the setup script to install the application and link the configuration.
+
+    bin/setup
+
+## Customizations
+
+### Keyboard
+
+Adds support for moving and resizing windows with Hammerspoon. Based on
+[jasonrudolph/keyboard][].
+
+#### Usage
 
 Go to `System Preferences -> Keyboard -> Modifier Keys` and to change `Caps
 Lock` to send `Control` instead.
 
-Run the setup script to install the applications and link configuration.
-
-    bin/setup
-
-## Usage
-
-### Window Mode
+##### Window Mode
 
 Use `Control+s` to enable window mode, followed by a key to modify a window size
 and position.
@@ -34,8 +37,11 @@ l      | Move and resize the window to the right half of the screen.
 return | Resize window the fill the entire screen.
 s      | Decrease the window size by 10% of the screen size.
 
-### Utilities
+##### Utilities
 
 Shortcut    | Description
 ----------- | -----------
 Control + ` | Reload the Hammerspoon configuration.
+
+[Hammerspoon]: https://github.com/Hammerspoon/hammerspoon
+[jasonrudolph/keyboard]: https://github.com/jasonrudolph/keyboard
