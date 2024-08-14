@@ -49,8 +49,10 @@ if [ -z "$TMUX" ]; then
     # Rename the window.
     tmux rename-window -t 1 code
 
+    DIMENSIONS=$(osascript -e 'Tell application "Finder" to get bounds of window of desktop')
+
     # Split window for test and terminal panes.
-    if [ "$(hostname)" == "MacBook-Air" ]; then
+    if [ "$DIMENSIONS" == "0, 0, 1470, 956" ]; then
       tmux split-window -t 1 -hl 60
       tmux split-window -t 2 -vl 16
     else
