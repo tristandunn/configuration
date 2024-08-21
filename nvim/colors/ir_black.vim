@@ -168,7 +168,13 @@ hi link javaScriptNumber      Number
 
 " Spelling.
 highlight clear SpellBad
-highlight SpellBad ctermbg=lightred ctermfg=black
+highlight SpellBad guibg=lightred guifg=black
+highlight clear SpellCap
+highlight SpellCap guibg=lightblue guifg=black
+highlight clear SpellLocal
+highlight SpellLocal guibg=yellow guifg=black
+highlight clear SpellRare
+highlight SpellRare guibg=red guifg=black
 
 " Pop-up menu.
 highlight Pmenu ctermbg=black ctermfg=grey
