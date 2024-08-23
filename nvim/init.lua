@@ -2,6 +2,7 @@
 -- Assume POSIX shell in vim.
 vim.g.is_posix      = true
 
+vim.opt.exrc        = true  -- Enable local .nvim.lua files.
 vim.opt.mouse       = "a"   -- Enable mouse support in all modes.
 vim.opt.swapfile    = false -- No swap files.
 vim.opt.writebackup = false -- Don't write backup files.
