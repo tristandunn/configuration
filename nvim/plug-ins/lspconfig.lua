@@ -36,7 +36,12 @@ return {
         documentation = cmp.config.disable
       },
       formatting = {
-        fields = { "menu", "abbr", "kind" }
+        fields = { "abbr", "kind" },
+        format = function(_, item)
+          item.abbr = string.sub(item.abbr, 1, 32)
+
+          return item
+        end
       },
       mapping = {
         ["<Up>"]    = cmp.mapping.select_prev_item(select_opts),
