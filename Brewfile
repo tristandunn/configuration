@@ -18,6 +18,5 @@ brew "ripgrep"
 brew "shellcheck"
 brew "tmux"
 
-cask "chromedriver"
 cask "kitty"
 cask "obsidian"
