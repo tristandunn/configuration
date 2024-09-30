@@ -26,6 +26,9 @@ export HOMEBREW_NO_ANALYTICS=1
 # No hints for Homebrew.
 export HOMEBREW_NO_ENV_HINTS=1
 
+# Disable statistics from Selenium Manager.
+export SE_AVOID_STATS=true
+
 # Load private Rubygems configuration.
 if [ -f "${HOME}/.gemrc.private" ]; then
   export GEMRC="${HOME}/.gemrc.private"
