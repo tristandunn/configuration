@@ -259,6 +259,14 @@ require("lazy").setup({
     opts         = require("plug-ins.telescope").opts
   },
 
+  -- Automatically create directories when needed.
+  {
+    "pezcoder/auto-create-directory.nvim",
+    init = function()
+      require("auto-create-directory").setup()
+    end
+  },
+
   -- File mapping projections.
   {
     "tpope/vim-projectionist",
