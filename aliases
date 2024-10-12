@@ -14,7 +14,7 @@ alias br="rake_command"
 
 # Rails
 alias rc="console_command"
-alias rs="foreman_command"
+alias rs="server_command"
 alias rake="rake_command"
 alias rspec="rspec_command"
 alias migrate="rake_command db:migrate"
@@ -42,15 +42,15 @@ console_command() {
   fi
 }
 
-foreman_command() {
-  if [ -f Procfile.dev ]; then
+server_command() {
+  if [ -f bin/dev ]; then
+    bin/dev
+  elif [ -f Procfile.dev ]; then
     foreman start -f Procfile.dev
+  elif [ -f Procfile ]; then
+    foreman start
   else
-    if [ -f Procfile ]; then
-      foreman start
-    else
-      rails_command server
-    fi
+    rails_command server
   fi
 }
 
@@ -81,12 +81,8 @@ rspec_command() {
 rubocop_command() {
   if [ -f bin/rubocop ]; then
     bin/rubocop -P "$@"
-  else
-    if [ -f Gemfile ]; then
-      bundle exec rubocop -P "$@"
-    else
-      rubocop -P "$@"
-    fi
+  elif [ -f Gemfile ]; then
+    bundle exec rubocop -P "$@"
   fi
 }
 
