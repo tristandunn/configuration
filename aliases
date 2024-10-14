@@ -44,7 +44,19 @@ console_command() {
 }
 
 deploy_command() {
-  eval $(cat .env) bin/kamal deploy "$@"
+  if [ -f bin/kamal ]; then
+    if [ -f .env ]; then
+      if [ -z "$1" ]; then
+        eval $(cat .env) bin/kamal deploy "$@"
+      else
+        eval $(cat .env) bin/kamal "$@"
+      fi
+    else
+      echo "No environment variables found."
+    fi
+  else
+    echo "No bin/kamal script found."
+  fi
 }
 
 server_command() {
