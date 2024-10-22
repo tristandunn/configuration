@@ -16,6 +16,7 @@ alias br="rake_command"
 alias rc="console_command"
 alias rs="server_command"
 alias rake="rake_command"
+alias kamal="kamal_command"
 alias rspec="rspec_command"
 alias deploy="deploy_command"
 alias migrate="rake_command db:migrate"
@@ -44,15 +45,15 @@ console_command() {
 }
 
 deploy_command() {
+  kamal_command deploy "$@"
+}
+
+kamal_command() {
   if [ -f bin/kamal ]; then
     if [ -f .env ]; then
-      if [ -z "$1" ]; then
-        eval $(cat .env) bin/kamal deploy "$@"
-      else
-        eval $(cat .env) bin/kamal "$@"
-      fi
+      eval $(cat .env) bin/kamal "$@"
     else
-      echo "No environment variables found."
+      bin/kamal "$@"
     fi
   else
     echo "No bin/kamal script found."
