@@ -18,5 +18,6 @@ brew "ripgrep"
 brew "shellcheck"
 brew "tmux"
 
+cask "docker"
 cask "kitty"
 cask "obsidian"
