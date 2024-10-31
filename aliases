@@ -22,14 +22,6 @@ alias deploy="deploy_command"
 alias migrate="rake_command db:migrate"
 alias rubocop="rubocop_command"
 
-# Postgres
-alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
-alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
-
-# Redis
-alias redis_start="redis-server /usr/local/etc/redis.conf --daemonize yes"
-alias redis_stop="redis-cli shutdown"
-
 # Miscellaneous
 alias brewhaha="brew cleanup -s && brew old"
 alias icloud="cd ~/Library/Mobile\ Documents"
