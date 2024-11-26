@@ -18,7 +18,6 @@ alias rs="server_command"
 alias rake="rake_command"
 alias kamal="kamal_command"
 alias rspec="rspec_command"
-alias deploy="deploy_command"
 alias migrate="rake_command db:migrate"
 alias rubocop="rubocop_command"
 
@@ -34,10 +33,6 @@ console_command() {
   else
     rails_command console
   fi
-}
-
-deploy_command() {
-  kamal_command deploy "$@"
 }
 
 kamal_command() {
