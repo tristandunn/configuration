@@ -42,12 +42,12 @@ class Old
   end
 
   def information
-    outdated_casks  = (outdated & casks).size
-    outdated_leaves = ((upgrades + reinstalls) - casks).size
+    casks  = outdated_casks == 1 ? "cask" : "casks"
+    leaves = outdated_leaves == 1 ? "leaf" : "leaves"
 
     puts("\nYou have " \
-         "#{bold(outdated_leaves)} old leaves and " \
-         "#{bold(outdated_casks)} old casks.\n\n")
+         "#{bold(outdated_leaves)} old #{leaves} and " \
+         "#{bold(outdated_casks)} old #{casks}.\n\n")
 
     (upgrades + reinstalls).sort.each do |formulae|
       puts formulae
@@ -64,6 +64,14 @@ class Old
 
   def outdated
     @outdated ||= brew("outdated")
+  end
+
+  def outdated_casks
+    (outdated & casks).size
+  end
+
+  def outdated_leaves
+    ((upgrades + reinstalls) - casks).size
   end
 
   def reinstalls
