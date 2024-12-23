@@ -235,6 +235,11 @@ require("lazy").setup({
     opts   = require("plug-ins.tmux-navigation").opts
   },
 
+  -- Terraform.
+  {
+    "hashivim/vim-terraform"
+  },
+
   -- File modification gutter.
   {
     "lewis6991/gitsigns.nvim",
