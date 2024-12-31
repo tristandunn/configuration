@@ -74,8 +74,22 @@ class Old
     ((upgrades + reinstalls) - casks).size
   end
 
+  def reinstall
+    if reinstalls.any?
+      puts("\nbrew reinstall #{reinstalls.join(" ")}")
+      system("brew reinstall #{reinstalls.join(" ")}")
+    end
+  end
+
   def reinstalls
     @reinstalls ||= (uses & leaves) - upgrades
+  end
+
+  def uninstall
+    if uninstalls.any?
+      puts("brew uninstall --ignore-dependencies #{uninstalls.join(" ")}")
+      system("brew uninstall --ignore-dependencies #{uninstalls.join(" ")}")
+    end
   end
 
   def uninstalls
@@ -83,13 +97,20 @@ class Old
   end
 
   def update
-    puts("brew uninstall --ignore-dependencies #{uninstalls.join(" ")}") if uninstalls.any?
-    puts("brew upgrade #{upgrades.join(" ")}") if upgrades.any?
-    puts("brew reinstall #{reinstalls.join(" ")}") if reinstalls.any?
+    uninstall
+    upgrade
+    reinstall
   end
 
   def update?
     UPGRADE_ARGUMENTS.include?(ARGV.first)
+  end
+
+  def upgrade
+    if upgrades.any?
+      puts("\nbrew upgrade #{upgrades.join(" ")}")
+      system("brew upgrade #{upgrades.join(" ")}")
+    end
   end
 
   def upgrades
