@@ -35,3 +35,5 @@
   email = tristanzdunn@gmail.com
 [includeIf "gitdir:~/Sites/"]
   path = ~/Sites/gitconfig.inc
+[help]
+	autocorrect = prompt
