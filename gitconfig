@@ -36,4 +36,4 @@
 [includeIf "gitdir:~/Sites/"]
   path = ~/Sites/gitconfig.inc
 [help]
-	autocorrect = prompt
+  autocorrect = prompt
