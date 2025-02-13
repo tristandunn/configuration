@@ -32,7 +32,7 @@
   default = nothing
 [user]
   name = Tristan Dunn
-  email = tristanzdunn@gmail.com
+  email = hello@tristandunn.com
 [includeIf "gitdir:~/Sites/"]
   path = ~/Sites/gitconfig.inc
 [help]
