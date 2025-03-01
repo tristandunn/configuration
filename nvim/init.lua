@@ -278,12 +278,6 @@ require("lazy").setup({
     init = require("plug-ins.projectionist").init
   },
 
-  -- Test runner.
-  {
-    "vim-test/vim-test",
-    init = require("plug-ins.test").init
-  },
-
   -- Automatically end certain code structures.
   {
     "tpope/vim-endwise"
@@ -292,6 +286,12 @@ require("lazy").setup({
   -- Rails helpers.
   {
     "tpope/vim-rails"
+  },
+
+  -- Test runner.
+  {
+    "vim-test/vim-test",
+    init = require("plug-ins.test").init
   }
 }, {
   -- Enable automatically checking for plug-in updates.
