@@ -19,9 +19,14 @@
   excludesfile = ~/.configuration/gitignore
   pager = less -r
 [diff]
+	algorithm = histogram
+	mnemonicPrefix = true
+	renames = true
   compactionHeuristic = true
 [fetch]
   prune = true
+[help]
+  autocorrect = prompt
 [init]
   defaultBranch = main
 [merge]
@@ -30,10 +35,13 @@
   ff = only
 [push]
   default = nothing
+[rerere]
+	enabled = true
+	autoUpdate = true
+[tag]
+	sort = version:refname
 [user]
   name = Tristan Dunn
   email = hello@tristandunn.com
 [includeIf "gitdir:~/Sites/"]
   path = ~/Sites/gitconfig.inc
-[help]
-  autocorrect = prompt
