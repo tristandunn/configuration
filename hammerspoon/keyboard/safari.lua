@@ -1,6 +1,6 @@
 local safariWatcher = nil
 
-function onApplicationEvent(name, event, application)
+local function onApplicationEvent(name, event, application)
   -- Ignore applications that aren't Safari.
   if name ~= "Safari" then
     return
@@ -8,7 +8,7 @@ function onApplicationEvent(name, event, application)
 
   if event == hs.application.watcher.launched then
     -- Start watching Safari when launched.
-    watchApplication(application)
+    WatchApplication(application)
   elseif event == hs.application.watcher.terminated then
     -- Stop watching Safari when terminated.
     if safariWatcher then
@@ -18,7 +18,7 @@ function onApplicationEvent(name, event, application)
   end
 end
 
-function watchApplication(application)
+function WatchApplication(application)
   -- Create a watcher for the Safari application.
   safariWatcher = application:newWatcher(function(window)
     -- Sometimes window appears to be missing.
@@ -58,5 +58,5 @@ local application = hs.appfinder.appFromName("Safari")
 
 -- Watch the application if found.
 if application then
-  watchApplication(application)
+  WatchApplication(application)
 end

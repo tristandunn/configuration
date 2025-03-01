@@ -129,11 +129,9 @@ end
 
 -- Load the window bindings.
 local _, bindings = pcall(require, "keyboard.windows-bindings")
-local modifiers = bindings.modifiers
-local trigger = bindings.trigger
 
 -- Bind the window bindings to the window layout mode and exit after execution.
-for index, mapping in ipairs(bindings.mappings) do
+for _, mapping in ipairs(bindings.mappings) do
   local modifiers, trigger, method = table.unpack(mapping)
 
   windowLayoutModal:bindWithAutomaticExit(modifiers, trigger, function()
@@ -142,6 +140,9 @@ for index, mapping in ipairs(bindings.mappings) do
     hs.window[method](focusedWindow)
   end)
 end
+
+local modifiers = bindings.modifiers
+local trigger = bindings.trigger
 
 -- Use modifiers+trigger to toggle the window layout mode.
 hs.hotkey.bind(modifiers, trigger, function()
