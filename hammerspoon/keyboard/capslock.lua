@@ -12,7 +12,7 @@ local count = function(table)
   return length
 end
 
-local modifier_handler = function(evt)
+modifier_handler = function(evt)
   local current_modifiers = evt:getFlags()
 
   if current_modifiers["ctrl"] and count(current_modifiers) == 1 and count(previous_modifiers) == 0 then
@@ -38,11 +38,11 @@ local modifier_handler = function(evt)
 end
 
 -- Call the modifier handler when a modifier key is pressed or released.
-local modifier_tap = hs.eventtap.new({ hs.eventtap.event.types.flagsChanged }, modifier_handler)
+modifier_tap = hs.eventtap.new({ hs.eventtap.event.types.flagsChanged }, modifier_handler)
 modifier_tap:start()
 
 -- If any non-modifier key is pressed, unmark escape to be sent.
-local non_modifier_tap = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function()
+non_modifier_tap = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function()
   send_escape = false
   return false
 end)
