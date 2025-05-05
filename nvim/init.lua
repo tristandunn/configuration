@@ -284,6 +284,11 @@ require("lazy").setup({
     "tpope/vim-rails"
   },
 
+  -- Open file at line number.
+  {
+    "xim/file-line"
+  },
+
   -- Test runner.
   {
     "vim-test/vim-test",
