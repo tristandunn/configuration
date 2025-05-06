@@ -236,6 +236,11 @@ require("lazy").setup({
     "hashivim/vim-terraform"
   },
 
+  -- Open file at line number.
+  {
+    "lewis6991/fileline.nvim"
+  },
+
   -- File modification gutter.
   {
     "lewis6991/gitsigns.nvim",
@@ -282,11 +287,6 @@ require("lazy").setup({
   -- Rails helpers.
   {
     "tpope/vim-rails"
-  },
-
-  -- Open file at line number.
-  {
-    "xim/file-line"
   },
 
   -- Test runner.
