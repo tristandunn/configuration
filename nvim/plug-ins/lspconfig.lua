@@ -102,24 +102,22 @@ return {
       require("cmp_nvim_lsp").default_capabilities()
     )
 
-    -- Set up LSP servers.
-    lspconfig.eslint.setup({})
-    lspconfig.jsonls.setup({})
-    lspconfig.rubocop.setup({})
-    lspconfig.ruby_lsp.setup({})
-    lspconfig.stylelint_lsp.setup({})
-    lspconfig.lua_ls.setup({
-      on_init = function(client)
-        client.notify(
-          "workspace/didChangeConfiguration",
-          { settings = client.config.settings }
-        )
-
-        return true
-      end
-    })
+    -- Enable LSP configurations.
+    vim.lsp.enable({ "eslint", "jsonls", "rubocop", "ruby_lsp", "stylelint_lsp" })
 
     -- Automatically format buffer with LSP when writing.
-    vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern  = "*.rb",
+      callback = function()
+        vim.lsp.buf.format()
+      end,
+    })
+
+    -- Display diagnostics inline as virtual text.
+    vim.diagnostic.config({
+      virtual_text = {
+        source = "always"
+      }
+    })
   end
 }
