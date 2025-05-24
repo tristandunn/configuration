@@ -4,6 +4,7 @@
 #
 
 brew "asdf"
+brew "codespell"
 brew "ctags"
 brew "fzf"
 brew "git"
