@@ -1,4 +1,5 @@
 -- Load the customization scripts.
+require("keyboard.bookmarklets")
 require("keyboard.capslock")
 require("keyboard.safari")
 require("keyboard.windows")
