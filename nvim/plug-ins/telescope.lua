@@ -5,9 +5,13 @@ return {
   },
 
   init = function()
-    -- Shortcuts.
-    vim.keymap.set("n", "<Leader>p", ":Telescope find_files<CR>")
-    vim.keymap.set("n", "<Leader>j", ":Telescope grep_string search=<C-R><C-W><CR>")
+    local set = vim.keymap.set
+
+    -- Find a file.
+    set("n", "<Leader>p", ":Telescope find_files<CR>")
+
+    -- Find a word.
+    set("n", "<Leader>j", ":Telescope grep_string search=<C-R><C-W><CR>")
   end,
 
   opts = {
@@ -19,6 +23,7 @@ return {
         }
       }
     },
+
     pickers = {
       find_files = {
         theme = "dropdown"

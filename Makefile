@@ -51,12 +51,13 @@ $(HOME)/.config/kitty/kitty.conf:
 	ln -sv $(CWD)/kitty.conf $(HOME)/.config/kitty/kitty.conf
 
 $(HOME)/.config/nvim/init.lua:
-	mkdir -p $(HOME)/.config/nvim
 	mkdir -p $(HOME)/.config/nvim/colors
 	mkdir -p $(HOME)/.config/nvim/lua
 	ln -sv $(CWD)/nvim/init.lua $(HOME)/.config/nvim/init.lua
 	ln -sv $(CWD)/nvim/colors/ir_black.vim $(HOME)/.config/nvim/colors/ir_black.vim
+	ln -sv $(CWD)/nvim/lsp $(HOME)/.config/nvim/lsp
 	ln -sv $(CWD)/nvim/plug-ins $(HOME)/.config/nvim/lua/plug-ins
+	ln -sv $(CWD)/nvim/settings $(HOME)/.config/nvim/lua/settings
 
 $(HOME)/.gemrc:
 	ln -sv $(CWD)/gemrc $(HOME)/.gemrc
