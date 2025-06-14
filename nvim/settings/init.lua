@@ -1,0 +1,7 @@
+require("settings.colors")
+require("settings.formats")
+require("settings.general")
+require("settings.layout")
+require("settings.lsp")
+require("settings.shortcuts")
+require("settings.spacing")
