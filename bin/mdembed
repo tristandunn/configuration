@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+
+# frozen_string_literal: true
+
+puts(
+  $stdin.read.gsub(/@([^\n]+)/m) do |match|
+    path, lines = match.strip[1..].split(":", 2)
+    start, stop = lines.to_s.split("-", 2).map(&:to_i)
+    contents    = File.read(path)
+
+    if start&.positive? && stop&.positive?
+      contents = contents
+        .split("\n")
+        .slice((start - 1)..(stop - 1))
+        .join("\n")
+    end
+
+    <<~BLOCK
+      ```#{path}
+      #{contents}
+      ```
+    BLOCK
+  end
+)
