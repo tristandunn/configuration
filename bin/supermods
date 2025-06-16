@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Exit immediately if any command exists with a non-zero status.
+set -e
+
+# Name the session the current directory name.
+NAME=$(basename "$PWD")
+
+# Read the standard input and process the file includes.
+MESSAGE=$(cat - | mdembed)
+
+if [ "$MESSAGE" = "delete" ]; then
+  # Delete the session when requested.
+  mods --delete "$NAME"
+elif [ "$MESSAGE" = "list" ]; then
+  # List the existing sessions.
+  mods --list 2>&1
+else
+  # Create or continue the session.
+  if ! mods --list 2>&1 | grep --quiet "$NAME"; then
+    mods --title "$NAME" "$MESSAGE"
+  else
+    mods --continue "$NAME" "$MESSAGE"
+  fi
+fi
