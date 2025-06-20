@@ -5,9 +5,9 @@
   d = diff
   dc = diff --cached
   default-branch-name = !git remote show origin | awk '/HEAD branch/ {print $NF}'
-  pl = pull
+  pl = pull --autostash
   ps = push
-  plre = pull --rebase
+  plre = pull --autostash --rebase
   s = switch
   sm = !git switch `git default-branch-name`
   st = status
