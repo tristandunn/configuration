@@ -47,5 +47,6 @@ vim.lsp.enable({
   "ruby",
   "rubocop",
   "stylelint",
-  "tailwindcss"
+  "tailwindcss",
+  "yaml"
 })

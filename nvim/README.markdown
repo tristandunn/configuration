@@ -10,7 +10,8 @@ brew install dockerfile-language-server \
              lua-language-server \
              ruby-lsp \
              tailwindcss-language-server \
-             vscode-langservers-extracted
+             vscode-langservers-extracted \
+             yaml-language-server
 
 # Install servers for RuboCop and extensions for Ruby.
 gem install rubocop \
