@@ -13,22 +13,22 @@ vim.keymap.set("v", "<Leader>c", "\"+y")
 set("v", "D", "y'>p")
 
 -- Hide search highlighting.
-set("n", "<Leader>h", ":nohl<CR>")
+set("n", "<Leader>h", "<Cmd>nohl<CR>")
 
 -- Tab shortcuts.
-set("n", "<Leader>w", ":quit<CR>")
-set("n", "<Leader>[", ":tabprevious<CR>")
-set("n", "<Leader>]", ":tabnext<CR>")
-set("n", "<Leader>1", ":tabn 1<CR>")
-set("n", "<Leader>2", ":tabn 2<CR>")
-set("n", "<Leader>3", ":tabn 3<CR>")
-set("n", "<Leader>4", ":tabn 4<CR>")
-set("n", "<Leader>5", ":tabn 5<CR>")
-set("n", "<Leader>6", ":tabn 6<CR>")
-set("n", "<Leader>7", ":tabn 7<CR>")
-set("n", "<Leader>8", ":tabn 8<CR>")
-set("n", "<Leader>9", ":tabn 9<CR>")
-set("n", "<Leader>0", ":tablast<CR>")
+set("n", "<Leader>w", "<Cmd>quit<CR>")
+set("n", "<Leader>[", "<Cmd>tabprevious<CR>")
+set("n", "<Leader>]", "<Cmd>tabnext<CR>")
+set("n", "<Leader>1", "<Cmd>tabn 1<CR>")
+set("n", "<Leader>2", "<Cmd>tabn 2<CR>")
+set("n", "<Leader>3", "<Cmd>tabn 3<CR>")
+set("n", "<Leader>4", "<Cmd>tabn 4<CR>")
+set("n", "<Leader>5", "<Cmd>tabn 5<CR>")
+set("n", "<Leader>6", "<Cmd>tabn 6<CR>")
+set("n", "<Leader>7", "<Cmd>tabn 7<CR>")
+set("n", "<Leader>8", "<Cmd>tabn 8<CR>")
+set("n", "<Leader>9", "<Cmd>tabn 9<CR>")
+set("n", "<Leader>0", "<Cmd>tablast<CR>")
 
 -- Opens an edit command with the path of the currently edited file filled in.
 set("n", "<Leader>e", ":e +9 <C-R>=escape(expand(\"%:p:h\") . \"/\", \" \") <CR>")
@@ -37,9 +37,9 @@ set("n", "<Leader>e", ":e +9 <C-R>=escape(expand(\"%:p:h\") . \"/\", \" \") <CR>
 set("n", "<Leader>te", ":tabe +9 <C-R>=escape(expand(\"%:p:h\") . \"/\", \" \") <CR>")
 
 -- Shortcuts for CMD+S forwarding support.
-set("n", "<C-S>", ":update<CR>")
-set("v", "<C-S>", "<C-C>:update<CR>")
-set("i", "<C-S>", "<C-O>:update<CR>")
+set("n", "<C-S>", "<Cmd>update<CR>")
+set("v", "<C-S>", "<C-C><Cmd>update<CR>")
+set("i", "<C-S>", "<C-O><Cmd>update<CR>")
 
 -- Shortcuts for Rails commands.
 set("n", "<Leader>bo", ":ExecuteCommandInPane bundle\\ outdated 0 0 2<CR>")
