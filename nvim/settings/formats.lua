@@ -1,22 +1,10 @@
 local autocmd = vim.api.nvim_create_autocmd
 
--- Enable spell check and set text width for commit messages.
+-- Enable spell check and set text width for commit messages and markdown.
 autocmd(
   { "FileType" },
   {
-    pattern  = { "gitcommit" },
-    callback = function()
-      vim.opt_local.spell     = true
-      vim.opt_local.textwidth = 80
-    end
-  }
-)
-
--- Enable spell check and set text width for Markdown files.
-autocmd(
-  { "BufRead", "BufNewFile" },
-  {
-    pattern  = { "*md", "*.markdown" },
+    pattern  = { "gitcommit", "markdown", "text" },
     callback = function()
       vim.opt_local.spell     = true
       vim.opt_local.textwidth = 80
