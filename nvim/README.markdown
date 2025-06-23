@@ -18,6 +18,7 @@ gem install rubocop \
             ruby-lsp-rails \
             ruby-lsp-rspec
 
-# Install server for Stylelint.
-npm install --global stylelint-lsp
+# Install server for ERB and Stylelint.
+npm install --global @herb-tools/language-server \
+                     stylelint-lsp
 ```

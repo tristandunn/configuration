@@ -41,6 +41,7 @@ vim.diagnostic.config({
 -- Enable LSP servers.
 vim.lsp.enable({
   "docker",
+  "erb",
   "eslint",
   "json",
   "lua",
