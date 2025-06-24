@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Exit immediately if a command exits with a non-zero status, treat unset
+# variables as an error, and fail if any command in a pipeline fails.
+set -euo pipefail
+
+# Path to the GitHub Copilot configuration file.
+CONFIG_FILE="$HOME/.config/github-copilot/apps.json"
+
+# Check if the configuration file exists and is accessible.
+if [ ! -f "$CONFIG_FILE" ]; then
+  echo "Error: Configuration file $CONFIG_FILE does not exist or cannot be accessed."
+  exit 1
+fi
+
+# Extract the Copilot OAuth token from the configuration file.
+COPILOT_TOKEN=$(cat "$CONFIG_FILE" | jq -r "to_entries | .[0].value.oauth_token")
+
+# Ensure the Copilot token was successfully extracted.
+if [ -z "$COPILOT_TOKEN" ] || [ "$COPILOT_TOKEN" == "null" ]; then
+  echo "Error: Failed to extract Copilot token."
+  exit 2
+fi
+
+# Request a fresh token from GitHub Copilot's internal API.
+TOKEN=$(curl -s https://api.github.com/copilot_internal/v2/token -H "Authorization: Bearer $COPILOT_TOKEN" | jq -r ".token")
+
+# Ensure the token was successfully fetched.
+if [ -z "$TOKEN" ] || [ "$TOKEN" == "null" ]; then
+  echo "Error: Failed to fetch a fresh token from GitHub."
+  exit 3
+fi
+
+# Run the aider CLI with the appropriate options and the fetched token.
+aider \
+  --api-key OPENAI="$TOKEN" \
+  --auto-test \
+  --dark-mode \
+  --lint-cmd "ruby: bundle exec rubocop" \
+  --model "openai/gpt-4.1" \
+  --no-analytics \
+  --no-auto-commits \
+  --no-gitignore \
+  --no-show-model-warnings \
+  --openai-api-base "https://api.githubcopilot.com" \
+  --test-cmd="bundle exec rspec" \
+  --vim \
+  --weak-model "openai/gpt-4o" \
+  --yes-always
