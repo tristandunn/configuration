@@ -19,9 +19,9 @@
   excludesfile = ~/.configuration/gitignore
   pager = less -r
 [diff]
-	algorithm = histogram
-	mnemonicPrefix = true
-	renames = true
+  algorithm = histogram
+  mnemonicPrefix = true
+  renames = true
   compactionHeuristic = true
 [fetch]
   prune = true
@@ -36,10 +36,10 @@
 [push]
   default = nothing
 [rerere]
-	enabled = true
-	autoUpdate = true
+  enabled = true
+  autoUpdate = true
 [tag]
-	sort = version:refname
+  sort = version:refname
 [user]
   name = Tristan Dunn
   email = hello@tristandunn.com
