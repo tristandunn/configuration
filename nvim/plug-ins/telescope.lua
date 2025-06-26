@@ -5,13 +5,18 @@ return {
   },
 
   init = function()
-    local set = vim.keymap.set
+    local builtin = require("telescope.builtin")
+    local set     = vim.keymap.set
 
     -- Find a file.
-    set("n", "<Leader>p", "<Cmd>Telescope find_files<CR>")
+    set("n", "<Leader>p", builtin.find_files)
 
     -- Find a word.
-    set("n", "<Leader>j", "<Cmd>Telescope grep_string search=<C-R><C-W><CR>")
+    set("n", "<Leader>j", function()
+      local word = vim.fn.expand("<cword>")
+
+      builtin.grep_string({ default_text = word })
+    end)
   end,
 
   opts = {
