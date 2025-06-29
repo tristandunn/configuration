@@ -3,7 +3,6 @@
 #   $ brew bundle
 #
 
-brew "asdf"
 brew "codespell"
 brew "ctags"
 brew "fzf"
@@ -11,6 +10,7 @@ brew "git"
 brew "gnupg"
 brew "lua-language-server"
 brew "macos-trash"
+brew "mise"
 brew "neovim"
 brew "ripgrep"
 brew "shellcheck"

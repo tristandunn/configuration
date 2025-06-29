@@ -13,9 +13,6 @@ export HISTFILE="/tmp/.zsh_history"
 # Disable less file.
 export LESSHISTFILE=-
 
-# Add asdf shims to the path.
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-
 # Access to custom executables.
 export PATH="$PATH:$HOME/.configuration/bin"
 
