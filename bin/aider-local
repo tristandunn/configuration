@@ -1,0 +1,17 @@
+#!/bin/bash
+
+export LM_STUDIO_API_KEY=dummy-api-key
+export LM_STUDIO_API_BASE=http://localhost:1234/v1
+
+aider \
+  --auto-test \
+  --dark-mode \
+  --lint-cmd "ruby: bundle exec rubocop" \
+  --model "lm_studio/lmstudio-community/Qwen2.5-Coder-7B-Instruct-MLX-8bit" \
+  --no-analytics \
+  --no-auto-commits \
+  --no-gitignore \
+  --no-show-model-warnings \
+  --test-cmd="bundle exec rspec" \
+  --vim \
+  --yes-always
