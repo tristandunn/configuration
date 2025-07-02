@@ -32,7 +32,7 @@ return {
     },
 
     sources = {
-      -- Requrie two characters to display completion.
+      -- Require two characters to display completion.
       min_keyword_length = 3,
 
       providers = {
