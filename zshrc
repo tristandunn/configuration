@@ -16,6 +16,9 @@ if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
 fi
 
+# Must alias Claude here so it correctly detects itself.
+alias claude="~/.claude/local/claude"
+
 # Ensure the environemtn variables are loaded.
 if [ -f "$HOME/.zshenv" ]; then
   source "$HOME/.zshenv"
