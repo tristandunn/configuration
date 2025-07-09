@@ -19,7 +19,7 @@ fi
 # Must alias Claude here so it correctly detects itself.
 alias claude="~/.claude/local/claude"
 
-# Ensure the environemtn variables are loaded.
+# Ensure the environment variables are loaded.
 if [ -f "$HOME/.zshenv" ]; then
   source "$HOME/.zshenv"
 fi
@@ -46,7 +46,7 @@ if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
-# Active mise.
+# Activate mise.
 if [ -f "/opt/homebrew/bin/mise" ]; then
   eval "$(/opt/homebrew/bin/mise activate zsh)"
 fi
