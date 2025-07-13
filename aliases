@@ -90,15 +90,3 @@ rubocop_command() {
     bundle exec rubocop -P "$@"
   fi
 }
-
-services-start() {
-  brew services start memcached
-  brew services start postgresql
-  brew services start redis
-}
-
-services-stop() {
-  brew services stop memcached
-  brew services stop postgresql
-  brew services stop redis
-}
