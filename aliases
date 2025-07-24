@@ -90,3 +90,15 @@ rubocop_command() {
     bundle exec rubocop -P "$@"
   fi
 }
+
+git() {
+  if [[ $1 == "d" || $1 == "dc" ]]; then
+    clear
+  fi
+
+  command git "$@"
+}
+
+wip() {
+  git commit --message "WIP: $*"
+}

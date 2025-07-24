@@ -68,17 +68,3 @@ precmd() {
 
   printf "\e]0;$name\a"
 }
-
-# Automatically clear the terminal when using the d and dc aliases.
-git() {
-  if [[ $1 == "d" || $1 == "dc" ]]; then
-    clear
-  fi
-
-  command git "$@"
-}
-
-# Shortcut for work-in-progress commits.
-wip() {
-  git commit --message "WIP: $*"
-}
