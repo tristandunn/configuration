@@ -4,9 +4,14 @@ if [ "$TERM" = "xterm-256color" ]; then
   killall "Terminal"
 fi
 
-# Completion.
-autoload -U compinit
-compinit -D
+# Completion which only updates daily.
+autoload -Uz compinit
+
+if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
+  compinit
+else
+  compinit -C
+fi
 
 # Automatically enter directories without `cd`.
 setopt auto_cd
