@@ -1,5 +1,9 @@
 return {
   options = {
+    cmdline = {
+      enabled = false
+    },
+
     completion = {
       list = {
         selection = {
