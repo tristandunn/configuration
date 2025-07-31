@@ -21,10 +21,6 @@ if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
 fi
 
-# Ensure the environment variables are loaded.
-if [ -f "$HOME/.zshenv" ]; then
-  source "$HOME/.zshenv"
-fi
 
 # Use vi mode.
 bindkey -v
