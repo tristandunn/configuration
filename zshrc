@@ -34,6 +34,11 @@ setopt prompt_subst
 # Ignore duplicate history entries.
 setopt histignoredups
 
+# Keep more history.
+export HISTSIZE=4096
+# Move history out of the home directory.
+export HISTFILE="/tmp/.zsh_history"
+
 # Homebrew doctors orders.
 if [ -f "/opt/homebrew/bin/brew" ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
