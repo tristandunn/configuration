@@ -7,10 +7,13 @@ fi
 # Completion which only updates daily.
 autoload -Uz compinit
 
-if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
-  compinit
+# Move zcompdump out of home directory
+ZCOMPDUMP="/tmp/.zcompdump"
+
+if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' "$ZCOMPDUMP" 2>/dev/null)" ]; then
+  compinit -d "$ZCOMPDUMP"
 else
-  compinit -C
+  compinit -C -d "$ZCOMPDUMP"
 fi
 
 # Automatically enter directories without `cd`.
