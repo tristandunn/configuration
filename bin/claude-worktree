@@ -1,0 +1,101 @@
+#!/usr/bin/env ruby
+
+# frozen_string_literal: true
+
+require "fileutils"
+
+class ClaudeWorktree
+  DIRECTORY = "tmp/worktrees"
+
+  def initialize(command:, name:)
+    @command = command
+    @name    = name
+    @path    = File.join(DIRECTORY, name)
+  end
+
+  def self.call
+    if ARGV.length < 2
+      puts "Usage: claude-worktree <add|rm> <worktree-name>"
+      exit 1
+    end
+
+    new(command: ARGV[0], name: ARGV[1]).call
+  end
+
+  def call
+    case command
+    when "add"
+      add_worktree
+    when "rm"
+      remove_worktree
+    else
+      puts "Error: Invalid command '#{command}'."
+      exit 99
+    end
+  end
+
+  private
+
+  attr_reader :command, :name, :path
+
+  def add_worktree
+    ensure_repository_present
+    create_directory
+    create_worktree
+    launch_claude
+  end
+
+  def create_directory
+    Dir.mkdir(DIRECTORY)
+  rescue Errno::EEXIST
+    nil
+  end
+
+  def create_worktree
+    return if worktree_folder_exists?
+
+    unless system("git worktree add #{path} -b #{name}")
+      exit 3
+    end
+  end
+
+  def delete_branch
+    system("git branch -D #{name}")
+  end
+
+  def delete_worktree
+    system("git worktree remove #{path}")
+  end
+
+  def delete_worktree_folder
+    FileUtils.rm_rf(path)
+  end
+
+  def ensure_repository_present
+    unless system("git rev-parse --git-dir > /dev/null 2>&1")
+      exit 2
+    end
+  end
+
+  def launch_claude
+    Dir.chdir(path) do
+      exec("claude --dangerously-skip-permissions")
+    end
+  end
+
+  def remove_worktree
+    ensure_repository_present
+
+    if worktree_folder_exists?
+      delete_worktree
+      delete_worktree_folder
+      delete_branch
+    end
+  end
+
+  def worktree_folder_exists?
+    Dir.exist?(path)
+  end
+end
+
+ClaudeWorktree.call
