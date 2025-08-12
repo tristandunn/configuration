@@ -1,0 +1,120 @@
+#!/bin/bash
+
+# Exit on error, undefined variables, and pipe failures.
+set -euo pipefail
+
+# Check if we're in a repository.
+if ! git rev-parse --git-dir > /dev/null 2>&1; then
+  echo "Error: Not in a git repository" >&2
+  exit 1
+fi
+
+# Get the current branch.
+current_branch=$(git branch --show-current)
+
+# Get the local branches.
+local_branches=$(git branch --format='%(refname:short)')
+
+# Get the remote branches, excluding HEAD.
+remote_branches=$(git branch -r --format='%(refname:short)' | grep -v 'origin/HEAD')
+
+# Create temporary files for branch lookups.
+all_branches_temp=$(mktemp)
+behind_temp=$(mktemp)
+local_temp=$(mktemp)
+remote_temp=$(mktemp)
+
+# Clean up temporary files on exit.
+trap 'rm -f "$local_temp" "$remote_temp" "$behind_temp" "$all_branches_temp"' EXIT
+
+# Store the local branches in temporary file.
+echo "$local_branches" > "$local_temp"
+
+# Process remote branches to remove origin/ prefix and store in temporary file.
+while IFS= read -r branch; do
+  echo "${branch#origin/}"
+done <<< "$remote_branches" > "$remote_temp"
+
+# Check which local branches are behind their remote counterparts and store
+# them in temporary file.
+echo "$local_branches" | while IFS= read -r branch; do
+  if git rev-parse --verify --quiet "origin/$branch" >/dev/null 2>&1; then
+    behind_count=$(git rev-list --count "$branch..origin/$branch" 2>/dev/null || echo "0")
+
+    if [[ "$behind_count" -gt 0 ]]; then
+      echo "$branch" >> "$behind_temp"
+    fi
+  fi
+done
+
+# Function to format a branch name.
+format_branch() {
+  local branch=$1
+  local is_behind=0
+  local is_local=0
+  local is_remote=0
+
+  if grep -Fxq "$branch" "$local_temp"; then
+    is_local=1
+  fi
+
+  if grep -Fxq "$branch" "$remote_temp"; then
+    is_remote=1
+  fi
+
+  if [[ -f "$behind_temp" ]] && grep -Fxq "$branch" "$behind_temp"; then
+    is_behind=1
+  fi
+
+  local prefix=""
+
+  # Set prefix based on branch status.
+  if [[ "$branch" == "$current_branch" ]]; then
+    prefix="* "
+  elif [[ "$is_local" == "1" ]] && [[ "$is_remote" == "0" ]]; then
+    prefix="+ "
+  elif [[ "$is_local" == "0" ]] && [[ "$is_remote" == "1" ]]; then
+    prefix="- "
+  else
+    prefix="  "
+  fi
+
+  # Set color based on branch location and status, bold if current.
+  local bold_start=""
+  local bold_end=""
+
+  if [[ "$branch" == "$current_branch" ]]; then
+    bold_start="\033[1m"  # Enable bold
+    bold_end="\033[22m"   # Remove bold.
+  fi
+
+  if [[ "$is_local" == "1" ]] && [[ "$is_remote" == "1" ]]; then
+    if [[ "$is_behind" == "1" ]]; then
+      printf "\033[33m${bold_start}%s%s${bold_end}\033[0m\n" "$prefix" "$branch"  # Yellow for out of date.
+    else
+      printf "\033[37m${bold_start}%s%s${bold_end}\033[0m\n" "$prefix" "$branch"  # White for up to date.
+    fi
+  elif [[ "$is_local" == "1" ]]; then
+    printf "\033[32m${bold_start}%s%s${bold_end}\033[0m\n" "$prefix" "$branch"    # Green for local only.
+  else
+    printf "\033[31m${bold_start}%s%s${bold_end}\033[0m\n" "$prefix" "$branch"    # Red for remote only.
+  fi
+}
+
+# Collect all the branches in temporary file.
+cat "$local_temp" "$remote_temp" > "$all_branches_temp"
+
+sorted_branches=$(sort -u "$all_branches_temp")
+
+# Show the main branch first, if it exists.
+if echo "$sorted_branches" | grep -Fxq "main"; then
+  format_branch "main"
+
+  # Remove from the sorted list to avoid duplication.
+  sorted_branches=$(echo "$sorted_branches" | grep -Fxv "main")
+fi
+
+# Show all the other branches.
+echo "$sorted_branches" | while IFS= read -r branch; do
+  [[ -n "$branch" ]] && format_branch "$branch"
+done
