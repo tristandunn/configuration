@@ -1,5 +1,6 @@
 [alias]
   a = !git add -A && git status
+  b = branch
   c = commit --edit --message
   ca = commit --amend
   d = diff
