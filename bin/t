@@ -56,8 +56,8 @@ if [ -z "$TMUX" ]; then
       tmux split-window -t 1 -hl 60
       tmux split-window -t 2 -vl 16
     else
-      tmux split-window -t 1 -hl 84
-      tmux split-window -t 2 -vl 16
+      tmux split-window -t 1 -hl 102
+      tmux split-window -t 2 -vp 32
     fi
 
     # Select the code pane.
