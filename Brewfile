@@ -20,4 +20,5 @@ brew "yamllint"
 
 cask "docker"
 cask "kitty"
+cask "netnewswire"
 cask "obsidian"
