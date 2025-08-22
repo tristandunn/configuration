@@ -3,22 +3,33 @@
 #   $ brew bundle
 #
 
-brew "codespell"
-brew "ctags"
-brew "fzf"
+# Requirements.
 brew "git"
 brew "gnupg"
-brew "jq"
-brew "lua-language-server"
-brew "macos-trash"
 brew "mise"
 brew "neovim"
+brew "tmux"
+
+# Utilities.
+brew "ctags"
+brew "fzf"
+brew "codespell"
+brew "jq"
+brew "macos-trash"
 brew "ripgrep"
 brew "shellcheck"
-brew "tmux"
 brew "yamllint"
 
-cask "docker"
+# Language servers.
+brew "dockerfile-language-server"
+brew "lua-language-server"
+brew "ruby-lsp"
+brew "tailwindcss-language-server"
+brew "vscode-langservers-extracted"
+brew "yaml-language-server"
+
+# Applications.
 cask "kitty"
 cask "netnewswire"
 cask "obsidian"
+cask "orbstack"
