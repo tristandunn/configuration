@@ -1,0 +1,25 @@
+#!/bin/bash
+
+set -euo pipefail
+
+input=""
+
+if [ ! -t 0 ]; then
+  input=$(cat)
+fi
+
+prompt="$*"
+
+if [ -n "$input" ] && [ -n "$prompt" ]; then
+  claude -p "$prompt"$'\n\n'"$input"
+elif [ -n "$input" ]; then
+  claude -p "$input"
+elif [ -n "$prompt" ]; then
+  claude -p "$prompt"
+else
+  echo "Usage: " >&2
+  echo "  llm <prompt>" >&2
+  echo "  cat <file> | llm [prompt]" >&2
+
+  exit 1
+fi
