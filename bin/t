@@ -49,6 +49,10 @@ if [ -z "$TMUX" ]; then
     # Rename the window.
     tmux rename-window -t 1 code
 
+    # Create the other windows.
+    tmux new-window -d -n claude
+    tmux new-window -d -n server
+
     DIMENSIONS=$(osascript -e 'Tell application "Finder" to get bounds of window of desktop')
 
     # Split window for test and terminal panes.
@@ -68,6 +72,10 @@ if [ -z "$TMUX" ]; then
 
     # Display the git status in the terminal pane.
     tmux send-keys -t 3 'git status' C-m
+
+    # Prefill commands in the other windows.
+    tmux send-keys -t claude 'claude'
+    tmux send-keys -t server 'rs'
   fi
 
   # Attach to the session.
