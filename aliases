@@ -22,7 +22,7 @@ alias migrate="rake_command db:migrate"
 alias rubocop="rubocop_command"
 
 # Miscellaneous
-alias brewhaha="brew cleanup -s && brew old"
+alias brewhaha="brew update && brew cleanup -s && brew old"
 alias icloud="cd ~/Library/Mobile\ Documents"
 alias icloud-obsidian="cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Personal"
 
