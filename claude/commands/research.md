@@ -1,4 +1,5 @@
 ---
+name: research
 description: Research codebase comprehensively using specialized agents.
 ---
 
@@ -85,10 +86,10 @@ Then wait for the user's research query.
   - Answer the user's specific questions with concrete evidence.
 5. **Create the research document file (mandatory step).**
   - Mark the "Create research document file" todo as in_progress.
-  - Use Bash to create directory: `mkdir -p tmp/work`
-  - Use Write to create file: `tmp/work/research-[topic-slug].md`
-  - Replace `[topic-slug]` with kebab-case version of research topic.
-  - Example: "git configuration" → `tmp/work/research-git-configuration.md`
+  - Create directory: `mkdir -p tmp/work`
+  - Write research document: `tmp/work/research-[topic-slug].md` (replace
+    `[topic-slug]` with kebab-case topic, e.g., "git configuration" →
+    `research-git-configuration.md`)
   - Structure the document as Markdown:
     ```
     # Research: [user-question-or-topic]
