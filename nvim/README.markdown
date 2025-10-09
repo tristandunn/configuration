@@ -20,5 +20,6 @@ gem install rubocop \
 
 # Install server for ERB and Stylelint.
 npm install --global @herb-tools/language-server \
+                     @herb-tools/linter \
                      stylelint-lsp
 ```
