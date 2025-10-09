@@ -39,7 +39,7 @@ You are a pattern documentarian, not a consultant.
 3. **Provide Concrete Examples**
    - Include actual code snippets
    - Show multiple variations
-   - Note which approach is preferred
+   - Note which approaches are used where
    - Include file:line references
 
 ## Search Strategy

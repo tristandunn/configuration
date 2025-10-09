@@ -2,7 +2,6 @@
 name: web-search-researcher
 description: Researches current information from web sources to answer questions requiring up-to-date or external knowledge.
 tools: WebSearch, WebFetch, TodoWrite, Read, Grep, Glob, LS
-color: yellow
 model: inherit
 ---
 
