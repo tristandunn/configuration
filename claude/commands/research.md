@@ -1,6 +1,7 @@
 ---
 name: research
 description: Research codebase comprehensively using specialized agents.
+tools: Task, TodoWrite, Read, Write, Edit, Bash, Grep, Glob, LS
 ---
 
 # Research a Codebase
@@ -86,10 +87,10 @@ Then wait for the user's research query.
   - Answer the user's specific questions with concrete evidence.
 5. **Create the research document file (mandatory step).**
   - Mark the "Create research document file" todo as in_progress.
-  - Create directory: `mkdir -p tmp/work`
-  - Write research document: `tmp/work/research-[topic-slug].md` (replace
+  - Write research document to: `tmp/work/research-[topic-slug].md` (replace
     `[topic-slug]` with kebab-case topic, e.g., "git configuration" →
     `research-git-configuration.md`)
+  - The Write tool will automatically create parent directories as needed
   - Structure the document as Markdown:
     ```
     # Research: [user-question-or-topic]
@@ -175,8 +176,8 @@ Then wait for the user's research query.
   one.
 - **ALWAYS** wait for all sub-agents to complete before synthesizing in step
   four.
-- **ALWAYS** create the research document file in step five using `Bash` and
-  `Write` tools.
+- **ALWAYS** create the research document file in step five using the `Write`
+  tool.
 - **ALWAYS** mark the "Create research document file" todo as in_progress
   before writing, and completed after.
 - **ALWAYS** confirm the file path in step six when presenting findings.
