@@ -10,6 +10,7 @@ export LESSHISTFILE=-
 
 # Access to custom executables.
 export PATH="$PATH:$HOME/.configuration/bin"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Set the ripgrep configuration path.
 export RIPGREP_CONFIG_PATH="$HOME/.configuration/ripgreprc"
