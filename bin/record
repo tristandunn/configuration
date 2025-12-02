@@ -23,7 +23,7 @@ cleanup() {
 trap cleanup EXIT
 
 # Record until silence or 60 seconds.
-rec -q "${RECORDING_FILE}" rate 16k silence 1 0.1 1% 1 2.0 1% trim 0 60
+rec -q "${RECORDING_FILE}" rate 16k pad 0.2 0 silence 1 0.05 1% 1 2.0 1% trim 0 60
 
 # Transcribe and output.
 if [ -f "${RECORDING_FILE}" ]; then

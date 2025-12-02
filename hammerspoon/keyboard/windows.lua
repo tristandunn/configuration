@@ -154,9 +154,33 @@ function hs.window.record(_)
       end
 
       if exitCode == 0 and stdout ~= "" then
-        hs.eventtap.keyStrokes(stdout)
+        local text  = stdout:gsub("%s+$", "")
+        local enter = false
+
+        -- Check if text ends with "enter" and remove it.
+        if text:lower():match("enter[%.!?%s]*$") then
+          text  = text:gsub("[%.!?%s]*[Ee][Nn][Tt][Ee][Rr][%.!?%s]*$", "")
+          enter = true
+        end
+
+        -- Send the text.
+        hs.eventtap.keyStrokes(text)
+
+        -- Submit the text.
+        if enter then
+          hs.timer.doAfter(0.1, function()
+            local app = hs.application.frontmostApplication()
+            local name = app and app:name() or ""
+
+            if name == "kitty" then
+              hs.eventtap.keyStroke({"cmd"}, "return")
+            else
+              hs.eventtap.keyStroke({}, "return")
+            end
+          end)
+        end
       elseif exitCode ~= 0 then
-        hs.alert.show("Error: " .. (exitCode or "Unknown error."))
+        hs.alert.show("Error: " .. exitCode)
       end
     end
   )
