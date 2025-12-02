@@ -8,10 +8,9 @@ export PATH="$HOME/.local/bin:/opt/homebrew/bin:/usr/bin:/bin"
 #      brew install ffmpeg sox uv
 # 2. Install parakeet-mlx:
 #      uv tool install parakeet-mlx --python 3.11
-# 3. Download the model:
-#      parakeet-mlx --help
-# 4. Grant microphone access:
-#      System Settings > Privacy & Security > Microphone > Enable for Hammerspoon
+#
+# Note: The first run will prompt you for Microphone permissions and download
+# the model. Subsequent runs will be much faster.
 
 RECORDING_FILE="/tmp/record-recording.wav"
 TRANSCRIBING_FILE="/tmp/record-transcribing"
@@ -23,7 +22,7 @@ cleanup() {
 trap cleanup EXIT
 
 # Record until silence or 60 seconds.
-rec -q "${RECORDING_FILE}" rate 16k pad 0.2 0 silence 1 0.05 1% 1 2.0 1% trim 0 60
+rec -q "${RECORDING_FILE}" rate 16k pad 0.2 0 silence 1 0.05 1% 1 1.0 1% trim 0 60
 
 # Transcribe and output.
 if [ -f "${RECORDING_FILE}" ]; then
