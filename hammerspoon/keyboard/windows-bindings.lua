@@ -9,6 +9,7 @@ return {
     { {}, "j",      "bottom" },
     { {}, "k",      "top" },
     { {}, "l",      "right" },
+    { {}, "r",      "record" },
     { {}, "return", "fullscreen" },
     { {}, "s",      "decrease" },
   }

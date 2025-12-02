@@ -116,6 +116,54 @@ function hs.window.top(window)
   window:setFrame(frame)
 end
 
+-- Menu bar indicator for recording.
+local recordingIndicator = nil
+local recordingTimer = nil
+
+-- Run the record command.
+function hs.window.record(_)
+  -- Ignore if already recording.
+  if recordingIndicator then
+    return
+  end
+
+  -- Show menu bar indicator for recording.
+  recordingIndicator = hs.menubar.new()
+  recordingIndicator:setTitle(hs.styledtext.new("●", {color = {red = 1, green = 0, blue = 0}}))
+
+  -- Poll for transcribing state to change menu bar indicator state.
+  recordingTimer = hs.timer.doEvery(0.2, function()
+    if hs.fs.attributes("/tmp/record-transcribing") and recordingIndicator then
+      recordingIndicator:setTitle(hs.styledtext.new("●", {color = {red = 0.2, green = 0.5, blue = 1}}))
+    end
+  end)
+
+  local task = hs.task.new(
+    "~/.configuration/bin/record",
+    function(exitCode, stdout, _)
+      -- Ensure the timer is stopped.
+      if recordingTimer then
+        recordingTimer:stop()
+        recordingTimer = nil
+      end
+
+      -- Ensure the indicator is removed.
+      if recordingIndicator then
+        recordingIndicator:delete()
+        recordingIndicator = nil
+      end
+
+      if exitCode == 0 and stdout ~= "" then
+        hs.eventtap.keyStrokes(stdout)
+      elseif exitCode ~= 0 then
+        hs.alert.show("Error: " .. (exitCode or "Unknown error."))
+      end
+    end
+  )
+
+  task:start()
+end
+
 -- Create a window layout mode.
 local windowLayoutModal = hs.hotkey.modal.new({}, "F16")
 

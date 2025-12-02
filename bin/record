@@ -1,0 +1,37 @@
+#!/bin/bash
+
+set -euo pipefail
+
+export PATH="$HOME/.local/bin:/opt/homebrew/bin:/usr/bin:/bin"
+
+# 1. Install dependencies:
+#      brew install ffmpeg sox uv
+# 2. Install parakeet-mlx:
+#      uv tool install parakeet-mlx --python 3.11
+# 3. Download the model:
+#      parakeet-mlx --help
+# 4. Grant microphone access:
+#      System Settings > Privacy & Security > Microphone > Enable for Hammerspoon
+
+RECORDING_FILE="/tmp/record-recording.wav"
+TRANSCRIBING_FILE="/tmp/record-transcribing"
+TRANSCRIPT_FILE="/tmp/record-recording.txt"
+
+cleanup() {
+  rm -f "${RECORDING_FILE}" "${TRANSCRIPT_FILE}" "${TRANSCRIBING_FILE}"
+}
+trap cleanup EXIT
+
+# Record until silence or 60 seconds.
+rec -q "${RECORDING_FILE}" rate 16k silence 1 0.1 1% 1 2.0 1% trim 0 60
+
+# Transcribe and output.
+if [ -f "${RECORDING_FILE}" ]; then
+  touch "${TRANSCRIBING_FILE}"
+  parakeet-mlx "${RECORDING_FILE}" --output-format txt --output-dir /tmp --chunk-duration 30 >/dev/null 2>&1
+  rm -f "${TRANSCRIBING_FILE}"
+
+  if [ -f "${TRANSCRIPT_FILE}" ]; then
+    cat "${TRANSCRIPT_FILE}"
+  fi
+fi
