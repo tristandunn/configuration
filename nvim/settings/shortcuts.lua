@@ -44,8 +44,9 @@ set("i", "<C-S>", "<C-O><Cmd>update<CR>")
 -- Shortcuts for Rails commands.
 set("n", "<Leader>bo", ":ExecuteCommandInPane bundle\\ outdated 0 0 2<CR>")
 set("n", "<Leader>bu", ":ExecuteCommandInPane bundle\\ update 0 0 2<CR>")
-set("n", "<Leader>r", ":ExecuteCommandInPane rubocop 0 0 2<CR>")
-set("n", "<Leader>rc", ":ExecuteCommandInPane bundle\\ exec\\ rake\\ check 0 0 2<CR>")
+set("n", "<Leader>rc", ":ExecuteCommandInPane bin/ci 0 0 2<CR>")
+set("n", "<Leader>rs", ":ExecuteCommandInPane bin/rails\\ spec 0 0 2<CR>")
+set("n", "<Leader>ru", ":ExecuteCommandInPane bin/rubocop 0 0 2<CR>")
 set("n", "<Leader>yo", ":ExecuteCommandInPane yarn\\ outdated 1 0 2<CR>")
 
 -- Remap NetrwRefresh to allow <C-l> to be used by nvim-tmux-navigation.
