@@ -8,7 +8,6 @@ install:
 	make $(HOME)/.gitconfig
 	make $(HOME)/.hushlogin
 	make $(HOME)/.inputrc
-	make $(HOME)/.psqlrc
 	make $(HOME)/.rgignore
 	make $(HOME)/.rspec
 	make $(HOME)/.tmux.conf
@@ -34,7 +33,6 @@ uninstall:
 	-test -L $(HOME)/.gitconfig && rm -fv $(HOME)/.gitconfig
 	-test -L $(HOME)/.hushlogin && rm -fv $(HOME)/.hushlogin
 	-test -L $(HOME)/.inputrc && rm -fv $(HOME)/.inputrc
-	-test -L $(HOME)/.psqlrc && rm -fv $(HOME)/.psqlrc
 	-test -L $(HOME)/.rgignore && rm -fv $(HOME)/.rgignore
 	-test -L $(HOME)/.rspec && rm -fv $(HOME)/.rspec
 	-test -L $(HOME)/.tmux.conf && rm -fv $(HOME)/.tmux.conf
@@ -70,9 +68,6 @@ $(HOME)/.hushlogin:
 
 $(HOME)/.inputrc:
 	ln -sv $(CWD)/inputrc $(HOME)/.inputrc
-
-$(HOME)/.psqlrc:
-	ln -sv $(CWD)/psqlrc $(HOME)/.psqlrc
 
 $(HOME)/.rgignore:
 	ln -sv $(CWD)/rgignore $(HOME)/.rgignore
