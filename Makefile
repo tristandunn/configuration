@@ -2,6 +2,7 @@ CWD=$(shell pwd)
 
 install:
 	make $(HOME)/.aliases
+	make $(HOME)/.claude/settings.json
 	make $(HOME)/.config/kitty/kitty.conf
 	make $(HOME)/.config/nvim/init.lua
 	make $(HOME)/.gemrc
@@ -27,6 +28,7 @@ homebrew-bundle:
 
 uninstall:
 	-test -L $(HOME)/.aliases && rm -fv $(HOME)/.aliases
+	-test -L $(HOME)/.claude/settings.json && rm -fv $(HOME)/.claude/settings.json
 	-test -L $(HOME)/.config/kitty/kitty.conf && rm -fv $(HOME)/.config/kitty/kitty.conf
 	-test -L $(HOME)/.config/nvim/init.lua && rm -fv $(HOME)/.config/nvim
 	-test -L $(HOME)/.gemrc && rm -fv $(HOME)/.gemrc
@@ -43,6 +45,10 @@ uninstall:
 
 $(HOME)/.aliases:
 	ln -sv $(CWD)/aliases $(HOME)/.aliases
+
+$(HOME)/.claude/settings.json:
+	mkdir -p $(HOME)/.claude
+	ln -sv $(CWD)/claude/settings.json $(HOME)/.claude/settings.json
 
 $(HOME)/.config/kitty/kitty.conf:
 	mkdir -p $(HOME)/.config/kitty
