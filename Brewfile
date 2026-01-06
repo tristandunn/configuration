@@ -18,6 +18,7 @@ brew "jq"
 brew "macos-trash"
 brew "ripgrep"
 brew "shellcheck"
+brew "tree"
 brew "yamllint"
 
 # Language servers.
