@@ -22,9 +22,14 @@
       "Bash(bin/ci:*)",
       "Bash(bin/rails:*)",
       "Bash(bin/rspec:*)",
-      "Bash(bundle exec rake spec)",
-      "Bash(bundle exec rake rubocop)",
+      "Bash(bundle exec rails initializers)",
+      "Bash(bundle exec rails log:clear)",
+      "Bash(bundle exec rails middleware)",
+      "Bash(bundle exec rails routes)",
+      "Bash(bundle exec rails tmp:clear)",
       "Bash(bundle exec rake rubocop:autocorrect)",
+      "Bash(bundle exec rake rubocop)",
+      "Bash(bundle exec rake spec)",
       "Bash(bundle exec rspec:*)",
       "Bash(bundle exec rubocop:*)",
       "Bash(bundle install:*)",
@@ -37,7 +42,9 @@
       "Bash(head:*)",
       "Bash(ls:*)",
       "Bash(pwd:*)",
-      "Bash(wc:*)"
+      "Bash(tree:*)",
+      "Bash(wc:*)",
+      "Bash(yarn install:*)"
     ],
     "deny": [
       "Read(./.env)"
