@@ -25,12 +25,6 @@ require("lazy").setup({
     opts   = require("plug-ins.tmux-navigation").opts
   },
 
-  -- GitHub Copilot.
-  {
-    "github/copilot.vim",
-    init = require("plug-ins.copilot").init
-  },
-
   -- Completion.
   {
     "saghen/blink.cmp",
