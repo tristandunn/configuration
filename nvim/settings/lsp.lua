@@ -37,17 +37,3 @@ vim.diagnostic.config({
     source = "always"
   }
 })
-
--- Enable LSP servers.
-vim.lsp.enable({
-  "docker",
-  "erb",
-  "eslint",
-  "json",
-  "lua",
-  "ruby",
-  "rubocop",
-  "stylelint",
-  "tailwindcss",
-  "yaml"
-})
