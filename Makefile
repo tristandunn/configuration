@@ -12,10 +12,10 @@ install:
 	make $(HOME)/.rgignore
 	make $(HOME)/.rspec
 	make $(HOME)/.tmux.conf
-	make $(HOME)/.tool-versions
 	make $(HOME)/.zlogin
 	make $(HOME)/.zshenv
 	make $(HOME)/.zshrc
+	make $(HOME)/mise.toml
 	make homebrew
 	make homebrew-bundle
 
@@ -30,6 +30,7 @@ uninstall:
 	-test -L $(HOME)/.aliases && rm -fv $(HOME)/.aliases
 	-test -L $(HOME)/.claude/settings.json && rm -fv $(HOME)/.claude/settings.json
 	-test -L $(HOME)/.config/kitty/kitty.conf && rm -fv $(HOME)/.config/kitty/kitty.conf
+	-test -L $(HOME)/.config/mise/config.toml && rm -fv $(HOME)/.config/mise/config.toml
 	-test -L $(HOME)/.config/nvim/init.lua && rm -fv $(HOME)/.config/nvim
 	-test -L $(HOME)/.gemrc && rm -fv $(HOME)/.gemrc
 	-test -L $(HOME)/.gitconfig && rm -fv $(HOME)/.gitconfig
@@ -38,7 +39,6 @@ uninstall:
 	-test -L $(HOME)/.rgignore && rm -fv $(HOME)/.rgignore
 	-test -L $(HOME)/.rspec && rm -fv $(HOME)/.rspec
 	-test -L $(HOME)/.tmux.conf && rm -fv $(HOME)/.tmux.conf
-	-test -L $(HOME)/.tool-versions && rm -fv $(HOME)/.tool-versions
 	-test -L $(HOME)/.zlogin && rm -fv $(HOME)/.zlogin
 	-test -L $(HOME)/.zshenv && rm -fv $(HOME)/.zshenv
 	-test -L $(HOME)/.zshrc && rm -fv $(HOME)/.zshrc
@@ -84,9 +84,6 @@ $(HOME)/.rspec:
 $(HOME)/.tmux.conf:
 	ln -sv $(CWD)/tmux.conf $(HOME)/.tmux.conf
 
-$(HOME)/.tool-versions:
-	ln -sv $(CWD)/tool-versions $(HOME)/.tool-versions
-
 $(HOME)/.zlogin:
 	ln -sv $(CWD)/zlogin $(HOME)/.zlogin
 
@@ -95,3 +92,7 @@ $(HOME)/.zshenv:
 
 $(HOME)/.zshrc:
 	ln -sv $(CWD)/zshrc $(HOME)/.zshrc
+
+$(HOME)/mise.toml:
+	mkdir -p $(HOME)/.config/mise
+	ln -sv $(CWD)/config.toml $(HOME)/.config/mise/config.toml

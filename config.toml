@@ -1,0 +1,11 @@
+[settings.node]
+corepack = true
+
+[settings.ruby]
+compile = false
+
+[tools.nodejs]
+version = "24.15.0"
+
+[tools.ruby]
+version = "4.0.4"
