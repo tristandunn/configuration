@@ -1,9 +1,3 @@
-# Force usage of the Kitty terminal.
-if [ "$TERM" = "xterm-256color" ]; then
-  open -a "Kitty"
-  killall "Terminal"
-fi
-
 # Completion which only updates daily.
 autoload -Uz compinit
 
